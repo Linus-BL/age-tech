@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './css/main.css';
 import Button from './components/Button'
+import Chip from './components/Chip'
 
 function App() {
   return (
@@ -21,7 +22,11 @@ function App() {
           Learn React
         </a>
       </header>
-      <Button onClickFunction={() => console.log("hej")}>Knapp</Button>
+      <Button onClickFunction={() => console.log("knapp")}>Knapp</Button>
+
+      <Chip onClickFunction={() => console.log("tagg")}>Tagg</Chip>
+
+
     </div>
   );
 }

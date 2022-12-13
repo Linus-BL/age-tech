@@ -75,17 +75,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/*Color 2*/
-/*
-$primary-color: #333333;
-$secondary-color: #cb5554;
-$tertiary-color: #eae5db;
-$quaternary-color: #FAF6F5;
-*/
 .button {
   background-color: #132A36;
   font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1em;
   color: #F4F4F4;
   padding-top: 1em;
@@ -95,6 +88,22 @@ $quaternary-color: #FAF6F5;
   justify-content: center;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  border-radius: 5px;
+}
+
+.chip {
+  background-color: #8AB0D2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #132A36;
+  padding: 1em 2em;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 2em;
 }
 
 /*# sourceMappingURL=main.css.map */
