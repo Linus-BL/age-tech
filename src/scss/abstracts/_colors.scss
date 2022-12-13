@@ -1,0 +1,22 @@
+$primary-color: #242132;
+$secondary-color: #746cfe;
+$tertiary-color: #ae8cfa;
+$quaternary-color: #fefcff;
+
+/*Color 2*/
+/*
+$primary-color: #333333;
+$secondary-color: #cb5554;
+$tertiary-color: #eae5db;
+$quaternary-color: #FAF6F5;
+*/
+
+
+// Set text color
+@function set-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
