@@ -1,0 +1,17 @@
+@import '../abstracts/colors.scss';
+@import '../base/fonts.scss';
+
+.button{
+    background-color: $primary-color;
+    font-family: $h5-font;
+    font-weight: $h5-font-weight;
+    font-size: $h5-font-size;
+    color: set-text-color($primary-color);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}

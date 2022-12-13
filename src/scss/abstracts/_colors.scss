@@ -1,7 +1,6 @@
-$primary-color: #242132;
-$secondary-color: #746cfe;
-$tertiary-color: #ae8cfa;
-$quaternary-color: #fefcff;
+$primary-color: #132A36;
+
+
 
 /*Color 2*/
 /*
@@ -17,6 +16,6 @@ $quaternary-color: #FAF6F5;
     @if (lightness($color) > 50) {
         @return #000;
     } @else {
-        @return #fff;
+        @return #F4F4F4;
     }
 }

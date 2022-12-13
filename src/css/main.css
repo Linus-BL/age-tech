@@ -75,5 +75,26 @@ select {
     scroll-behavior: auto !important;
   }
 }
+/*Color 2*/
+/*
+$primary-color: #333333;
+$secondary-color: #cb5554;
+$tertiary-color: #eae5db;
+$quaternary-color: #FAF6F5;
+*/
+.button {
+  background-color: #132A36;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #F4F4F4;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
 
 /*# sourceMappingURL=main.css.map */
