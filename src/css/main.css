@@ -113,19 +113,17 @@ select {
   font-weight: 900;
   font-size: 1em;
   color: #132A36;
-  padding: 1em 2em;
+  padding: 0.7em 1.3em;
   width: fit-content;
   display: flex;
   justify-content: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
   border-radius: 2em;
 }
 
 .adCard {
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
   border-radius: 5px;
-  height: 350px;
+  height: 400px;
   width: 180px;
   flex-shrink: 0;
 }
@@ -165,6 +163,13 @@ select {
   color: #121212;
 }
 
+.heading3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #121212;
+}
+
 .heading5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
@@ -177,11 +182,29 @@ select {
   align-items: stretch;
   gap: 1em;
   overflow-x: scroll;
-  height: 500px;
+  padding-bottom: 1em;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.categoryHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.tags {
+  display: flex;
+  align-items: stretch;
+  gap: 0.8em;
+  flex-wrap: wrap;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

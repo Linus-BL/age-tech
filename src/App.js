@@ -7,6 +7,15 @@ import AdCard from './components/AdCard'
 import testImage from '../src/ad_test.jpg'
 import ScrollableSection from './components/ScrollableSection'
 import Heading1 from './components/textComponents/Heading1'
+import CategorySection from './components/CategorySection'
+import TagsSection from './components/TagsSection'
+
+const tags = [{ id: 1, tagName: "Stickning" },
+{ id: 2, tagName: "Måla" },
+{ id: 3, tagName: "Motorkross" },
+{ id: 4, tagName: "Fest" },
+{ id: 5, tagName: "Snickeri" },
+{ id: 6, tagName: "Bakning" }]
 
 const ad = {
   id: 1,
@@ -61,13 +70,18 @@ function App() {
     <div className="App">
 
       <header className="App-header">
-
-        <Heading1>Boomer Biz</Heading1>
+        <div>        <Heading1>Boomer Biz</Heading1>
+        </div>
 
       </header>
 
+      <TagsSection tags={tags}></TagsSection>
 
-      <Chip onClickFunction={() => console.log("tagg")}>Tagg</Chip>
+
+      {/* <Chip onClickFunction={() => console.log("tagg")}>Tagg</Chip> */}
+
+      <CategorySection category="Motorkross" ads={ads}></CategorySection>
+      <CategorySection category="Stickning" ads={ads}></CategorySection>
 
       <ScrollableSection ads={ads}></ScrollableSection>
       <AdCard ad={ad}></AdCard>

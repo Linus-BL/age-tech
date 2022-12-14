@@ -4,7 +4,7 @@
 .adCard{
     box-shadow: 0.4em 0.6em 0.7em rgba(19,40,50,0.2);
     border-radius: 5px;
-    height: 350px;
+    height: 400px;
     width: 180px;
     flex-shrink: 0;
 }
@@ -16,10 +16,10 @@
     height: 200px;
     width: fill;
    
-
 }
 .textContent{
     padding: 0.6em;
+    
     .iconText{
     display: flex;
     align-items: center;

@@ -4,10 +4,9 @@
 .scrollableSection{
     display: flex;
     align-items: stretch;
-
     gap: 1em;
     overflow-x: scroll;
-    height: 500px;
+    padding-bottom: 1em;;
     
 }
 
