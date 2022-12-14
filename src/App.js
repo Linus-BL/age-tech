@@ -10,7 +10,7 @@ import Header from './components/Header'
 
 const tags = [{ id: 1, tagName: "Stickning" },
 { id: 2, tagName: "Måla" },
-{ id: 3, tagName: "Motorkross" },
+{ id: 3, tagName: "Motorcross" },
 { id: 4, tagName: "Fest" },
 { id: 5, tagName: "Snickeri" },
 { id: 6, tagName: "Bakning" }]
@@ -74,13 +74,12 @@ function App() {
 
       <TagsSection tags={tags}></TagsSection>
 
-
-      {/* <Chip onClickFunction={() => console.log("tagg")}>Tagg</Chip> */}
-
       <CategorySection category="Motorkross" ads={ads}></CategorySection>
       <CategorySection category="Stickning" ads={ads}></CategorySection>
 
-      <ScrollableSection ads={ads}></ScrollableSection>
+
+hej hej
+
       <AdCard ad={ad}></AdCard>
       <Button onClickFunction={() => console.log("knapp")} active={active} >Knapp</Button>
 

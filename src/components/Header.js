@@ -5,7 +5,7 @@ const Header = ({ children, onClickFunction, active = true }) => {
 
     return (
         <div className="headerSection">
-            <Heading1>Boomer Bizzaz</Heading1>
+            <Heading1>Boomer Biz</Heading1>
         </div>)
 }
 
