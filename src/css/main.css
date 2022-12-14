@@ -138,10 +138,16 @@ select {
 .textContent {
   padding: 0.6em;
 }
+.textContent .title {
+  margin-block-start: 0em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+}
 .textContent .iconText {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
+  padding-bottom: 0.3em;
 }
 
 .icon {
@@ -205,6 +211,15 @@ select {
   flex-wrap: wrap;
   padding-bottom: 1em;
   padding-top: 1em;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #8AB0D2;
 }
 
 /*# sourceMappingURL=main.css.map */

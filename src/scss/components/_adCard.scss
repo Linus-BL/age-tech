@@ -19,11 +19,17 @@
 }
 .textContent{
     padding: 0.6em;
+    .title{
+        margin-block-start: 0em;
+        margin-block-end: 1.67em;
+        margin-inline-start: 0px;
+    }
     
     .iconText{
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.6em;
+    padding-bottom: 0.3em;
 }}
 .icon{
     max-height: 32px;

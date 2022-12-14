@@ -9,12 +9,12 @@ import { MdStarOutline } from "react-icons/md";
 const adCard = (props) => {
     return (
         <div className="adCard" onClick={props.onClickFunction} >
-            <div className="adCardImgContainer" > <img src={props.ad.image} alt="ad picture" className="adCardImage"></img></div>
+            <div className="adCardImgContainer" > <img src={props.ad.image} alt="ad" className="adCardImage"></img></div>
             <div className="textContent">
-                <Heading5 >{props.ad.title}</Heading5>
+                <Heading5 className="title">{props.ad.title}</Heading5>
                 <div className="iconText"> <MdOutlineLocationOn className="icon" /> <BodyText>{props.ad.location}</BodyText></div>
                 <div className="iconText"> <MdCalendarToday className="icon" /> <BodyText>{props.ad.date}</BodyText></div>
-                <div className="iconText"> <MdStarOutline className="icon" /><BodyText>{props.ad.points}</BodyText></div>
+                <div className="iconText"> <MdStarOutline className="icon" /><BodyText>{props.ad.points} poäng</BodyText></div>
             </div>
         </div >)
 }

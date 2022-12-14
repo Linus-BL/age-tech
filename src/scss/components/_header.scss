@@ -1,0 +1,12 @@
+@use '../abstracts';
+@use '../base';
+
+.headerSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: abstracts.$secondary-color;
+
+}

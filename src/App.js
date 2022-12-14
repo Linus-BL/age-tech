@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './css/main.css';
 import Button from './components/Button'
-import Chip from './components/Chip'
 import AdCard from './components/AdCard'
 import testImage from '../src/ad_test.jpg'
 import ScrollableSection from './components/ScrollableSection'
-import Heading1 from './components/textComponents/Heading1'
 import CategorySection from './components/CategorySection'
 import TagsSection from './components/TagsSection'
+import Header from './components/Header'
 
 const tags = [{ id: 1, tagName: "Stickning" },
 { id: 2, tagName: "Måla" },
@@ -70,8 +68,7 @@ function App() {
     <div className="App">
 
       <header className="App-header">
-        <div>        <Heading1>Boomer Biz</Heading1>
-        </div>
+        <Header></Header>
 
       </header>
 
