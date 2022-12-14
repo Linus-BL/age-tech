@@ -91,6 +91,22 @@ select {
   border-radius: 5px;
 }
 
+.buttonDisabled {
+  background-color: #D9D9D9;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: #B3B3B3;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5px;
+}
+
 .chip {
   background-color: #8AB0D2;
   font-family: "Montserrat", sans-serif;
@@ -104,6 +120,19 @@ select {
   margin-left: 0.5em;
   margin-right: 0.5em;
   border-radius: 2em;
+}
+
+.adCard {
+  background-color: #F4F4F4;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #121212;
+  width: fit-content;
+  padding: 1em;
+  box-shadow: 0.5em 0.7em 0.6em rgba(19, 43, 54, 0.4);
+  border-radius: 5px;
+  margin: 5em;
 }
 
 /*# sourceMappingURL=main.css.map */

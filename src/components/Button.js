@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Button = ({ children, onClickFunction, }) => {
+const Button = ({ children, onClickFunction, active = true }) => {
 
 
     return (
-
-        <div className="button" onClick={onClickFunction} ><p>{children}</p></div>)
+        <>
+            {active ? <div className="button" onClick={onClickFunction}><p> {children}</p ></div > : <div className="buttonDisabled"><p> {children}</p ></div >
+            }
+        </>)
 }
 
 export default Button

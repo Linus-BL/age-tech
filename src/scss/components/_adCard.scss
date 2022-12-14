@@ -1,0 +1,15 @@
+@use '../abstracts';
+@use '../base';
+
+.adCard{
+    background-color: abstracts.$white;
+    font-family: base.$h5-font;
+    font-weight: base.$h5-font-weight;
+    font-size: base.$h5-font-size;
+    color: abstracts.$black;
+    width: fit-content;
+    padding: 1em;
+    box-shadow: 0.5em 0.7em 0.6em rgba(19,43,54,0.4);
+    border-radius: 5px;
+    margin: 5em;
+}
