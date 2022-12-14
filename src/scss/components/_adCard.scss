@@ -2,14 +2,30 @@
 @use '../base';
 
 .adCard{
-    background-color: abstracts.$white;
-    font-family: base.$h5-font;
-    font-weight: base.$h5-font-weight;
-    font-size: base.$h5-font-size;
-    color: abstracts.$black;
-    width: fit-content;
-    padding: 1em;
-    box-shadow: 0.5em 0.7em 0.6em rgba(19,43,54,0.4);
+    box-shadow: 0.4em 0.6em 0.7em rgba(19,40,50,0.2);
     border-radius: 5px;
-    margin: 5em;
+    height: 350px;
+    width: 180px;
+    flex-shrink: 0;
+}
+
+
+.adCardImage{
+    border-radius: 5px 5px 0px 0px;
+    object-fit: cover;
+    height: 200px;
+    width: fill;
+   
+
+}
+.textContent{
+    padding: 0.6em;
+    .iconText{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}}
+.icon{
+    max-height: 32px;
+    max-width: 32px;
 }

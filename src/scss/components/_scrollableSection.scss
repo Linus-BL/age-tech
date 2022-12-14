@@ -1,0 +1,14 @@
+@use '../abstracts';
+@use '../base';
+
+.scrollableSection{
+    display: flex;
+    align-items: stretch;
+
+    gap: 1em;
+    overflow-x: scroll;
+    height: 500px;
+    
+}
+
+::-webkit-scrollbar {display:none;}

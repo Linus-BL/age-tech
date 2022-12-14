@@ -1,0 +1,10 @@
+@use '../abstracts';
+@use '../base';
+
+.bodyText{
+    font-family: base.$main-font;
+    font-weight: base.$main-font-weight;
+    font-size: base.$main-font-size;
+    color: abstracts.$black;
+
+}

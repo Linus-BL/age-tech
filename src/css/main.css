@@ -123,16 +123,65 @@ select {
 }
 
 .adCard {
-  background-color: #F4F4F4;
+  box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+  border-radius: 5px;
+  height: 350px;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.adCardImage {
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
+  height: 200px;
+  width: fill;
+}
+
+.textContent {
+  padding: 0.6em;
+}
+.textContent .iconText {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.icon {
+  max-height: 32px;
+  max-width: 32px;
+}
+
+.bodyText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #121212;
+}
+
+.heading1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #121212;
-  width: fit-content;
-  padding: 1em;
-  box-shadow: 0.5em 0.7em 0.6em rgba(19, 43, 54, 0.4);
-  border-radius: 5px;
-  margin: 5em;
+}
+
+.scrollableSection {
+  display: flex;
+  align-items: stretch;
+  gap: 1em;
+  overflow-x: scroll;
+  height: 500px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
