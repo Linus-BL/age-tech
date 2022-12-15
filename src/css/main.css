@@ -90,6 +90,12 @@ select {
   margin-right: 0.5em;
   border-radius: 5px;
 }
+.button:hover {
+  background-color: #284859;
+}
+.button:active {
+  background-color: #121212;
+}
 
 .buttonDisabled {
   background-color: #D9D9D9;
@@ -199,6 +205,7 @@ select {
 .categoryHeading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {

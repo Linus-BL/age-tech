@@ -63,7 +63,7 @@ const ads = [{
 
 
 function App() {
-  const active = false;
+  const active = true;
   return (
     <div className="App">
 
