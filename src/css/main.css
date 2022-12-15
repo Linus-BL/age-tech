@@ -2,6 +2,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,7 +13,8 @@ h1,
 h2,
 h3,
 h4,
-p,
+h5,
+h6,
 figure,
 blockquote,
 dl,
@@ -75,14 +78,42 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.bodyText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #121212;
+}
+
+.heading1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #121212;
+  margin: 0.4em 0em;
+}
+
 .button {
   background-color: #132A36;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #F4F4F4;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,8 +134,7 @@ select {
   font-weight: 700;
   font-size: 1em;
   color: #B3B3B3;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,7 +168,7 @@ select {
   border-radius: 5px 5px 0px 0px;
   object-fit: cover;
   height: 200px;
-  width: fill;
+  width: stretch;
 }
 
 .textContent {
@@ -161,33 +191,32 @@ select {
   max-width: 32px;
 }
 
-.bodyText {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  color: #121212;
+.inputField {
+  background-color: #F4F4F4;
+  width: stretch;
+  border-radius: 5px;
+  border: none;
+}
+.inputField:focus {
+  outline: none;
+  background-color: #D9D9D9;
 }
 
-.heading1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1.5em;
-  color: #121212;
+.inputField {
+  background-color: #F4F4F4;
+  width: stretch;
+  border-radius: 5px;
+  border: none;
+}
+.inputField:focus {
+  outline: none;
+  background-color: #D9D9D9;
 }
 
-.heading3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.5em;
-  color: #121212;
-}
-
-.heading5 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1em;
-  color: #121212;
-  margin: 0.4em 0em;
+.searchField {
+  display: flex;
+  gap: 0.5em;
+  width: stretch;
 }
 
 .scrollableSection {
@@ -224,6 +253,7 @@ select {
 .headerSection {
   display: flex;
   flex-direction: column;
+  gap: 2em;
   align-items: center;
   justify-content: center;
   height: 200px;

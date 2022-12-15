@@ -3,10 +3,10 @@ import './css/main.css';
 import Button from './components/Button'
 import AdCard from './components/AdCard'
 import testImage from '../src/ad_test.jpg'
-import ScrollableSection from './components/ScrollableSection'
 import CategorySection from './components/CategorySection'
 import TagsSection from './components/TagsSection'
 import Header from './components/Header'
+import SearchField from './components/SearchField'
 
 const tags = [{ id: 1, tagName: "Stickning" },
 { id: 2, tagName: "Måla" },
@@ -71,6 +71,7 @@ function App() {
         <Header></Header>
 
       </header>
+
 
       <TagsSection tags={tags}></TagsSection>
 

@@ -9,13 +9,11 @@
     flex-shrink: 0;
 }
 
-
 .adCardImage{
     border-radius: 5px 5px 0px 0px;
     object-fit: cover;
     height: 200px;
-    width: fill;
-   
+    width: stretch;
 }
 .textContent{
     padding: 0.6em;
@@ -24,7 +22,6 @@
         margin-block-end: 1.67em;
         margin-inline-start: 0px;
     }
-    
     .iconText{
     display: flex;
     align-items: center;
