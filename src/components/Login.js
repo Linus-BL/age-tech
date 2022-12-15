@@ -19,7 +19,14 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate('/dashboard');
     } catch (error) {
+      //console.log(JSON.stringify(error))
       setError(error.code + error.message);
+      if(error.code === "auth/wrong-password"){
+        setError("Wrong password.")
+      }
+      if(error.code === "auth/user-not-found"){{
+        setError("This email adress is not registered.")
+      }}
       //error.code error.message to get detailed errors
     }
     setLoading(false);
