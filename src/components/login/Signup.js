@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -13,20 +14,17 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError('Password do not match');
+    }
     try {
       setError('');
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate('/dashboard');
+      await signup(emailRef.current.value, passwordRef.current.value);
+      navigate('/dashboard'); //Ändra routing till formulärsida
     } catch (error) {
-      //console.log(JSON.stringify(error))
       setError(error.code + error.message);
-      if(error.code === "auth/wrong-password"){
-        setError("Wrong password.")
-      }
-      if(error.code === "auth/user-not-found"){{
-        setError("This email adress is not registered.")
-      }}
+      //Den validerar lösenordslängd, måste vara mer än 6 tecken
       //error.code error.message to get detailed errors
     }
     setLoading(false);
@@ -37,7 +35,7 @@ export default function Login() {
   return (
     <>
       <div>
-        <h2>Log In</h2>
+        <h2>Sign Up</h2>
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -57,6 +55,15 @@ export default function Login() {
               required
             />
           </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password-confirm"
+              placeholder="Confirm passoword"
+              ref={passwordConfirmRef}
+              required
+            />
+          </div>
           <input
             disabled={loading}
             className="form-btn"
@@ -64,12 +71,8 @@ export default function Login() {
             value="Submit"
           />
         </form>
-        <div>{/*Glömt lösen*/}</div>
         <div>
-          Need an account? <Link to="/signup">Sign up</Link>{' '}
-        </div>
-        <div>
-          <Link to="/forgotPassword">Forgot password</Link>{' '}
+          Need an account? <Link to="/login">Log ín</Link>{' '}
         </div>
       </div>
     </>

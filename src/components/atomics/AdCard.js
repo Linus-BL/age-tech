@@ -1,6 +1,6 @@
 import React from 'react'
-import BodyText from './textComponents/BodyText'
-import Heading5 from './textComponents/Heading5'
+import BodyText from '../textComponents/BodyText'
+import Heading5 from '../textComponents/Heading5'
 import { MdCalendarToday } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdStarOutline } from "react-icons/md";

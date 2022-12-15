@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollableSection from './ScrollableSection'
-import Heading3 from './textComponents/Heading3'
+import Heading3 from '../textComponents/Heading3'
 
 const CategorySection = ({ category = "Category Name", ads }) => {
     return (

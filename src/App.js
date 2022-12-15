@@ -1,20 +1,19 @@
 import React from 'react';
 import './css/main.css';
-import Signup from './components/Signup';
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
-import ForgotPassword from './components/ForgotPassword';
+import Signup from './components/login/Signup';
+import Dashboard from './components/profile/Dashboard';
+import Login from './components/login/Login';
+import ForgotPassword from './components/login/ForgotPassword';
 import AuthProvider from './context/AuthContext';
 import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
 } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute';
-import UpdateProfile from './components/UpdateProfile';
+import PrivateRoute from './components/nav/PrivateRoute';
+import UpdateProfile from './components/profile/UpdateProfile';
 
 function App() {
-  const active = true;
   return (
     <>
       <Router>

@@ -78,35 +78,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-.bodyText {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  color: #121212;
-}
-
-.heading1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1.5em;
-  color: #121212;
-}
-
-.heading3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.5em;
-  color: #121212;
-}
-
-.heading5 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1em;
-  color: #121212;
-  margin: 0.4em 0em;
-}
-
 .button {
   background-color: #132A36;
   font-family: "Montserrat", sans-serif;
@@ -258,6 +229,35 @@ select {
   justify-content: center;
   height: 200px;
   background-color: #8AB0D2;
+}
+
+.bodyText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #121212;
+}
+
+.heading1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #121212;
+  margin: 0.4em 0em;
 }
 
 /*# sourceMappingURL=main.css.map */
