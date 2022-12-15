@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading3 from './textComponents/Heading3'
+import Heading3 from '../textComponents/Heading3'
 import Chip from './Chip'
 
 const TagSection = ({ sectionTitle = "Kolla in dessa", tags }) => {
