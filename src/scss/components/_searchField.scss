@@ -1,0 +1,19 @@
+@use '../abstracts';
+@use '../base';
+
+.inputField{
+    background-color: abstracts.$white;
+    width: stretch;
+        border-radius: 5px;
+    border: none;
+    &:focus {
+        outline: none;
+        background-color: abstracts.$light-gray;
+    }
+    
+}
+.searchField{
+    display: flex;
+    gap: 0.5em;
+    width: stretch;
+}

@@ -14,6 +14,7 @@ import PrivateRoute from './components/PrivateRoute';
 import UpdateProfile from './components/UpdateProfile';
 
 function App() {
+  const active = true;
   return (
     <>
       <Router>

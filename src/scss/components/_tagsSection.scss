@@ -1,0 +1,16 @@
+@use '../abstracts';
+@use '../base';
+
+.tagsSection{
+    
+    
+}
+.tags{
+    display: flex;
+    align-items: stretch;
+    gap: 0.8em;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    padding-top: 1em;
+
+}

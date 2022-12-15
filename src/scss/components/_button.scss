@@ -1,0 +1,39 @@
+@use '../abstracts';
+@use '../base';
+
+.button{
+    background-color: abstracts.$primary-color;
+    font-family: base.$h5-font;
+    font-weight: base.$h4-font-weight;
+    font-size: base.$h5-font-size;
+    color: abstracts.$white;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 5px; 
+    &:hover {
+        background-color: abstracts.$primary-color-active;
+      }
+    &:active  {
+        background-color: abstracts.$black;
+      }
+}
+.buttonDisabled{
+    background-color: abstracts.$light-gray;
+    font-family: base.$h5-font;
+    font-weight: base.$h4-font-weight;
+    font-size: base.$h5-font-size;
+    color: abstracts.$middle-gray;
+    padding: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 5px;
+
+}

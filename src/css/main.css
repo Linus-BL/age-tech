@@ -2,6 +2,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,7 +13,8 @@ h1,
 h2,
 h3,
 h4,
-p,
+h5,
+h6,
 figure,
 blockquote,
 dl,
@@ -20,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -74,6 +77,187 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.bodyText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #121212;
+}
+
+.heading1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #121212;
+}
+
+.heading5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #121212;
+  margin: 0.4em 0em;
+}
+
+.button {
+  background-color: #132A36;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: #F4F4F4;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #284859;
+}
+.button:active {
+  background-color: #121212;
+}
+
+.buttonDisabled {
+  background-color: #D9D9D9;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: #B3B3B3;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5px;
+}
+
+.chip {
+  background-color: #8AB0D2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1em;
+  color: #132A36;
+  padding: 0.7em 1.3em;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  border-radius: 2em;
+}
+
+.adCard {
+  box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+  border-radius: 5px;
+  height: 400px;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.adCardImage {
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
+  height: 200px;
+  width: stretch;
+}
+
+.textContent {
+  padding: 0.6em;
+}
+.textContent .title {
+  margin-block-start: 0em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+}
+.textContent .iconText {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding-bottom: 0.3em;
+}
+
+.icon {
+  max-height: 32px;
+  max-width: 32px;
+}
+
+.inputField {
+  background-color: #F4F4F4;
+  width: stretch;
+  border-radius: 5px;
+  border: none;
+}
+.inputField:focus {
+  outline: none;
+  background-color: #D9D9D9;
+}
+
+.inputField {
+  background-color: #F4F4F4;
+  width: stretch;
+  border-radius: 5px;
+  border: none;
+}
+.inputField:focus {
+  outline: none;
+  background-color: #D9D9D9;
+}
+
+.searchField {
+  display: flex;
+  gap: 0.5em;
+  width: stretch;
+}
+
+.scrollableSection {
+  display: flex;
+  align-items: stretch;
+  gap: 1em;
+  overflow-x: scroll;
+  padding-bottom: 1em;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.tags {
+  display: flex;
+  align-items: stretch;
+  gap: 0.8em;
+  flex-wrap: wrap;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #8AB0D2;
 }
 
 /*# sourceMappingURL=main.css.map */

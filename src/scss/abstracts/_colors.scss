@@ -1,21 +1,20 @@
-$primary-color: #242132;
-$secondary-color: #746cfe;
-$tertiary-color: #ae8cfa;
-$quaternary-color: #fefcff;
+$primary-color: #132A36;
+$primary-color-active: #284859;
+$secondary-color: #8AB0D2;
+$secondary-color-active: #72A8D9;
 
-/*Color 2*/
-/*
-$primary-color: #333333;
-$secondary-color: #cb5554;
-$tertiary-color: #eae5db;
-$quaternary-color: #FAF6F5;
-*/
+$white: #F4F4F4;
+$black: #121212;
 
-// Set text color
+$light-gray: #D9D9D9;
+$middle-gray: #B3B3B3;
+
+
+// Set text color - not used 
 @function set-text-color($color) {
-  @if (lightness($color) > 50) {
-    @return #000;
-  } @else {
-    @return #fff;
-  }
+    @if (lightness($color) > 10%) {
+        @return #000;
+    } @else {
+        @return #F4F4F4;
+    }
 }
