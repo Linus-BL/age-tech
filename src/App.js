@@ -1,90 +1,40 @@
 import React from 'react';
 import './css/main.css';
-import Button from './components/Button'
-import AdCard from './components/AdCard'
-import testImage from '../src/ad_test.jpg'
-import CategorySection from './components/CategorySection'
-import TagsSection from './components/TagsSection'
-import Header from './components/Header'
-import SearchField from './components/SearchField'
-
-const tags = [{ id: 1, tagName: "Stickning" },
-{ id: 2, tagName: "Måla" },
-{ id: 3, tagName: "Motorcross" },
-{ id: 4, tagName: "Fest" },
-{ id: 5, tagName: "Snickeri" },
-{ id: 6, tagName: "Bakning" }]
-
-const ad = {
-  id: 1,
-  title: "Baka hos mig",
-  description: "Kom och baka",
-  image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
-  points: 23,
-}
-
-const ads = [{
-  id: 1,
-  title: "Baka hos mig",
-  description: "Kom och baka",
-  image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
-  points: 23
-}, {
-  id: 2,
-  title: "snickra hos mig",
-  description: "Kom och baka",
-  image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
-  points: 23
-},
-{
-  id: 3,
-  title: "snickra hos mig",
-  description: "Kom och baka",
-  image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
-  points: 23
-},
-{
-  id: 4,
-  title: "snickra hos mig",
-  description: "Kom och baka",
-  image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
-  points: 23
-}]
-
+import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import ForgotPassword from './components/ForgotPassword';
+import AuthProvider from './context/AuthContext';
+import {
+  BrowserRouter as Router,
+  Routes as Switch,
+  Route,
+} from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
+import UpdateProfile from './components/UpdateProfile';
 
 function App() {
   const active = true;
   return (
-    <div className="App">
-
-      <header className="App-header">
-        <Header></Header>
-
-      </header>
-
-
-      <TagsSection tags={tags}></TagsSection>
-
-      <CategorySection category="Motorkross" ads={ads}></CategorySection>
-      <CategorySection category="Stickning" ads={ads}></CategorySection>
-
-
-hej hej
-
-      <AdCard ad={ad}></AdCard>
-      <Button onClickFunction={() => console.log("knapp")} active={active} >Knapp</Button>
-
-    </div>
+    <>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
+            <Route path="/dashboard" element={<PrivateRoute />}>
+              <Route path="" element={<Dashboard />} />
+            </Route>
+            {/* Aka raderna mellan dessa två kommentarer */}
+            <Route path="/updateProfile" element={<PrivateRoute />}>
+              <Route path="" element={<UpdateProfile />} />
+            </Route>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forgotPassword" element={<ForgotPassword />} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </>
   );
 }
 
