@@ -28,7 +28,7 @@ function App() {
               <Route path="" element={<UpdateProfile />} />
             </Route>
             <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route exact path="/" element={<Login />} />
             <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Switch>
         </AuthProvider>
