@@ -12,10 +12,13 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
+import LinkButton from './components/atomics/LinkButton';
+import Button from './components/atomics/Button';
 
 function App() {
   return (
     <>
+      <LinkButton onClickFunction={() => console.log("knapp")}>Visa mer</LinkButton>
       <Router>
         <AuthProvider>
           <Switch>

@@ -114,6 +114,17 @@ select {
   border-radius: 5px;
 }
 
+.linkButton {
+  color: #121212;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.2em;
+}
+
 .chip {
   background-color: #8AB0D2;
   font-family: "Montserrat", sans-serif;
