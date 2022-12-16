@@ -19,6 +19,7 @@ import Heading5 from './components/textComponents/Heading5'
 import CoopImage from './coop.png'
 import Adcard from './components/atomics/AdCard'
 import testImage from './ad_test.jpg'
+import Points from './components/shop/Points'
 
 const deal = {
   title: "Rabatt på coop",
@@ -26,7 +27,6 @@ const deal = {
   points: 24,
   image: CoopImage
 }
-
 
 const ad = {
   id: 1,
@@ -37,10 +37,13 @@ const ad = {
   date: "20 november",
   points: 23,
 }
-
+const user = {
+  points: 245
+}
 function App() {
   return (
     <>
+      <Points user={user}></Points>
       <Adcard ad={ad}></Adcard>
       <Heading5>hej hallå</Heading5>
       <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal>
