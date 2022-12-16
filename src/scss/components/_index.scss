@@ -1,18 +1,20 @@
 
-
-
+//atomics
 @forward './button';
 @forward './linkButton';
 @forward './chip';
 @forward './adCard';
-
 @forward './textInput';
 @forward './searchField';
 
-
+//bigger componants
 @forward './scrollableSection';
 @forward './categorySection';
 @forward './tagsSection';
 @forward './header';
 
+
+//folders
+@forward './shop';
+@forward './textComponents/'
 

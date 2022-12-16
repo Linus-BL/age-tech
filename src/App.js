@@ -14,11 +14,36 @@ import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
 import LinkButton from './components/atomics/LinkButton';
 import Button from './components/atomics/Button';
+import Deal from './components/shop/Deal'
+import Heading5 from './components/textComponents/Heading5'
+import CoopImage from './coop.png'
+import Adcard from './components/atomics/AdCard'
+import testImage from './ad_test.jpg'
+
+const deal = {
+  title: "Rabatt på coop",
+  description: "bla bla bla, så här mycket rabbat kan du få på hela sortimentet",
+  points: 24,
+  image: CoopImage
+}
+
+
+const ad = {
+  id: 1,
+  title: "Baka hos mig",
+  description: "Kom och baka",
+  image: testImage,
+  location: "Skultunaparken",
+  date: "20 november",
+  points: 23,
+}
 
 function App() {
   return (
     <>
-      <LinkButton onClickFunction={() => console.log("knapp")}>Visa mer</LinkButton>
+      <Adcard ad={ad}></Adcard>
+      <Heading5>hej hallå</Heading5>
+      <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal>
       <Router>
         <AuthProvider>
           <Switch>

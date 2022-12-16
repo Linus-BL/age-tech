@@ -153,15 +153,15 @@ select {
   width: stretch;
 }
 
-.textContent {
+.textContentAd {
   padding: 0.6em;
 }
-.textContent .title {
+.textContentAd .title {
   margin-block-start: 0em;
   margin-block-end: 1.67em;
   margin-inline-start: 0px;
 }
-.textContent .iconText {
+.textContentAd .iconText {
   display: flex;
   align-items: center;
   gap: 0.6em;
@@ -242,6 +242,44 @@ select {
   background-color: #8AB0D2;
 }
 
+.dealCard {
+  display: flex;
+  box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+  border-radius: 5px;
+  height: 200px;
+  width: stretch;
+  flex-shrink: 0;
+}
+
+.adCardImage {
+  border-radius: 5px 5px 0px 0px;
+  object-fit: contain;
+  height: stretch;
+  width: 400px;
+}
+
+.textContentDeal {
+  padding: 0.6em 0.6em 0.6em 1.2em;
+  background-color: #F4F4F4;
+  width: stretch;
+}
+.textContentDeal .title {
+  margin-block-start: 0em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+}
+.textContentDeal .iconText {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding-bottom: 0.3em;
+}
+
+.icon {
+  max-height: 32px;
+  max-width: 32px;
+}
+
 .bodyText {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -261,6 +299,14 @@ select {
   font-weight: 600;
   font-size: 1.5em;
   color: #121212;
+}
+
+.heading4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.125em;
+  color: #121212;
+  margin: 0.4em 0em;
 }
 
 .heading5 {

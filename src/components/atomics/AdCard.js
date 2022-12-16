@@ -10,7 +10,7 @@ const adCard = (props) => {
     return (
         <div className="adCard" onClick={props.onClickFunction} >
             <div className="adCardImgContainer" > <img src={props.ad.image} alt="ad" className="adCardImage"></img></div>
-            <div className="textContent">
+            <div className="textContentAd">
                 <Heading5 className="title">{props.ad.title}</Heading5>
                 <div className="iconText"> <MdOutlineLocationOn className="icon" /> <BodyText>{props.ad.location}</BodyText></div>
                 <div className="iconText"> <MdCalendarToday className="icon" /> <BodyText>{props.ad.date}</BodyText></div>
