@@ -43,10 +43,10 @@ const user = {
 function App() {
   return (
     <>
-      <Points user={user}></Points>
+      {/* <Points user={user}></Points>
       <Adcard ad={ad}></Adcard>
       <Heading5>hej hallå</Heading5>
-      <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal>
+      <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal> */}
       <Router>
         <AuthProvider>
           <Switch>

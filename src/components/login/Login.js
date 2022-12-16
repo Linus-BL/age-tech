@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-
+import Heading1 from '../textComponents/Heading1'
+import BodyText from '../textComponents/BodyText'
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -37,43 +38,46 @@ export default function Login() {
   //Check if it does a email check
 
   return (
-    <>
-      <div>
-        <h2>Log In</h2>
-        {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              ref={emailRef}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              ref={passwordRef}
-              required
-            />
-          </div>
+
+    <div className="loginPage">
+      <Heading1>Log In</Heading1>
+      {error && <p>{error}</p>}
+      <form className="loginForm" onSubmit={handleSubmit}>
+        <div className="formGroup">
           <input
-            disabled={loading}
-            className="form-btn"
-            type="submit"
-            value="Submit"
+            className="inputField"
+            type="email"
+            name="email"
+            placeholder="Email"
+            ref={emailRef}
           />
-        </form>
-        <div>{/*Glömt lösen*/}</div>
-        <div>
-          Need an account? <Link to="/signup">Sign up</Link>{' '}
         </div>
-        <div>
-          <Link to="/forgotPassword">Forgot password</Link>{' '}
+        <div className="formGroup">
+          <input
+            className="inputField"
+            type="password"
+            name="password"
+            placeholder="Password"
+            ref={passwordRef}
+            required
+          />
         </div>
+        <input
+          disabled={loading}
+          className="button"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+
+      <div className="signUp">
+        <BodyText>  Need an account? <Link to="/signup">Sign up</Link></BodyText>
+
       </div>
-    </>
+      <div className="forgotPassword">
+        <BodyText> <Link to="/forgotPassword">Forgot password</Link></BodyText>
+      </div>
+    </div>
+
   );
 }
