@@ -21,7 +21,7 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate('/dashboard'); //Ändra routing till formulärsida
+      navigate('/signupdetails'); //Ändra routing till formulärsida
     } catch (error) {
       setError(error.code + error.message);
       //Den validerar lösenordslängd, måste vara mer än 6 tecken

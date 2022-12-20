@@ -21,12 +21,12 @@ export default function Login() {
     } catch (error) {
       //console.log(JSON.stringify(error))
       setError(error.code + error.message);
-      if (error.code === "auth/wrong-password") {
-        setError("Wrong password.")
+      if (error.code === 'auth/wrong-password') {
+        setError('Wrong password.');
       }
-      if (error.code === "auth/user-not-found") {
+      if (error.code === 'auth/user-not-found') {
         {
-          setError("This email adress is not registered.")
+          setError('This email adress is not registered.');
         }
       }
       //error.code error.message to get detailed errors
