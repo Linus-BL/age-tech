@@ -1,5 +1,5 @@
-@use '../abstracts';
-@use '../base';
+@use '../../abstracts';
+@use '../../base';
 
 .headerSection{
     display: flex;
@@ -9,5 +9,6 @@
     justify-content: center;
     height: 200px;
     background-color: abstracts.$secondary-color;
+    padding: 0 0.5em;
 
 }

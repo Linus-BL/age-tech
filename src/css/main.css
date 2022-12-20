@@ -229,16 +229,6 @@ select {
   padding-top: 1em;
 }
 
-.headerSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: #8AB0D2;
-}
-
 .dealCard {
   display: flex;
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
@@ -375,8 +365,7 @@ select {
   justify-content: start;
   align-self: start;
   gap: 1em;
-  margin-top: 20px;
-  min-height: 1000px;
+  margin: 0 0.5em;
 }
 
 .nameAndPicture {
@@ -406,6 +395,21 @@ select {
   z-index: 1000;
   padding: 1em;
   width: 100vw;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #8AB0D2;
+  padding: 0 0.5em;
+}
+
+.homePage .mainContent {
+  padding: 1em 0.5em;
 }
 
 /*# sourceMappingURL=main.css.map */

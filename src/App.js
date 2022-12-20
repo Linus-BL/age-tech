@@ -21,6 +21,7 @@ import Adcard from './components/atomics/AdCard'
 import testImage from './ad_test.jpg'
 import Points from './components/shop/Points'
 import Profile from './components/profile/Profile'
+import Home from './components/home/Home'
 
 const deal = {
   title: "Rabatt på coop",
@@ -44,30 +45,35 @@ const user = {
 function App() {
   return (
     <>
-      {/* <Points user={user}></Points>
+      <div className="app">
+        {/* <Points user={user}></Points>
       <Adcard ad={ad}></Adcard>
       <Heading5>hej hallå</Heading5>
       <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal> */}
-      <Router>
-        <AuthProvider>
-          <Switch>
-            {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
-            <Route path="/dashboard" element={<PrivateRoute />}>
-              <Route path="" element={<Dashboard />} />
-            </Route>
-            <Route path="/profile" element={<PrivateRoute />}>
-              <Route path="" element={<Profile />} />
-            </Route>
-            {/* Aka raderna mellan dessa två kommentarer */}
-            <Route path="/updateProfile" element={<PrivateRoute />}>
-              <Route path="" element={<UpdateProfile />} />
-            </Route>
-            <Route path="/signup" element={<Signup />} />
-            <Route exact path="/" element={<Login />} />
-            <Route path="/forgotPassword" element={<ForgotPassword />} />
-          </Switch>
-        </AuthProvider>
-      </Router>
+        <Router >
+          <AuthProvider>
+            <Switch>
+              {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
+              <Route path="/dashboard" element={<PrivateRoute />}>
+                <Route path="" element={<Dashboard />} />
+              </Route>
+              <Route path="/profile" element={<PrivateRoute />}>
+                <Route path="" element={<Profile />} />
+              </Route>
+              <Route path="/home" element={<PrivateRoute />}>
+                <Route path="" element={<Home />} />
+              </Route>
+              {/* Aka raderna mellan dessa två kommentarer */}
+              <Route path="/updateProfile" element={<PrivateRoute />}>
+                <Route path="" element={<UpdateProfile />} />
+              </Route>
+              <Route path="/signup" element={<Signup />} />
+              <Route exact path="/" element={<Login />} />
+              <Route path="/forgotPassword" element={<ForgotPassword />} />
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </div>
     </>
   );
 }
