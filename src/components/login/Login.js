@@ -3,6 +3,9 @@ import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Heading1 from '../textComponents/Heading1'
 import BodyText from '../textComponents/BodyText'
+import Header from '../home/Header'
+
+
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -40,6 +43,7 @@ export default function Login() {
   return (
 
     <div className="loginPage">
+
       <Heading1>Log In</Heading1>
       {error && <p>{error}</p>}
       <form className="loginForm" onSubmit={handleSubmit}>

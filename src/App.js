@@ -20,6 +20,7 @@ import CoopImage from './coop.png'
 import Adcard from './components/atomics/AdCard'
 import testImage from './ad_test.jpg'
 import Points from './components/shop/Points'
+import Profile from './components/profile/Profile'
 
 const deal = {
   title: "Rabatt på coop",
@@ -53,6 +54,9 @@ function App() {
             {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
             <Route path="/dashboard" element={<PrivateRoute />}>
               <Route path="" element={<Dashboard />} />
+            </Route>
+            <Route path="/profile" element={<PrivateRoute />}>
+              <Route path="" element={<Profile />} />
             </Route>
             {/* Aka raderna mellan dessa två kommentarer */}
             <Route path="/updateProfile" element={<PrivateRoute />}>

@@ -1,0 +1,41 @@
+@use '../../abstracts';
+@use '../../base';
+
+.profilePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-self: start;
+    gap: 1em;
+    margin-top:20px;
+    min-height:1000px;
+}
+.nameAndPicture{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0em 0em 0em;
+
+    .profilePicture{
+        width: 10em;
+        height: 10em;
+        border-radius: 10em;
+        margin-bottom: 1em;
+    }
+}
+
+.profileShortInfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonSticky{
+    position:-webkit-sticky;
+    position: sticky;
+    position: fixed;
+    bottom: 1em;
+    z-index: 1000;
+    padding: 1em;
+    width: 100vw;
+}
