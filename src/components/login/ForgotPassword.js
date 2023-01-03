@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { Link, /*useNavigate*/ } from 'react-router-dom';
+import { Link /*useNavigate*/ } from 'react-router-dom';
 import Heading1 from '../textComponents/Heading1';
 
 export default function ForgotPassword() {
@@ -46,7 +46,6 @@ export default function ForgotPassword() {
             />
           </div>
           <input
-
             disabled={loading}
             className="button"
             type="submit"

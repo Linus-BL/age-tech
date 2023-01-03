@@ -1,10 +1,10 @@
 @use '../../abstracts';
 @use '../../base';
 
-.heading4{
-    font-family: base.$h4-font;
-    font-weight: base.$h4-font-weight;
-    font-size: base.$h4-font-size;
-    color: abstracts.$black; 
-    margin: 0.4em 0em;
+.heading4 {
+  font-family: base.$h4-font;
+  font-weight: base.$h4-font-weight;
+  font-size: base.$h4-font-size;
+  color: abstracts.$black;
+  margin: 0.4em 0em;
 }

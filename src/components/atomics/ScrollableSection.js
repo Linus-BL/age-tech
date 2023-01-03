@@ -1,16 +1,13 @@
-import React from 'react'
-import AdCard from './AdCard'
+import React from 'react';
+import AdCard from './AdCard';
 
 const ScrollableSection = ({ ads }) => {
-    const sectionAds = ads;
-    const sectionItems = sectionAds.map((ad) =>
-        <AdCard ad={ad} key={ad.id}></AdCard>)
+  const sectionAds = ads;
+  const sectionItems = sectionAds.map((ad) => (
+    <AdCard ad={ad} key={ad.id}></AdCard>
+  ));
 
-    return (
-        <div className="scrollableSection">
-            {sectionItems}
+  return <div className="scrollableSection">{sectionItems}</div>;
+};
 
-        </div>)
-}
-
-export default ScrollableSection
+export default ScrollableSection;

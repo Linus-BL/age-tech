@@ -1,14 +1,13 @@
 @use '../abstracts';
 @use '../base';
 
-.linkButton{
-    color: abstracts.$black;
-    display: flex;
-    align-items: center;
-    
+.linkButton {
+  color: abstracts.$black;
+  display: flex;
+  align-items: center;
 }
 
-.icon{
-    width: 1.5em;
-    height: 1.2em;
+.icon {
+  width: 1.5em;
+  height: 1.2em;
 }

@@ -1,39 +1,36 @@
 @use '../abstracts';
 @use '../base';
 
-.button{
-    background-color: abstracts.$primary-color;
-    font-family: base.$h5-font;
-    font-weight: base.$h4-font-weight;
-    font-size: base.$h5-font-size;
-    color: abstracts.$white;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.button {
+  background-color: abstracts.$primary-color;
+  font-family: base.$h5-font;
+  font-weight: base.$h4-font-weight;
+  font-size: base.$h5-font-size;
+  color: abstracts.$white;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 5px; 
-    border-style: none;
-    &:hover {
-        background-color: abstracts.$primary-color-active;
-      }
-    &:active  {
-        background-color: abstracts.$black;
-      }
+  border-radius: 5px;
+  border-style: none;
+  &:hover {
+    background-color: abstracts.$primary-color-active;
+  }
+  &:active {
+    background-color: abstracts.$black;
+  }
 }
-.buttonDisabled{
-    background-color: abstracts.$light-gray;
-    font-family: base.$h5-font;
-    font-weight: base.$h4-font-weight;
-    font-size: base.$h5-font-size;
-    color: abstracts.$middle-gray;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.buttonDisabled {
+  background-color: abstracts.$light-gray;
+  font-family: base.$h5-font;
+  font-weight: base.$h4-font-weight;
+  font-size: base.$h5-font-size;
+  color: abstracts.$middle-gray;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 5px;
-
-
-
+  border-radius: 5px;
 }

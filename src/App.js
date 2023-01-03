@@ -14,66 +14,76 @@ import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
 import LinkButton from './components/atomics/LinkButton';
 import Button from './components/atomics/Button';
-import Deal from './components/shop/Deal'
-import Heading5 from './components/textComponents/Heading5'
-import CoopImage from './coop.png'
-import Adcard from './components/atomics/AdCard'
-import testImage from './ad_test.jpg'
-import Points from './components/shop/Points'
-import Profile from './components/profile/Profile'
-import Home from './components/home/Home'
+import Deal from './components/shop/Deal';
+import Heading5 from './components/textComponents/Heading5';
+import CoopImage from './coop.png';
+import Adcard from './components/atomics/AdCard';
+import testImage from './ad_test.jpg';
+import Points from './components/shop/Points';
+import Profile from './components/profile/Profile';
+import Home from './components/home/Home';
+import SignupDetails from './components/login/SignupDetails';
+import Offer from './components/ads/Offer';
+import Request from './components/ads/Request';
 
 const deal = {
-  title: "Rabatt på coop",
-  description: "bla bla bla, så här mycket rabbat kan du få på hela sortimentet",
+  title: 'Rabatt på coop',
+  description:
+    'bla bla bla, så här mycket rabbat kan du få på hela sortimentet',
   points: 24,
-  image: CoopImage
-}
+  image: CoopImage,
+};
 
 const ad = {
   id: 1,
-  title: "Baka hos mig",
-  description: "Kom och baka",
+  title: 'Baka hos mig',
+  description: 'Kom och baka',
   image: testImage,
-  location: "Skultunaparken",
-  date: "20 november",
+  location: 'Skultunaparken',
+  date: '20 november',
   points: 23,
-}
+};
 const user = {
-  points: 245
-}
+  points: 245,
+};
 function App() {
   return (
     <>
-      <div className="app">
-        {/* <Points user={user}></Points>
-      <Adcard ad={ad}></Adcard>
-      <Heading5>hej hallå</Heading5>
-      <Deal onClickFunction={() => { console.log("deal") }} deal={deal}></Deal> */}
-        <Router >
-          <AuthProvider>
-            <Switch>
-              {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
-              <Route path="/dashboard" element={<PrivateRoute />}>
-                <Route path="" element={<Dashboard />} />
-              </Route>
-              <Route path="/profile" element={<PrivateRoute />}>
-                <Route path="" element={<Profile />} />
-              </Route>
-              <Route path="/home" element={<PrivateRoute />}>
-                <Route path="" element={<Home />} />
-              </Route>
-              {/* Aka raderna mellan dessa två kommentarer */}
-              <Route path="/updateProfile" element={<PrivateRoute />}>
-                <Route path="" element={<UpdateProfile />} />
-              </Route>
-              <Route path="/signup" element={<Signup />} />
-              <Route exact path="/" element={<Login />} />
-              <Route path="/forgotPassword" element={<ForgotPassword />} />
-            </Switch>
-          </AuthProvider>
-        </Router>
-      </div>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            {/*Allt i appen ska samma struktur som dashboard (förutom login/signup/forgotPassword)*/}
+            <Route path="/dashboard" element={<PrivateRoute />}>
+              <Route path="" element={<Dashboard />} />
+            </Route>
+            {/* Aka raderna mellan dessa två kommentarer */}
+            <Route path="/updateProfile" element={<PrivateRoute />}>
+              <Route path="" element={<UpdateProfile />} />
+            </Route>
+            <Route path="/profile" element={<PrivateRoute />}>
+              <Route path="" element={<Profile />} />
+            </Route>
+            <Route path="/home" element={<PrivateRoute />}>
+              <Route path="" element={<Home />} />
+            </Route>
+            <Route path="/signupDetails" element={<PrivateRoute />}>
+              <Route path="" element={<SignupDetails />} />
+            </Route>
+            <Route path="/createOffer" element={<PrivateRoute />}>
+              <Route path="" element={<Offer />} />
+            </Route>
+            <Route path="/createRequest" element={<PrivateRoute />}>
+              <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/signupDetails" element={<PrivateRoute />}>
+              <Route path="" element={<SignupDetails />} />
+            </Route>
+            <Route path="/signup" element={<Signup />} />
+            <Route exact path="/" element={<Login />} />
+            <Route path="/forgotPassword" element={<ForgotPassword />} />
+          </Switch>
+        </AuthProvider>
+      </Router>
     </>
   );
 }

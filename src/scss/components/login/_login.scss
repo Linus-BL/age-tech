@@ -1,37 +1,36 @@
 @use '../../abstracts';
 @use '../../base';
 
-.loginPage{
-    background-color: abstracts.$secondary-color;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: stretch;
-    justify-content:center;
-    flex-direction: column ;
-    padding: 2em;
+.loginPage {
+  background-color: abstracts.$secondary-color;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
 }
-.loginForm{
-    width: stretch;
-}
-
-.formGroup{
-    padding:1em 0em;
+.loginForm {
+  width: stretch;
 }
 
-.inputField{
-    padding: 1em; 
-    width: stretch;
-
+.formGroup {
+  padding: 1em 0em;
 }
 
-.signUp{
-margin-top: 1em;
-}
-.forgotPassword{
-    margin-top: 1em;
+.inputField {
+  padding: 1em;
+  width: stretch;
 }
 
-.links{
-    margin-top: 1em;;
+.signUp {
+  margin-top: 1em;
+}
+.forgotPassword {
+  margin-top: 1em;
+}
+
+.links {
+  margin-top: 1em;
 }

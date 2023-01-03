@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import Heading1 from '../textComponents/Heading1'
-import BodyText from '../textComponents/BodyText'
-import Header from '../home/Header'
-
+import Heading1 from '../textComponents/Heading1';
+import BodyText from '../textComponents/BodyText';
+import Header from '../home/Header';
 
 export default function Login() {
   const emailRef = useRef();
@@ -25,12 +24,12 @@ export default function Login() {
     } catch (error) {
       //console.log(JSON.stringify(error))
       setError(error.code + error.message);
-      if (error.code === "auth/wrong-password") {
-        setError("Wrong password.")
+      if (error.code === 'auth/wrong-password') {
+        setError('Wrong password.');
       }
-      if (error.code === "auth/user-not-found") {
+      if (error.code === 'auth/user-not-found') {
         {
-          setError("This email adress is not registered.")
+          setError('This email adress is not registered.');
         }
       }
       //error.code error.message to get detailed errors
@@ -41,9 +40,7 @@ export default function Login() {
   //Check if it does a email check
 
   return (
-
     <div className="loginPage">
-
       <Heading1>Log In</Heading1>
       {error && <p>{error}</p>}
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -75,13 +72,17 @@ export default function Login() {
       </form>
 
       <div className="signUp">
-        <BodyText>  Need an account? <Link to="/signup">Sign up</Link></BodyText>
-
+        <BodyText>
+          {' '}
+          Need an account? <Link to="/signup">Sign up</Link>
+        </BodyText>
       </div>
       <div className="forgotPassword">
-        <BodyText> <Link to="/forgotPassword">Forgot password</Link></BodyText>
+        <BodyText>
+          {' '}
+          <Link to="/forgotPassword">Forgot password</Link>
+        </BodyText>
       </div>
     </div>
-
   );
 }

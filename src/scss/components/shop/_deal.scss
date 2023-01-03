@@ -1,37 +1,38 @@
 @use '../../abstracts';
 @use '../../base';
 
-.dealCard{
-    display: flex;
-    box-shadow: 0.4em 0.6em 0.7em rgba(19,40,50,0.2);
-    border-radius: 5px;
-    height: 200px;
-    width: stretch;
-    flex-shrink: 0;
+.dealCard {
+  display: flex;
+  box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+  border-radius: 5px;
+  height: 200px;
+  width: stretch;
+  flex-shrink: 0;
 }
-.adCardImage{
-    border-radius: 5px 5px 0px 0px;
-    object-fit: contain;
-    height: stretch;
-    width: 400px;
+.adCardImage {
+  border-radius: 5px 5px 0px 0px;
+  object-fit: contain;
+  height: stretch;
+  width: 400px;
 }
-.textContentDeal{
-    padding: 0.6em 0.6em 0.6em 1.2em;
-    background-color: abstracts.$white;
-    width: stretch;
-    
-    .title{
-        margin-block-start: 0em;
-        margin-block-end: 1.67em;
-        margin-inline-start: 0px;
-    }
-    .iconText{
+.textContentDeal {
+  padding: 0.6em 0.6em 0.6em 1.2em;
+  background-color: abstracts.$white;
+  width: stretch;
+
+  .title {
+    margin-block-start: 0em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+  }
+  .iconText {
     display: flex;
     align-items: center;
     gap: 0.6em;
     padding-bottom: 0.3em;
-}}
-.icon{
-    max-height: 32px;
-    max-width: 32px;
+  }
+}
+.icon {
+  max-height: 32px;
+  max-width: 32px;
 }

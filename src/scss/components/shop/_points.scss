@@ -1,21 +1,21 @@
 @use '../../abstracts';
 @use '../../base';
 
-.pointsSection{
-    background-color: abstracts.$primary-color;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2em 0.5em;
+.pointsSection {
+  background-color: abstracts.$primary-color;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 0.5em;
 }
-.points{
-   display: flex;
-   align-items: center;
-   gap: 0.5em;
+.points {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
-.iconPoints{
-    width: 1.5em;
-    height: 1.5em;
+.iconPoints {
+  width: 1.5em;
+  height: 1.5em;
 }

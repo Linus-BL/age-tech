@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const TextInput = ({ }) => {
+const TextInput = ({}) => {
+  var value = '';
+  return (
+    <textarea
+      className="inputField"
+      value={value}
+      onChange={console.log('on change')}
+    />
+  );
+};
 
-    var value = "";
-    return (
-        <textarea className="inputField" value={value} onChange={console.log("on change")} />
-    )
-}
-
-export default TextInput
+export default TextInput;

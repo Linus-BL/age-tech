@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import Heading1 from '../textComponents/Heading1'
+import Heading1 from '../textComponents/Heading1';
 
 export default function Signup() {
   const emailRef = useRef();
@@ -22,7 +22,7 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate('/dashboard'); //Ändra routing till formulärsida
+      navigate('/signupdetails'); //Ändra routing till formulärsida
     } catch (error) {
       setError(error.code + error.message);
       //Den validerar lösenordslängd, måste vara mer än 6 tecken

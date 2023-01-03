@@ -1,5 +1,3 @@
-@forward './app';
-
 //atomics
 @forward './button';
 @forward './linkButton';
@@ -13,12 +11,9 @@
 @forward './categorySection';
 @forward './tagsSection';
 
-
 //folders
 @forward './shop';
 @forward './textComponents/';
 @forward './login/';
 @forward './profile/';
 @forward './home/';
-
-
