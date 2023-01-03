@@ -12,6 +12,9 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
+import SignupDetails from './components/login/SignupDetails';
+import Offer from './components/ads/Offer';
+import Request from './components/ads/Request';
 
 function App() {
   return (
@@ -26,6 +29,18 @@ function App() {
             {/* Aka raderna mellan dessa två kommentarer */}
             <Route path="/updateProfile" element={<PrivateRoute />}>
               <Route path="" element={<UpdateProfile />} />
+            </Route>
+            <Route path="/signupDetails" element={<PrivateRoute />}>
+              <Route path="" element={<SignupDetails />} />
+            </Route>
+            <Route path="/createOffer" element={<PrivateRoute />}>
+              <Route path="" element={<Offer />} />
+            </Route>
+            <Route path="/createRequest" element={<PrivateRoute />}>
+              <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/signupDetails" element={<PrivateRoute />}>
+              <Route path="" element={<SignupDetails />} />
             </Route>
             <Route path="/signup" element={<Signup />} />
             <Route exact path="/" element={<Login />} />

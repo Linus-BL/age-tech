@@ -22,6 +22,7 @@ export default function Dashboard() {
     <div>
       <h2>Dashboard</h2>
       <strong>Email:</strong> {currentUser.email}
+      <strong>Email:</strong> {currentUser.uid}
       <Link to="/updateProfile">Update profile</Link>
       <button className="" onClick={handleLogout}>
         Log out{' '}

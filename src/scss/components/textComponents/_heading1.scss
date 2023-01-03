@@ -1,10 +1,9 @@
 @use '../../abstracts';
 @use '../../base';
 
-.heading1{
-    font-family: base.$h1-font;
-    font-weight: base.$h1-font-weight;
-    font-size: base.$h1-font-size;
-    color: abstracts.$black;
-
+.heading1 {
+  font-family: base.$h1-font;
+  font-weight: base.$h1-font-weight;
+  font-size: base.$h1-font-size;
+  color: abstracts.$black;
 }
