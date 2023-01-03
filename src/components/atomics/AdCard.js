@@ -12,7 +12,7 @@ const adCard = (props) => {
         {' '}
         <img src={props.ad.image} alt="ad" className="adCardImage"></img>
       </div>
-      <div className="textContent">
+      <div className="textContentAd">
         <Heading5 className="title">{props.ad.title}</Heading5>
         <div className="iconText">
           {' '}

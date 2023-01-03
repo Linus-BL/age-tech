@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "sass --source-map -w src/scss/main.scss src/css/main.css",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc.json"
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json,scss}\" --config ./.prettierrc.json"
   },
   "prettier": "prettier-config",
   "browserslist": {

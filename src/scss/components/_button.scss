@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+
   border-radius: 5px;
+  border-style: none;
   &:hover {
     background-color: abstracts.$primary-color-active;
   }
@@ -28,11 +28,9 @@
   font-size: base.$h5-font-size;
   color: abstracts.$middle-gray;
   padding: 1em;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+
   border-radius: 5px;
 }

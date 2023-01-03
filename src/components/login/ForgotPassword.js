@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link /*useNavigate*/ } from 'react-router-dom';
+import Heading1 from '../textComponents/Heading1';
 
 export default function ForgotPassword() {
   const emailRef = useRef();
@@ -30,13 +31,14 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <div>
-        <h2>Password Reset</h2>
+      <div className="loginPage">
+        <Heading1>Password Reset</Heading1>
         {error && <p>{error}</p>}
         {message && <p>{message}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <div className="formGroup">
             <input
+              className="inputField"
               type="email"
               name="email"
               placeholder="Email"
@@ -45,16 +47,16 @@ export default function ForgotPassword() {
           </div>
           <input
             disabled={loading}
-            className="form-btn"
+            className="button"
             type="submit"
             value="Submit"
           />
         </form>
         <div>
-          <div>
+          <div className="links">
             Need an account? <Link to="/signup">Sign up</Link>{' '}
           </div>
-          <div>
+          <div className="links">
             Have an account? <Link to="/login">Log ín</Link>{' '}
           </div>
         </div>

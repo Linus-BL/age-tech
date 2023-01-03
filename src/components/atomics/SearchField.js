@@ -1,15 +1,25 @@
 import React from 'react';
-import Button from './Button';
+import { useState } from 'react';
+
 const TextInput = () => {
-  var value = '';
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
   return (
     <div className="searchField">
-      <textarea
+      <input
+        type="search"
+        placeholder="Search here"
+        onChange={handleChange}
+        value={searchInput}
         className="inputField"
-        value={value}
-        onChange={console.log('on change')}
-      ></textarea>
-      <Button>sök</Button>
+      />
+
+      <input className="button" type="submit" value="Sök" />
     </div>
   );
 };

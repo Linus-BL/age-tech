@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Heading1 from '../textComponents/Heading1';
 
 export default function Signup() {
   const emailRef = useRef();
@@ -34,20 +35,22 @@ export default function Signup() {
 
   return (
     <>
-      <div>
-        <h2>Sign Up</h2>
+      <div className="loginPage">
+        <Heading1>Sign Up</Heading1>
         {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <div className="formGroup">
             <input
+              className="inputField"
               type="email"
               name="email"
               placeholder="Email"
               ref={emailRef}
             />
           </div>
-          <div className="form-group">
+          <div className="formGroup">
             <input
+              className="inputField"
               type="password"
               name="password"
               placeholder="Password"
@@ -55,8 +58,9 @@ export default function Signup() {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="formGroup">
             <input
+              className="inputField"
               type="password"
               name="password-confirm"
               placeholder="Confirm passoword"
@@ -65,13 +69,13 @@ export default function Signup() {
             />
           </div>
           <input
+            className="button"
             disabled={loading}
-            className="form-btn"
             type="submit"
             value="Submit"
           />
         </form>
-        <div>
+        <div className="links">
           Need an account? <Link to="/login">Log ín</Link>{' '}
         </div>
       </div>
