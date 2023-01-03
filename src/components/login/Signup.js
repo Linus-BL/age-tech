@@ -76,7 +76,7 @@ export default function Signup() {
           />
         </form>
         <div className="links">
-          Need an account? <Link to="/login">Log ín</Link>{' '}
+          Need an account? <Link to="/">Log ín</Link>{' '}
         </div>
       </div>
     </>
