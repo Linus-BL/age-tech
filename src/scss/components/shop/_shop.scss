@@ -1,0 +1,13 @@
+.dealsSection {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  gap: 10px;
+}
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  position: fixed;
+  padding-bottom: 1em;
+  z-index: 1000;
+}

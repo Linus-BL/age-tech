@@ -44,7 +44,7 @@ export default function SignupDetails() {
     setAge('');
     setGender('');
 
-    navigate('/dashboard');
+    navigate('/home');
   };
 
   return (

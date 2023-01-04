@@ -3,7 +3,6 @@ import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Heading1 from '../textComponents/Heading1';
 import BodyText from '../textComponents/BodyText';
-import Header from '../home/Header';
 
 export default function Login() {
   const emailRef = useRef();

@@ -1,5 +1,5 @@
-@use '../abstracts';
-@use '../base';
+@use '../../abstracts';
+@use '../../base';
 
 .button {
   background-color: abstracts.$primary-color;
@@ -11,7 +11,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 5px;
   border-style: none;
   &:hover {
@@ -31,6 +30,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 5px;
 }
