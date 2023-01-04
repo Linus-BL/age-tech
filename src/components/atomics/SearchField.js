@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const TextInput = () => {
+const TextInput = ({ placeholderText = 'Vad söker du efter?' }) => {
   const [searchInput, setSearchInput] = useState('');
 
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ const TextInput = () => {
     <div className="searchField">
       <input
         type="search"
-        placeholder="Search here"
+        placeholder={placeholderText}
         onChange={handleChange}
         value={searchInput}
         className="inputField"

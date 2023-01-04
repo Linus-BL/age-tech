@@ -5,7 +5,8 @@
   background-color: abstracts.$white;
   width: stretch;
   border-radius: 5px;
-  border: none;
+  border: solid 1px #ff0000;
+  border-color: abstracts.$primary-color;
   &:focus {
     outline: none;
     background-color: abstracts.$light-gray;
