@@ -8,6 +8,8 @@ import {
   updatePassword,
 } from 'firebase/auth';
 import { auth } from '../firebase';
+import {doc, onSnapshot} from "firebase/firestore";
+import { db } from '../firebase';
 
 const AuthContext = React.createContext();
 
@@ -17,6 +19,7 @@ export function useAuth() {
 
 export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(true);
 
   function signup(email, password) {
@@ -41,6 +44,17 @@ export default function AuthProvider({ children }) {
     return updatePassword(currentUser, password);
   }
 
+  //hämta userdata
+  useEffect(()=>{
+    if(!loading){
+      const unsubscribe = onSnapshot(doc(db, 'users', currentUser.uid), doc =>{
+        console.log("user data: ", doc.data(), doc.id);
+        setUserData({...doc.data()})
+      })
+      return unsubscribe;
+    }
+  },[loading])
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -51,6 +65,7 @@ export default function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    userData,
     signup,
     login,
     logout,

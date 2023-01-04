@@ -10,24 +10,24 @@ const adCard = (props) => {
     <div className="adCard" onClick={props.onClickFunction}>
       <div className="adCardImgContainer">
         {' '}
-        <img src={props.ad.image} alt="ad" className="adCardImage"></img>
+        <img src={props.ad.imageUrl} alt="ad" className="adCardImage"></img>
       </div>
       <div className="textContentAd">
         <Heading5 className="title">{props.ad.title}</Heading5>
         <div className="iconText">
           {' '}
           <MdOutlineLocationOn className="icon" />{' '}
-          <BodyText>{props.ad.location}</BodyText>
+          <BodyText>{props.ad.place}</BodyText>
         </div>
         <div className="iconText">
           {' '}
           <MdCalendarToday className="icon" />{' '}
-          <BodyText>{props.ad.date}</BodyText>
+          <BodyText>{props.ad.datetime}</BodyText>
         </div>
         <div className="iconText">
           {' '}
           <MdStarOutline className="icon" />
-          <BodyText>{props.ad.points} poäng</BodyText>
+          <BodyText>{props.ad.compensation} poäng</BodyText>
         </div>
       </div>
     </div>

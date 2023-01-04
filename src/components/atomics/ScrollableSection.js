@@ -4,7 +4,8 @@ import AdCard from './AdCard';
 const ScrollableSection = ({ ads }) => {
   const sectionAds = ads;
   const sectionItems = sectionAds.map((ad) => (
-    <AdCard ad={ad} key={ad.id}></AdCard>
+    
+    <AdCard ad={ad.ad} key={ad.id}></AdCard>
   ));
 
   return <div className="scrollableSection">{sectionItems}</div>;
