@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:3000/request -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link rel="icon" href="http://localhost:3000/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Web site created using create-react-app">
+  <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="http://localhost:3000/manifest.json">
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: 'Montserrat', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+  </style>
+  <style type="text/css">
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Remove default margin */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    dl,
+    dd {
+      margin: 0;
+    }
+
+    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+    ul[role=list],
+    ol[role=list] {
+      list-style: none;
+    }
+
+    /* Set core root defaults */
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
+
+    /* Set core body defaults */
+    body {
+      min-height: 100vh;
+      text-rendering: optimizeSpeed;
+      line-height: 1.5;
+    }
+
+    /* A elements that don't have a class get default styles */
+    a:not([class]) {
+      text-decoration-skip-ink: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Make images easier to work with */
+    img,
+    picture {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Inherit fonts for inputs and buttons */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+    @media (prefers-reduced-motion: reduce) {
+      html:focus-within {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    .button {
+      background-color: #132a36;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1em;
+      color: #f4f4f4;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border-style: none;
+    }
+
+    .button:hover {
+      background-color: #284859;
+    }
+
+    .button:active {
+      background-color: #121212;
+    }
+
+    .buttonDisabled {
+      background-color: #d9d9d9;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1em;
+      color: #b3b3b3;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+    }
+
+    .linkButton {
+      color: #121212;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 1.5em;
+      height: 1.2em;
+    }
+
+    .chip {
+      background-color: #8ab0d2;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 1em;
+      color: #132a36;
+      padding: 0.7em 1.3em;
+      width: -moz-fit-content;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      border-radius: 2em;
+    }
+
+    .adCard {
+      box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+      border-radius: 5px;
+      height: 400px;
+      width: 180px;
+      flex-shrink: 0;
+    }
+
+    .adCardImage {
+      border-radius: 5px 5px 0px 0px;
+      object-fit: cover;
+      height: 200px;
+      width: -webkit-fill-available;
+      width: stretch;
+    }
+
+    .textContentAd {
+      padding: 0.6em;
+    }
+
+    .textContentAd .title {
+      margin-block-start: 0em;
+      margin-block-end: 1.67em;
+      margin-inline-start: 0px;
+    }
+
+    .textContentAd .iconText {
+      display: flex;
+      align-items: center;
+      grid-gap: 0.6em;
+      gap: 0.6em;
+      padding-bottom: 0.3em;
+    }
+
+    .icon {
+      max-height: 32px;
+      max-width: 32px;
+    }
+
+    .inputField {
+      background-color: #f4f4f4;
+      width: -webkit-fill-available;
+      width: stretch;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .inputField:focus {
+      outline: none;
+      background-color: #d9d9d9;
+    }
+
+    .inputField {
+      background-color: #f4f4f4;
+      width: -webkit-fill-available;
+      width: stretch;
+      border-radius: 5px;
+      border: solid 1px #ff0000;
+      border-color: #132a36;
+    }
+
+    .inputField:focus {
+      outline: none;
+      background-color: #d9d9d9;
+    }
+
+    .searchField {
+      display: flex;
+      grid-gap: 0.5em;
+      gap: 0.5em;
+      width: -webkit-fill-available;
+      width: stretch;
+    }
+
+    .informationContentAd {
+      padding: 10px;
+    }
+
+    .titleAndPoints {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .shortInfoSection {
+      background-color: #ee9999;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1 1 1;
+      justify-items: start;
+    }
+
+    .iconText {
+      display: flex;
+      align-items: center;
+      grid-gap: 0.6em;
+      gap: 0.6em;
+      padding-bottom: 0.3em;
+    }
+
+    .scrollableSection {
+      display: flex;
+      align-items: stretch;
+      grid-gap: 1em;
+      gap: 1em;
+      overflow-x: scroll;
+      padding-bottom: 1em;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .categoryHeading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tags {
+      display: flex;
+      align-items: stretch;
+      grid-gap: 0.8em;
+      gap: 0.8em;
+      flex-wrap: wrap;
+      padding-bottom: 1em;
+      padding-top: 1em;
+    }
+
+    .dealCard {
+      display: flex;
+      box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
+      border-radius: 5px;
+      height: 200px;
+      width: -webkit-fill-available;
+      width: stretch;
+      flex-shrink: 0;
+    }
+
+    .dealCardImgContainer {
+      object-fit: contain;
+      height: -webkit-fill-available;
+      height: stretch;
+      width: 400px;
+    }
+
+    .adCardImage {
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .textContentDeal {
+      padding: 0.6em 8px 0.6em 1.2em;
+      background-color: #f4f4f4;
+      width: -webkit-fill-available;
+      width: stretch;
+    }
+
+    .textContentDeal .title {
+      margin-block-start: 0em;
+      margin-block-end: 1.67em;
+      margin-inline-start: 0px;
+    }
+
+    .textContentDeal .iconText {
+      display: flex;
+      align-items: center;
+      grid-gap: 0.6em;
+      gap: 0.6em;
+      padding-bottom: 0.3em;
+      padding-top: 8px;
+    }
+
+    .icon {
+      max-height: 32px;
+      max-width: 32px;
+    }
+
+    .pointsSection {
+      background-color: #132a36;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2em 0.5em;
+    }
+
+    .points {
+      display: flex;
+      align-items: center;
+      grid-gap: 0.5em;
+      gap: 0.5em;
+    }
+
+    .iconPoints {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    .dealsSection {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 10px;
+      grid-gap: 10px;
+      gap: 10px;
+    }
+
+    .buttonSticky {
+      position: sticky;
+      position: fixed;
+      padding-bottom: 1em;
+      z-index: 1000;
+    }
+
+    .bodyText {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1em;
+      color: #121212;
+    }
+
+    .heading1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 1.5em;
+      color: #121212;
+    }
+
+    .heading3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+
+    .heading4 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.125em;
+      color: #121212;
+      margin: 0.4em 0em;
+    }
+
+    .heading5 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 1em;
+      color: #121212;
+      margin: 0.4em 0em;
+    }
+
+    .loginPage {
+      background-color: #8ab0d2;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2em;
+    }
+
+    .loginForm {
+      width: -webkit-fill-available;
+      width: stretch;
+    }
+
+    .formGroup {
+      padding: 1em 0em;
+    }
+
+    .inputField {
+      padding: 1em;
+      width: -webkit-fill-available;
+      width: stretch;
+    }
+
+    .signUp {
+      margin-top: 1em;
+    }
+
+    .forgotPassword {
+      margin-top: 1em;
+    }
+
+    .links {
+      margin-top: 1em;
+    }
+
+    .profilePage {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-self: start;
+      grid-gap: 1em;
+      gap: 1em;
+      margin: 0 0.5em;
+    }
+
+    .nameAndPicture {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em 0em 0em 0em;
+    }
+
+    .nameAndPicture .profilePicture {
+      width: 10em;
+      height: 10em;
+      border-radius: 10em;
+      margin-bottom: 1em;
+    }
+
+    .profileShortInfo {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .buttonSticky {
+      position: sticky;
+      position: fixed;
+      bottom: 1em;
+      z-index: 1000;
+      padding: 1em;
+      width: 100vw;
+    }
+
+    .headerSection {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 2em;
+      gap: 2em;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      background-color: #8ab0d2;
+    }
+
+    .homePage .mainContent {
+      padding: 1em 0.5em;
+    }
+  </style>
+  <script src="./React App_files/cb=gapi.loaded_0" async=""></script>
+  <script src="./React App_files/api.js" type="text/javascript" charset="UTF-8" gapi_processed="true"></script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script>
+  <script src="./React App_files/2.chunk.js"></script>
+  <script src="./React App_files/main.chunk.js"></script>
+  <script src="./React App_files/main.baa5d029b753b3d1674a.hot-update.js"></script>
+
+  <scribe-shadow id="shadow-root-scribe-elem"
+    style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible;">
+  </scribe-shadow><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no"
+    tabindex="-1" vspace="0" width="100%" aria-hidden="true" id="I0_1672837102080" name="I0_1672837102080"
+    src="./React App_files/iframe.html" style="position: absolute; top: -100px; width: 1px; height: 1px;"></iframe>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>

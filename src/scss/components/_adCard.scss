@@ -8,6 +8,9 @@
   width: 180px;
   flex-shrink: 0;
 }
+.adCardImgContainer{
+  border-radius: 5px;
+}
 
 .adCardImage {
   border-radius: 5px 5px 0px 0px;
@@ -32,4 +35,5 @@
 .icon {
   max-height: 32px;
   max-width: 32px;
+  color: abstracts.$black;
 }

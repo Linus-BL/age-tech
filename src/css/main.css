@@ -23,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -80,7 +80,7 @@ select {
 }
 .button {
   background-color: #132a36;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;
@@ -100,7 +100,7 @@ select {
 
 .buttonDisabled {
   background-color: #d9d9d9;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #b3b3b3;
@@ -124,7 +124,7 @@ select {
 
 .chip {
   background-color: #8ab0d2;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #132a36;
@@ -141,6 +141,10 @@ select {
   height: 400px;
   width: 180px;
   flex-shrink: 0;
+}
+
+.adCardImgContainer {
+  border-radius: 5px;
 }
 
 .adCardImage {
@@ -168,6 +172,7 @@ select {
 .icon {
   max-height: 32px;
   max-width: 32px;
+  color: #121212;
 }
 
 .inputField {
@@ -197,6 +202,46 @@ select {
   display: flex;
   gap: 0.5em;
   width: stretch;
+}
+
+.informationContentAd {
+  padding: 10px;
+}
+
+.titleAndPoints {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.creatorSection {
+  padding: 16px 0px;
+  display: flex;
+  gap: 10px;
+}
+
+.profilePicture {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #ff0000;
+}
+
+.shortInfoSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1 1 1;
+  justify-items: start;
+  grid-auto-flow: row;
+  padding: 16px 0 0 0;
+}
+
+.iconText {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding-bottom: 0.3em;
 }
 
 .scrollableSection {
@@ -245,7 +290,7 @@ select {
   width: 400px;
 }
 
-.adCardImage {
+.dealCardImage {
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -308,27 +353,27 @@ select {
 }
 
 .bodyText {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #121212;
 }
 
 .heading1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1.5em;
   color: #121212;
 }
 
 .heading3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.5em;
 }
 
 .heading4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.125em;
   color: #121212;
@@ -336,7 +381,7 @@ select {
 }
 
 .heading5 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #121212;

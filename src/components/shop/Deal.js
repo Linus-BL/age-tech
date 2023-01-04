@@ -8,7 +8,7 @@ const DealCard = (props) => {
     <div className="dealCard" onClick={props.onClickFunction}>
       <div className="dealCardImgContainer">
         {' '}
-        <img src={props.deal.image} alt="deal" className="adCardImage"></img>
+        <img src={props.deal.image} alt="deal" className="dealCardImage"></img>
       </div>
       <div className="textContentDeal">
         <Heading4 className="title">{props.deal.title}</Heading4>
