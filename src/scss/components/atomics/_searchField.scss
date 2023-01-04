@@ -1,5 +1,5 @@
-@use '../abstracts';
-@use '../base';
+@use '../../abstracts';
+@use '../../base';
 
 .inputField {
   background-color: abstracts.$white;
@@ -10,4 +10,9 @@
     outline: none;
     background-color: abstracts.$light-gray;
   }
+}
+.searchField {
+  display: flex;
+  gap: 0.5em;
+  width: stretch;
 }

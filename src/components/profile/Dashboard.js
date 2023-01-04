@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import SwitchButton from '../atomics/switchButton';
 
 export default function Dashboard() {
   const { logout } = useAuth();
@@ -18,6 +19,14 @@ export default function Dashboard() {
     }
   }
 
+  const switchData = {
+    buttonOne: "log in",
+    buttonTwo: "log out",
+    buttonOneNavigation: "/dashboard",
+    buttonTwoNavigation: "/dashboard",
+    activeButton: "buttonOne",
+  }
+
   return (
     <div>
       <h2>Dashboard</h2>
@@ -27,6 +36,7 @@ export default function Dashboard() {
       <button className="" onClick={handleLogout}>
         Log out{' '}
       </button>
+      <SwitchButton data={switchData}/>
     </div>
   );
 }
