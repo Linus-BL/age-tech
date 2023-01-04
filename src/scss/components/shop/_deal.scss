@@ -9,14 +9,16 @@
   width: stretch;
   flex-shrink: 0;
 }
-.adCardImage {
-  border-radius: 5px 5px 0px 0px;
+.dealCardImgContainer {
   object-fit: contain;
   height: stretch;
   width: 400px;
 }
+.adCardImage {
+  border-radius: 5px 0px 0px 5px;
+}
 .textContentDeal {
-  padding: 0.6em 0.6em 0.6em 1.2em;
+  padding: 0.6em 8px 0.6em 1.2em;
   background-color: abstracts.$white;
   width: stretch;
 
@@ -30,6 +32,7 @@
     align-items: center;
     gap: 0.6em;
     padding-bottom: 0.3em;
+    padding-top: 8px;
   }
 }
 .icon {
