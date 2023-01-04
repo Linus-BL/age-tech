@@ -37,11 +37,7 @@ export default function Home() {
         .catch((error)=>{
           console.log(error);
         })
-
-       getAdById('ObDALnnjKcm6TUqCBNu8')
-        .then((ad)=>console.log("ad by id home", ad))
         
-
         setLoading(false)
     }catch(e){
       console.log(e);
