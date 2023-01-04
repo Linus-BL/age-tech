@@ -1,5 +1,4 @@
 import React from 'react';
-import Heading3 from '../textComponents/Heading3';
 import CategorySection from '../atomics/CategorySection';
 import testImage from '../../ad_test.jpg';
 

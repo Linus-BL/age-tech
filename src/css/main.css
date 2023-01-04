@@ -23,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -80,7 +80,7 @@ select {
 }
 .button {
   background-color: #132a36;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;
@@ -100,7 +100,7 @@ select {
 
 .buttonDisabled {
   background-color: #d9d9d9;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #b3b3b3;
@@ -124,7 +124,7 @@ select {
 
 .chip {
   background-color: #8ab0d2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #132a36;
@@ -185,7 +185,8 @@ select {
   background-color: #f4f4f4;
   width: stretch;
   border-radius: 5px;
-  border: none;
+  border: solid 1px #ff0000;
+  border-color: #132a36;
 }
 .inputField:focus {
   outline: none;
@@ -238,15 +239,18 @@ select {
   flex-shrink: 0;
 }
 
-.adCardImage {
-  border-radius: 5px 5px 0px 0px;
+.dealCardImgContainer {
   object-fit: contain;
   height: stretch;
   width: 400px;
 }
 
+.adCardImage {
+  border-radius: 5px 0px 0px 5px;
+}
+
 .textContentDeal {
-  padding: 0.6em 0.6em 0.6em 1.2em;
+  padding: 0.6em 8px 0.6em 1.2em;
   background-color: #f4f4f4;
   width: stretch;
 }
@@ -260,6 +264,7 @@ select {
   align-items: center;
   gap: 0.6em;
   padding-bottom: 0.3em;
+  padding-top: 8px;
 }
 
 .icon {
@@ -287,28 +292,43 @@ select {
   height: 1.5em;
 }
 
+.dealsSection {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  gap: 10px;
+}
+
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  position: fixed;
+  padding-bottom: 1em;
+  z-index: 1000;
+}
+
 .bodyText {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #121212;
 }
 
 .heading1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.5em;
   color: #121212;
 }
 
 .heading3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.5em;
 }
 
 .heading4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.125em;
   color: #121212;
@@ -316,7 +336,7 @@ select {
 }
 
 .heading5 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #121212;

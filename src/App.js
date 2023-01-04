@@ -16,7 +16,7 @@ import LinkButton from './components/atomics/LinkButton';
 import Button from './components/atomics/Button';
 import Deal from './components/shop/Deal';
 import Heading5 from './components/textComponents/Heading5';
-import CoopImage from './coop.png';
+
 import Adcard from './components/atomics/AdCard';
 import testImage from './ad_test.jpg';
 import Points from './components/shop/Points';
@@ -25,14 +25,7 @@ import Home from './components/home/Home';
 import SignupDetails from './components/login/SignupDetails';
 import Offer from './components/ads/Offer';
 import Request from './components/ads/Request';
-
-const deal = {
-  title: 'Rabatt på coop',
-  description:
-    'bla bla bla, så här mycket rabbat kan du få på hela sortimentet',
-  points: 24,
-  image: CoopImage,
-};
+import Shop from './components/shop/Shop';
 
 const ad = {
   id: 1,
@@ -65,6 +58,9 @@ function App() {
             </Route>
             <Route path="/home" element={<PrivateRoute />}>
               <Route path="" element={<Home />} />
+            </Route>
+            <Route path="/shop" element={<PrivateRoute />}>
+              <Route path="" element={<Shop />} />
             </Route>
             <Route path="/signupDetails" element={<PrivateRoute />}>
               <Route path="" element={<SignupDetails />} />
