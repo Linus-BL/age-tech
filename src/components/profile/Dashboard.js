@@ -19,14 +19,6 @@ export default function Dashboard() {
     }
   }
 
-  const switchData = {
-    buttonOne: "log in",
-    buttonTwo: "log out",
-    buttonOneNavigation: "/dashboard",
-    buttonTwoNavigation: "/dashboard",
-    activeButton: "buttonOne",
-  }
-
   return (
     <div>
       <h2>Dashboard</h2>
@@ -36,7 +28,6 @@ export default function Dashboard() {
       <button className="" onClick={handleLogout}>
         Log out{' '}
       </button>
-      <SwitchButton data={switchData}/>
     </div>
   );
 }
