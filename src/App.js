@@ -71,12 +71,9 @@ function App() {
             <Route path="/createRequest" element={<PrivateRoute />}>
               <Route path="" element={<Request />} />
             </Route>
-            <Route path="/signupDetails" element={<PrivateRoute />}>
-              <Route path="" element={<SignupDetails />} />
-            </Route>
 
             <Route path="/signup" element={<Signup />} />
-
+            <Route exact path="/" element={<Login />} />
             <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Switch>
         </AuthProvider>

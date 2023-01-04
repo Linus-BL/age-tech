@@ -4,8 +4,12 @@ import Heading5 from '../textComponents/Heading5';
 import { MdCalendarToday } from 'react-icons/md';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import { MdStarOutline } from 'react-icons/md';
+import { getAdById } from '../../api/AdsApi';
 
 const adCard = (props) => {
+  const id = props.id;
+  
+
   return (
     <div className="adCard" onClick={props.onClickFunction}>
       <div className="adCardImgContainer">
