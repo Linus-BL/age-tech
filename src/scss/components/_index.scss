@@ -1,12 +1,3 @@
-//atomics
-@forward './button';
-@forward './linkButton';
-@forward './chip';
-@forward './adCard';
-@forward './textInput';
-@forward './searchField';
-@forward './adOpened';
-
 //bigger componants
 @forward './scrollableSection';
 @forward './categorySection';
@@ -18,3 +9,4 @@
 @forward './login/';
 @forward './profile/';
 @forward './home/';
+@forward './atomics/'
