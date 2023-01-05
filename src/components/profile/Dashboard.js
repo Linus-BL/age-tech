@@ -29,7 +29,6 @@ export default function Dashboard() {
       <button className="" onClick={handleLogout}>
         Log out{' '}
       </button>
-      <Navbar />
     </div>
   );
 }
