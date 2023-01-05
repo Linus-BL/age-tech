@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import SwitchButton from '../atomics/switchButton';
-import Navbar from '../nav/Navbar';
 
 export default function Dashboard() {
   const { logout } = useAuth();
