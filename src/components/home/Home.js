@@ -11,6 +11,7 @@ import AllCategories from './AllCategories';
 import { getAllAds } from '../../api/AdsApi';
 import { getAllTags } from '../../api/TagsApi';
 import { getAdById } from '../../api/AdsApi';
+import SwitchButton from '../atomics/switchButton';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -44,10 +45,18 @@ export default function Home() {
     }
   }, [])
   
-
+  const switchData = {
+    buttonOne: "Erbjudna",
+    buttonTwo: "Efterfrågade",
+    buttonOneNavigation: "/home",
+    buttonTwoNavigation: "/home",
+    activeButton: "buttonOne",
+  }
+  
   return (
     <div className="homePage">
       <Header></Header>
+      <SwitchButton data={switchData}/>
       {!loading && 
         <div className="mainContent">
           <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>

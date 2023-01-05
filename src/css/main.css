@@ -503,7 +503,6 @@ select {
   border: 1px #132a36 solid;
   text-align: center;
   margin: 1rem;
-  margin-top: 3rem;
   border-radius: 50px;
   display: flex;
   font-family: "Montserrat", sans-serif;
@@ -515,13 +514,12 @@ select {
   flex: 1;
   text-decoration: none;
   margin: 0;
-  padding: 0.5rem;
+  padding: 8px 10%;
   border-radius: 50px;
   color: #132a36;
 }
 .switchContainer .active {
   background-color: #132a36;
-  padding: 8px 10%;
   color: #f4f4f4;
 }
 

@@ -5,7 +5,6 @@
   border: 1px abstracts.$primary-color solid;
   text-align: center;
   margin: 1rem;
-  margin-top: 3rem;
   border-radius: 50px;
   display: flex;
   font-family: base.$h5-font;
@@ -17,14 +16,13 @@
     flex: 1;
     text-decoration: none;
     margin: 0;
-    padding: 0.5rem;
+    padding: 8px 10%;
     border-radius: 50px;
     color: abstracts.$primary-color;
   }
 
   .active {
     background-color: abstracts.$primary-color;
-    padding: 8px 10%;
     color: abstracts.$white;
   }
 }

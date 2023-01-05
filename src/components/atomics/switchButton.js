@@ -37,14 +37,14 @@ const switchButton = (props) => {
       <Link
         to={props.data.buttonOneNavigation}
         onClick={() => onSetActiveMenuItem('buttonOne')}
-        className={active === 'buttonOne' ? 'active' : ''}
+        className={active === 'buttonOne' ? 'active left' : ''}
       >
         {props.data.buttonOne}
       </Link>
       <Link
         to={props.data.buttonTwoNavigation}
         onClick={() => onSetActiveMenuItem('buttonTwo')}
-        className={active === 'buttonTwo' ? 'active' : ''}
+        className={active === 'buttonTwo' ? 'active right' : ''}
       >
         {props.data.buttonTwo}
       </Link>
