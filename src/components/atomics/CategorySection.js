@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollableSection from './ScrollableSection';
 import Heading3 from '../textComponents/Heading3';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const CategorySection = ({ category = 'Category Name', ads }) => {
 
@@ -16,7 +17,7 @@ const CategorySection = ({ category = 'Category Name', ads }) => {
       </div>
 
       <div className="scrollableSection">
-        <ScrollableSection ads={ads}></ScrollableSection>
+        <ScrollableSection tag={category}></ScrollableSection>
       </div>
     </div>
   );

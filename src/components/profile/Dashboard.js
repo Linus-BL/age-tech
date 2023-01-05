@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import SwitchButton from '../atomics/switchButton';
 
 export default function Dashboard() {
-  const { logout } = useAuth();
+  const { logout, getUserData, userData } = useAuth();
   const navigate = useNavigate();
   const { currentUser } = useAuth();
+
+  useEffect(()=>{
+    try{
+       getUserData();
+    } catch(error){
+      console.log(error)
+    }
+    
+  },[])
 
   async function handleLogout(e) {
     e.preventDefault();
@@ -22,6 +31,7 @@ export default function Dashboard() {
   return (
     <div>
       <h2>Dashboard</h2>
+      {userData && <p>{JSON.stringify(userData)}</p>}
       <strong>Email:</strong> {currentUser.email}
       <strong>Email:</strong> {currentUser.uid}
       <Link to="/updateProfile">Update profile</Link>

@@ -1,14 +1,19 @@
 @use '../../abstracts';
 
 .headerAllAds{
+   display: grid;
+   grid-template-columns: 1fr 4fr 1fr;
+   padding: 24px 16px;
+   background-color: abstracts.$secondary-color;
+}
+.heading{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 16px;
-    background-color: abstracts.$secondary-color;
-}
+    
 
+}
 .AdsByCategory{
+    background-color: abstract.$white;
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;

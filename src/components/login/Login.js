@@ -7,10 +7,11 @@ import BodyText from '../textComponents/BodyText';
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { login, getUserData} = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +20,9 @@ export default function Login() {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate('/dashboard');
+      
+      navigate('/home');
+      
     } catch (error) {
       //console.log(JSON.stringify(error))
       setError(error.code + error.message);

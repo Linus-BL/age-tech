@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineLocationOn } from 'react-icons/md';
@@ -7,67 +8,53 @@ import testImage from '../../ad_test.jpg';
 import Header from './Header';
 import TagSection from '../atomics/TagsSection';
 import AllCategories from './AllCategories';
-
-const ads = [
-  {
-    id: 1,
-    title: 'Baka hos mig',
-    description: 'Kom och baka',
-    image: testImage,
-    location: 'Skultunaparken',
-    date: '20 november',
-    points: 23,
-  },
-  {
-    id: 2,
-    title: 'snickra hos mig',
-    description: 'Kom och baka',
-    image: testImage,
-    location: 'Skultunaparken',
-    date: '20 november',
-    points: 23,
-  },
-  {
-    id: 3,
-    title: 'snickra hos mig',
-    description: 'Kom och baka',
-    image: testImage,
-    location: 'Skultunaparken',
-    date: '20 november',
-    points: 23,
-  },
-  {
-    id: 4,
-    title: 'snickra hos mig',
-    description: 'Kom och baka',
-    image: testImage,
-    location: 'Skultunaparken',
-    date: '20 november',
-    points: 23,
-  },
-];
-
-const tags = [
-  { id: 1, tagName: 'Stickning' },
-  { id: 2, tagName: 'Måla' },
-  { id: 3, tagName: 'Motorcross' },
-  { id: 4, tagName: 'Fest' },
-  { id: 5, tagName: 'Snickeri' },
-  { id: 6, tagName: 'Bakning' },
-];
+import { getAllAds } from '../../api/AdsApi';
+import { getAllTags } from '../../api/TagsApi';
+import { getAdById } from '../../api/AdsApi';
 
 export default function Home() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
+  const [ads, setAds] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    try{
+      getAllAds()
+      .then((ads)=>{
+        setAds(ads)
+      })
+      .catch((error)=>{
+        console.log("Error", error)
+      })
+  
+      getAllTags()
+        .then((tags)=>{
+          setTags(tags)
+        })
+        .catch((error)=>{
+          console.log(error);
+        })
+        
+        setLoading(false)
+    }catch(e){
+      console.log(e);
+    }
+  }, [])
+  
 
   return (
     <div className="homePage">
       <Header></Header>
-      <div className="mainContent">
-        <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>
-        <CategorySection ads={ads}></CategorySection>
-        <AllCategories categories={tags}></AllCategories>
-      </div>
+      {!loading && 
+        <div className="mainContent">
+          <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>
+          <AllCategories ads={ads} categories={tags}></AllCategories>
+        </div>
+      }
+
     </div>
   );
 }

@@ -1,74 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AdCard from '../atomics/AdCard'
 import testImage from '../../ad_test.jpg';
 import Heading1 from '../textComponents/Heading1'
 import { useParams, useNavigate } from 'react-router-dom';
+import { get5AdsByTag } from '../../api/AdsApi'
+import BackButton from '../atomics/BackButton';
 
-const ads = [
-    {
-        id: 1,
-        title: 'Baka hos mig',
-        description: 'Kom och baka',
-        image: testImage,
-        location: 'Skultunaparken',
-        date: '20 november',
-        points: 23,
-    },
-    {
-        id: 2,
-        title: 'snickra hos mig',
-        description: 'Kom och baka',
-        image: testImage,
-        location: 'Skultunaparken',
-        date: '20 november',
-        points: 23,
-    },
-    {
-        id: 3,
-        title: 'snickra hos mig',
-        description: 'Kom och baka',
-        image: testImage,
-        location: 'Skultunaparken',
-        date: '20 november',
-        points: 23,
-    },
-    {
-        id: 4,
-        title: 'snickra hos mig',
-        description: 'Kom och baka',
-        image: testImage,
-        location: 'Skultunaparken',
-        date: '20 november',
-        points: 23,
-    },
-];
 
-//Use get-all ads api call
-
-const AllAdsByCategory = ({ tag }) => {
+const AllAdsByCategory = () => {
     const params = useParams();
     const navigate = useNavigate();
-    const { id } = params;
+    const { tagName } = params;
+    const [ads, setAds] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    function navigateToHome() {
-        navigate(-1)
-    }
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
+        try {
+            get5AdsByTag(tagName)
+                .then((ads) => {
+                    setAds(ads)
+                    console.log(ads)
+
+                })
+                .catch((error) => {
+                    console.log("Error", error)
+                })
+            setLoading(false)
+
+        } catch (e) {
+            console.log(e);
+        }
     }, [])
 
-    const allCategories = ads.map((ad) => (
+
+    const adsToshow = ads.map((ad) => (
         <AdCard
-            category={ad.title}
-            key={ad.id}
-            ad={ad}
+            ad={ad.ad} id={ad.id} key={ad.id}
         ></AdCard>
     ));
 
     return <div>
-        <div className="headerAllAds"><button onClick={navigateToHome}>back</button><Heading1>{id}</Heading1></div>
-        <div className="AdsByCategory">{allCategories} {tag}</div>
-    </div>
+        <div className="headerAllAds">
+
+            <BackButton></BackButton>
+            <div className="heading"> <Heading1 >{tagName}</Heading1></div></div>
+
+        {!loading && <div className="AdsByCategory">{adsToshow}</div>}
+    </div >
 };
 
 export default AllAdsByCategory;
