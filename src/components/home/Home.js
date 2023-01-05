@@ -21,34 +21,35 @@ export default function Home() {
 
 
   useEffect(() => {
-    try{
+    try {
       getAllAds()
-      .then((ads)=>{
-        setAds(ads)
-      })
-      .catch((error)=>{
-        console.log("Error", error)
-      })
-  
-      getAllTags()
-        .then((tags)=>{
-          setTags(tags)
+        .then((ads) => {
+          setAds(ads)
         })
-        .catch((error)=>{
+        .catch((error) => {
+          console.log("Error", error)
+        })
+
+      getAllTags()
+        .then((tags) => {
+          setTags(tags)
+          console.log("TAGS ", tags)
+        })
+        .catch((error) => {
           console.log(error);
         })
-        
-        setLoading(false)
-    }catch(e){
+
+      setLoading(false)
+    } catch (e) {
       console.log(e);
     }
   }, [])
-  
+
 
   return (
     <div className="homePage">
       <Header></Header>
-      {!loading && 
+      {!loading &&
         <div className="mainContent">
           <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>
           <AllCategories ads={ads} categories={tags}></AllCategories>
