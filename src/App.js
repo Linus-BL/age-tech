@@ -27,6 +27,7 @@ import Offer from './components/ads/Offer';
 import Request from './components/ads/Request';
 import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
+import AllAdsByCategory from './components/home/AdsByCategory';
 
 const ad = {
   id: 1,
@@ -63,7 +64,9 @@ function App() {
             <Route path="/shop" element={<PrivateRoute />}>
               <Route path="" element={<Shop />} />
             </Route>
-
+            <Route path="/allAds" element={<PrivateRoute />}>
+              <Route path="/allAds/:id" element={<AllAdsByCategory />} />
+            </Route>
             <Route path="/ad" element={<PrivateRoute />}>
               <Route path="/ad/:id" element={<AdOpened />} />
             </Route>
