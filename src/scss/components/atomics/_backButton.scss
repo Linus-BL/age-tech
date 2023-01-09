@@ -1,0 +1,25 @@
+@use '../../abstracts';
+
+.backButton {
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+}
+.backButtonOnImage {
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.arrowBlack {
+  width: stretch;
+  height: stretch;
+}
+
+.arrowWhite {
+  width: stretch;
+  height: stretch;
+  color: abstracts.$white;
+}

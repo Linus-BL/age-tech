@@ -46,7 +46,7 @@ export default function AuthProvider({ children }) {
 
   //hämta userdata
   useEffect(() => {
-    if (!loading) {
+    if (!loading && currentUser) {
       const unsubscribe = onSnapshot(
         doc(db, 'users', currentUser.uid),
         (doc) => {

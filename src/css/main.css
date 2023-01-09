@@ -100,6 +100,11 @@ select {
   display: none;
 }
 
+.showMore {
+  display: flex;
+  align-items: center;
+}
+
 .tags {
   display: flex;
   align-items: stretch;
@@ -328,6 +333,28 @@ select {
   padding: 1em 0.5em;
 }
 
+.headerAllAds {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  padding: 24px 16px;
+  background-color: #8ab0d2;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.AdsByCategory {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding: 10px 10px 10px 10px;
+  gap: 10px 10px;
+  justify-content: space-between;
+}
+
 .button {
   background-color: #132a36;
   font-family: "Montserrat", sans-serif;
@@ -360,6 +387,32 @@ select {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+}
+
+.backButton {
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+}
+
+.backButtonOnImage {
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.arrowBlack {
+  width: stretch;
+  height: stretch;
+}
+
+.arrowWhite {
+  width: stretch;
+  height: stretch;
+  color: #f4f4f4;
 }
 
 .linkButton {
@@ -430,15 +483,43 @@ select {
   padding: 10px;
 }
 
+.openedAdImgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0.6));
+}
+
+.adCardImageOpened {
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  object-fit: cover;
+  height: 300px;
+  width: stretch;
+}
+
+.backButtonOnImg {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  border: 1px green solid;
+}
+
 .titleAndPoints {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .creatorSection {
-  padding: 16px 0px;
+  padding: 24px 0px 16px;
   display: flex;
   gap: 10px;
 }
@@ -455,8 +536,9 @@ select {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1 1 1;
   justify-items: start;
+  align-items: center;
   grid-auto-flow: row;
-  padding: 16px 0 0 0;
+  padding: 24px 0 0 0;
 }
 
 .iconText {

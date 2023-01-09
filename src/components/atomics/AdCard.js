@@ -4,8 +4,6 @@ import Heading5 from '../textComponents/Heading5';
 import { MdCalendarToday } from 'react-icons/md';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import { MdStarOutline } from 'react-icons/md';
-import { getAdById } from '../../api/AdsApi';
-import Button from './Button';
 import { Link } from 'react-router-dom';
 
 const adCard = (props) => {
@@ -13,7 +11,7 @@ const adCard = (props) => {
 
   return (
     <div className="adCard" onClick={props.onClickFunction}>
-      <Link to={`/ad/${props.ad.id}`}>
+      <Link to={`/ad/${id}`}>
         <div className="adCardImgContainer">
           {' '}
           <img src={props.ad.imageUrl} alt="ad" className="adCardImage"></img>
