@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import BodyText from '../textComponents/BodyText';
 import Heading5 from '../textComponents/Heading5';
 import { MdCalendarToday } from 'react-icons/md';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import { MdStarOutline } from 'react-icons/md';
-import Button from './Button';
 import { Link } from 'react-router-dom';
 
-
 const adCard = (props) => {
-
   const id = props.id;
-  console.log("id ", id);
-
-
+  console.log('id ', id);
 
   return (
     <div className="adCard" onClick={props.onClickFunction}>

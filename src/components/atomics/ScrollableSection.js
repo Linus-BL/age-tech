@@ -11,13 +11,12 @@ const ScrollableSection = ({ tag }) => {
         setAds(ads);
       })
       .catch((e) => {
-        console.log(e)
-      })
-  }, [])
+        console.log(e);
+      });
+  }, []);
 
   const sectionAds = ads;
   const sectionItems = sectionAds.map((ad) => (
-
     <AdCard ad={ad.ad} id={ad.id} key={ad.id}></AdCard>
   ));
 

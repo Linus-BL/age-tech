@@ -8,7 +8,7 @@ import {
   updatePassword,
 } from 'firebase/auth';
 import { auth } from '../firebase';
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 
 const AuthContext = React.createContext();
@@ -47,13 +47,16 @@ export default function AuthProvider({ children }) {
   //hämta userdata
   useEffect(() => {
     if (!loading && currentUser) {
-      const unsubscribe = onSnapshot(doc(db, 'users', currentUser.uid), doc => {
-        console.log("user data: ", doc.data(), doc.id);
-        setUserData({ ...doc.data() })
-      })
+      const unsubscribe = onSnapshot(
+        doc(db, 'users', currentUser.uid),
+        (doc) => {
+          console.log('user data: ', doc.data(), doc.id);
+          setUserData({ ...doc.data() });
+        },
+      );
       return unsubscribe;
     }
-  }, [loading])
+  }, [loading]);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {

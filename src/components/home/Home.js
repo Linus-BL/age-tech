@@ -19,43 +19,40 @@ export default function Home() {
   const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     try {
       getAllAds()
         .then((ads) => {
-          setAds(ads)
+          setAds(ads);
         })
         .catch((error) => {
-          console.log("Error", error)
-        })
+          console.log('Error', error);
+        });
 
       getAllTags()
         .then((tags) => {
-          setTags(tags)
-          console.log("TAGS ", tags)
+          setTags(tags);
+          console.log('TAGS ', tags);
         })
         .catch((error) => {
           console.log(error);
-        })
+        });
 
-      setLoading(false)
+      setLoading(false);
     } catch (e) {
       console.log(e);
     }
-  }, [])
-
+  }, []);
 
   return (
     <div className="homePage">
       <Header></Header>
-      {!loading &&
+      {!loading && (
         <div className="mainContent">
           <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>
           <AllCategories ads={ads} categories={tags}></AllCategories>
         </div>
-      }
-
+      )}
     </div>
   );
 }

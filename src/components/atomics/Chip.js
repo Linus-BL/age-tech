@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Chip = ({ onClickFunction, tagName }) => {
   return (
-    <div className="chip" onClick={onClickFunction}>
+    <Link className="chip" to={`/allAds/${tagName}`}>
       <p>{tagName}</p>
-    </div>
+    </Link>
   );
 };
 
