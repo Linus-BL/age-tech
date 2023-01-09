@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const adCard = (props) => {
   const id = props.id;
-  console.log('id ', id);
 
   return (
     <div className="adCard" onClick={props.onClickFunction}>

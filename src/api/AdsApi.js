@@ -30,14 +30,12 @@ export async function get5AdsByTag(tag) {
   const adsRef = collection(db, col);
   let ads = [];
 
-  console.log('kommer till rätt funktion ');
   // create query against collection
   const q = query(adsRef, where('tags', 'array-contains-any', [tag]));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     ads.push({ id: doc.id, ad: doc.data() });
   });
-  console.log('returning ads', ads);
   return ads;
 }
 
