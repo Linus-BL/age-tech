@@ -261,12 +261,7 @@ select {
 }
 
 .formGroup {
-  padding: 1em 0em;
-}
-
-.inputField {
-  padding: 1em;
-  width: stretch;
+  padding: 0.5em 0em;
 }
 
 .signUp {
@@ -322,11 +317,11 @@ select {
 .headerSection {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   align-items: center;
   justify-content: center;
-  height: 200px;
   background-color: #8ab0d2;
+  padding: 1em 0.5em 1em 0.5em;
 }
 
 .homePage .mainContent {
@@ -340,6 +335,7 @@ select {
   font-size: 1em;
   color: #f4f4f4;
   padding: 1em;
+  width: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -470,22 +466,24 @@ select {
   padding-bottom: 0.3em;
 }
 
+/*
 .inputField {
-  background-color: #f4f4f4;
+  background-color: abstracts.$white;
   width: stretch;
   border-radius: 5px;
   border: none;
+  &:focus {
+    outline: none;
+    background-color: abstracts.$light-gray;
+  }
 }
-.inputField:focus {
-  outline: none;
-  background-color: #d9d9d9;
-}
-
+*/
 .inputField {
   background-color: #f4f4f4;
   width: stretch;
   border-radius: 5px;
   border: solid 1px #ff0000;
+  padding: 1em;
   border-color: #132a36;
 }
 .inputField:focus {

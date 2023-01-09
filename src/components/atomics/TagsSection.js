@@ -3,7 +3,6 @@ import Heading3 from '../textComponents/Heading3';
 import Chip from './Chip';
 
 const TagSection = ({ sectionTitle, tags }) => {
-
   const sectionItems = tags.map((tag) => (
     <Chip tagName={tag.name} key={tag.id}></Chip>
   ));

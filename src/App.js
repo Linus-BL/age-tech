@@ -27,7 +27,7 @@ import Offer from './components/ads/Offer';
 import Request from './components/ads/Request';
 import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
-import Navbar from './components/nav/Navbar'
+import Navbar from './components/nav/Navbar';
 
 const ad = {
   id: 1,
@@ -83,7 +83,6 @@ function App() {
             <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Switch>
           <Navbar />
-
         </AuthProvider>
       </Router>
     </>
