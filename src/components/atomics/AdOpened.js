@@ -1,81 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import BodyText from '../textComponents/BodyText';
 import Heading1 from '../textComponents/Heading1';
 import { MdCalendarToday } from 'react-icons/md';
 import { MdOutlineLocationOn } from 'react-icons/md';
-
 import { MdAccessTime } from 'react-icons/md';
 import { MdStarOutline } from 'react-icons/md';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Logger } from 'sass';
-import testImage from '../../ad_test.jpg';
+import { useParams } from 'react-router-dom';
 import Button from './Button';
 import Heading5 from '../textComponents/Heading5';
-import TagSection from './TagsSection';
-import Profile from '../profile/Profile';
 import Heading4 from '../textComponents/Heading4';
+import { getAdById } from '../../api/AdsApi';
+import TagSection from '../atomics/TagsSection';
+import BackButton from '../atomics/BackButton';
 
-const ad = {
-  id: 1,
-  title: 'Baka hos mig',
-  description:
-    'Under en eftermiddag lär jag dig att baka med sursdeg. Jag kommer visa exakt hur du gör dig egen surdegstartare occh hur du har hand om din surdeg. Vi kommer också att att baka ut upp till 4 limpor med med surdeg som bas. ',
-  image: testImage,
-  location: 'Skultunaparken',
-  date: '20 november',
-  time: '16.00',
-  points: 23,
-};
-
-const tags = [
-  { id: 1, tagName: 'Stickning' },
-  { id: 2, tagName: 'Måla' },
-  { id: 3, tagName: 'Motorcross' },
-  { id: 4, tagName: 'Fest' },
-  { id: 5, tagName: 'Snickeri' },
-  { id: 6, tagName: 'Bakning' },
-];
-
-const adOpen = (props) => {
+const adOpen = () => {
   //takes in one ad object though props
-
+  const [ad, setAd] = useState([]);
+  const [loading, setLoading] = useState();
   const params = useParams();
   const { id } = params;
 
+  console.log('id from params ', id);
+
   useEffect(() => {
-    // Update the document title using the browser API
-    console.log('ID from params', id);
-  });
-
-  const navigate = useNavigate();
-
-  function handleClick() {
-    navigate('/home');
-  }
+    window.scrollTo(0, 0);
+    try {
+      getAdById(id)
+        .then((ad) => {
+          setAd(ad);
+          console.log('AD', ad);
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   return (
     <div className="adOpen">
-      <button type="button" onClick={handleClick}>
-        Go home
-      </button>
-
-      <div className="adImgContainer">
-        <img src={ad.image} alt="ad" className="adCardImage"></img>
+      <div className="openedAdImgContainer">
+        <BackButton onImage={true}></BackButton>
+        <img src={ad.imageUrl} alt="ad" className="adCardImageOpened"></img>
       </div>
 
       <div className="informationContentAd">
         <div className="titleAndPoints">
-          <Heading1 className="title">{ad.title}</Heading1>
+          <Heading1 className="title">{ad.titel}</Heading1>
           <div className="iconText">
             <MdStarOutline className="icon" />
-            <BodyText>{ad.points} poäng</BodyText>
+            <BodyText>{ad.compensation} poäng</BodyText>
           </div>
         </div>
         <BodyText>{ad.description}</BodyText>
         {/* get profile and use data from there */}
         <div className="creatorSection">
           <div className="profilePicture"></div>
-          <Heading4>Birgitta Bohlin</Heading4>
+          <Heading4>{ad.creator}</Heading4>
         </div>
         <Button>Kontakta annonsör</Button>
         <div className="shortInfoSection">
@@ -84,7 +67,7 @@ const adOpen = (props) => {
             <MdOutlineLocationOn className="icon" />
             <Heading5>Plats</Heading5>
           </div>
-          <BodyText>{ad.location}</BodyText>
+          <BodyText>{ad.place}</BodyText>
           <div className="iconText">
             {' '}
             <MdCalendarToday className="icon" /> <Heading5>Datum</Heading5>
@@ -96,7 +79,7 @@ const adOpen = (props) => {
           </div>
           <BodyText>{ad.time}</BodyText>
         </div>
-        <TagSection tags={tags}></TagSection>
+        {/* <TagSection tags={ad.tags}></TagSection> */}
       </div>
     </div>
   );

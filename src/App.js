@@ -27,7 +27,8 @@ import Offer from './components/ads/Offer';
 import Request from './components/ads/Request';
 import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
-import Navbar from './components/nav/Navbar'
+import AllAdsByCategory from './components/home/AdsByCategory';
+import Navbar from './components/nav/Navbar';
 
 const ad = {
   id: 1,
@@ -64,7 +65,9 @@ function App() {
             <Route path="/shop" element={<PrivateRoute />}>
               <Route path="" element={<Shop />} />
             </Route>
-
+            <Route path="/allAds" element={<PrivateRoute />}>
+              <Route path="/allAds/:tagName" element={<AllAdsByCategory />} />
+            </Route>
             <Route path="/ad" element={<PrivateRoute />}>
               <Route path="/ad/:id" element={<AdOpened />} />
             </Route>
@@ -83,7 +86,6 @@ function App() {
             <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Switch>
           <Navbar />
-
         </AuthProvider>
       </Router>
     </>
