@@ -26,11 +26,7 @@ export async function get5AdsByTag(tag){
     const q = query(adsRef, where("tags", "array-contains-any", [tag]));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc)=>{
-        
             ads.push({id: doc.id, ad: doc.data()})
-        
-            
-        
     })
     return ads;
 }

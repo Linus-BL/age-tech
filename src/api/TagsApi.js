@@ -16,7 +16,6 @@ export async function getSpecificTag(tagType){
         console.log(doc.id, "=>", doc.data());
         tags.push({id: doc.id, ad: doc.data()})
     })
-    console.log(tags)
     return tags;
 }
 
@@ -36,13 +35,12 @@ export async function getAllTags(){
 export async function getUserTags(userId){
     const col = 'users'
     const docRef = doc(db, col, userId);
-    getDoc(docRef)
-        .then((doc)=>{
-            console.log(doc.data())
-            return doc.data().tags
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
+    const docSnap = await getDoc(docRef);
+    const tagDocREf = docSnap.data().tags;
+    const tagSnap = await getDocs(tagDocREf);
+    console.log(tagSnap.data())
+    
+    return null;
+    
 
 }
