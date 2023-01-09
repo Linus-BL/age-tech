@@ -4,6 +4,7 @@ import { db } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
+import Heading1 from '../textComponents/Heading1';
 
 export default function SignupDetails() {
   const { currentUser } = useAuth();
@@ -48,84 +49,96 @@ export default function SignupDetails() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          value={firstName}
-          placeholder="First Name"
-          onChange={(event) => setFirstName(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          id="lastName"
-          name="lastName"
-          value={lastName}
-          placeholder="Last Name"
-          onChange={(event) => setLastName(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          id="bio"
-          name="bio"
-          value={bio}
-          placeholder="Bio"
-          onChange={(event) => setBio(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          id="city"
-          name="city"
-          value={city}
-          placeholder="City"
-          onChange={(event) => setCity(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={age}
-          placeholder="Age"
-          onChange={(event) => setAge(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          id="gender"
-          name="gender"
-          value={gender}
-          placeholder="Gender"
-          onChange={(event) => setGender(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          id="profilePicture"
-          name="profilePicture"
-          value={profilePicture}
-          placeholder="Profile picture url"
-          onChange={(event) => setProfilePicture(event.target.value)}
-        />
-      </div>
+    <>
+      <div className="loginPage">
+        <Heading1>Profile details</Heading1>
+        <form onSubmit={handleSubmit}>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={firstName}
+              placeholder="First Name"
+              onChange={(event) => setFirstName(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={lastName}
+              placeholder="Last Name"
+              onChange={(event) => setLastName(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="bio"
+              name="bio"
+              value={bio}
+              placeholder="Bio"
+              onChange={(event) => setBio(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="city"
+              name="city"
+              value={city}
+              placeholder="City"
+              onChange={(event) => setCity(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="number"
+              id="age"
+              name="age"
+              value={age}
+              placeholder="Age"
+              onChange={(event) => setAge(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="gender"
+              name="gender"
+              value={gender}
+              placeholder="Gender"
+              onChange={(event) => setGender(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="profilePicture"
+              name="profilePicture"
+              value={profilePicture}
+              placeholder="Profile picture url"
+              onChange={(event) => setProfilePicture(event.target.value)}
+            />
+          </div>
 
-      <input
-        //disabled={loading}
-        className="form-btn"
-        type="submit"
-        value="Submit"
-      />
-    </form>
+          <input
+            //disabled={loading}
+            className="button"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </>
   );
 }
