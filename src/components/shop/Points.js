@@ -1,15 +1,15 @@
 import React from 'react';
-import Heading3 from '../textComponents/Heading3';
+import Heading4 from '../textComponents/Heading4';
 import { MdStarOutline } from 'react-icons/md';
 
 const PointsSection = (props) => {
   return (
     <div className="pointsSection">
-      <Heading3 className="title">Dina poäng</Heading3>
+      <Heading4 className="title">Dina poäng</Heading4>
       <div className="points">
         {' '}
         <MdStarOutline className="iconPoints" />
-        <Heading3>{props.user.points} poäng</Heading3>
+        <Heading4>{props.user.points} poäng</Heading4>
       </div>
     </div>
   );

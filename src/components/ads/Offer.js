@@ -128,7 +128,7 @@ export default function Offer() {
               name="date"
               value={date}
               placeholder="Datum"
-              onChange={(event) => setTime(event.target.value)}
+              onChange={(event) => setDate(event.target.value)}
             />
           </div>
           <div className="formGroup">

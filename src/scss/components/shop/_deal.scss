@@ -5,22 +5,27 @@
   display: flex;
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
   border-radius: 5px;
-  height: 200px;
+  height: stretch;
   width: stretch;
   flex-shrink: 0;
+  background-color: #ffffff;
 }
 .dealCardImgContainer {
-  object-fit: contain;
-  height: stretch;
-  width: 400px;
+  width: 250px;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1em;
 }
 .dealCardImage {
   border-radius: 5px 0px 0px 5px;
 }
 .textContentDeal {
-  padding: 0.6em 8px 0.6em 1.2em;
-  background-color: abstracts.$white;
+  padding: 0.8em 8px 1em 1.2em;
+  background-color: #ffffff;
   width: stretch;
+  border-radius: 5px;
 
   .title {
     margin-block-start: 0em;

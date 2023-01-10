@@ -1,3 +1,5 @@
+@use '../../abstracts';
+
 .informationContentAd {
   padding: 10px;
 }
@@ -24,7 +26,6 @@
   z-index: 1000;
   width: 32px;
   height: 32px;
-  border: 1px green solid;
 }
 .titleAndPoints {
   display: flex;
@@ -38,11 +39,14 @@
   display: flex;
   gap: 10px;
 }
+.creator {
+  color: #000000;
+  text-decoration: none;
+}
 .profilePicture {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: #ff0000;
 }
 .shortInfoSection {
   display: grid;
@@ -56,6 +60,10 @@
 .iconText {
   display: flex;
   align-items: center;
+  justify-content: start;
   gap: 0.6em;
   padding-bottom: 0.3em;
+}
+.iconOpenedAd {
+  width: 20px;
 }
