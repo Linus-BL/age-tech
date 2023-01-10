@@ -12,8 +12,6 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
-import Adcard from './components/atomics/AdCard';
-import testImage from './ad_test.jpg';
 import OwnProfile from './components/profile/OwnProfile';
 import Profile from './components/profile/Profile';
 import Home from './components/home/Home';
@@ -25,19 +23,8 @@ import AdOpened from './components/atomics/AdOpened';
 import AllAdsByCategory from './components/home/AdsByCategory';
 import Navbar from './components/nav/Navbar';
 import AllAdsUser from './components/profile/AllAdsUser';
+import CreateAd from './components/ads/CreateAd';
 
-const ad = {
-  id: 1,
-  title: 'Baka hos mig',
-  description: 'Kom och baka',
-  image: testImage,
-  location: 'Skultunaparken',
-  date: '20 november',
-  points: 23,
-};
-const user = {
-  points: 245,
-};
 function App() {
   return (
     <>
@@ -81,6 +68,9 @@ function App() {
             </Route>
             <Route path="/createRequest" element={<PrivateRoute />}>
               <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/createAd" element={<PrivateRoute />}>
+              <Route path="" element={<CreateAd />} />
             </Route>
 
             <Route path="/signup" element={<Signup />} />
