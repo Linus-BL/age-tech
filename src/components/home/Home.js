@@ -10,6 +10,7 @@ import TagSection from '../atomics/TagsSection';
 import AllCategories from './AllCategories';
 import { getAllAds } from '../../api/AdsApi';
 import { getAllTags } from '../../api/TagsApi';
+import { getUserData } from '../../api/userApi';
 import { getAdById } from '../../api/AdsApi';
 import SwitchButton from '../atomics/switchButton';
 

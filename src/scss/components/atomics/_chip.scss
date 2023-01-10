@@ -13,3 +13,16 @@
   justify-content: center;
   border-radius: 2em;
 }
+
+.secondary {
+  background-color: none;
+  border-color: abstracts.$primary-color;
+  border-style: solid;
+}
+
+.mini {
+  font-family: base.$h5-font;
+  font-weight: base.$h6-font-weight;
+  font-size: base.$h6-font-size;
+  padding: 0.3em 0.8em;
+}
