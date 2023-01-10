@@ -10,11 +10,8 @@ export async function searchableTags() {
         delete element.id;
       });
       tags = res;
-      console.log(tags);
     })
     .catch((e) => console.log(e));
 
-  index.saveObjects(tags).then(({ objectIDs }) => {
-    console.log(objectIDs);
-  });
+  index.saveObjects(tags);
 }

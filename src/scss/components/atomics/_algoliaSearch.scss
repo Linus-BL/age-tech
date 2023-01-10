@@ -1,0 +1,139 @@
+@use '../../abstracts';
+@use '../../base';
+
+.ais-Hits {
+  margin: 0.5em 0;
+  width: stretch;
+  border-radius: 5px;
+  position: relative;
+}
+
+.ais-Hits-list {
+  /*
+    border-radius: 5px;
+    border-style: none;
+    list-style-type: none;
+    :first-child{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    :last-child{
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }*/
+  list-style: none;
+  width: stretch;
+  gap: 0.8em;
+  flex-wrap: wrap;
+  border: 1.5px solid abstracts.$middle-gray;
+  :last-child {
+    border-bottom: none;
+  }
+  position: absolute;
+  z-index: 1;
+}
+.ais-Hits-item {
+  background-color: abstracts.$white;
+  padding: 0.5em;
+  margin: 0.1em 0;
+
+  border-bottom: abstracts.$primary-color 1em;
+
+  &:hover {
+    background-color: abstracts.$primary-color-active;
+    color: abstracts.$white;
+  }
+
+  .selected {
+    background-color: abstracts.$primary-color-active;
+    color: abstracts.$white;
+  }
+  /*
+          background-color: abstracts.$white;
+          font-family: base.$h5-font;
+          font-weight: base.$h6-font-weight;
+          font-size: base.$h6-font-size;
+          padding: 0.5em 0.8em;
+          border-bottom: 1px solid abstracts.$middle-gray;
+  
+  
+          .selected{
+            background-color: abstracts.$primary-color-active;
+            color: abstracts.$white;
+          }*/
+}
+
+.ais-SearchBox-form {
+  display: flex;
+  gap: 0.5em;
+  width: stretch;
+}
+
+.ais-SearchBox-input {
+  background-color: abstracts.$white;
+  flex-grow: 4;
+  border-radius: 5px;
+  border: solid 1px #ff0000;
+  padding: 0 1em;
+  border-color: abstracts.$primary-color;
+  &:focus {
+    outline: none;
+    background-color: abstracts.$light-gray;
+  }
+}
+
+.ais-SearchBox-submit {
+  flex-grow: 1;
+  min-width: 4em;
+  background-color: abstracts.$primary-color;
+  font-family: base.$h5-font;
+  font-weight: base.$h4-font-weight;
+  font-size: base.$h5-font-size;
+  color: abstracts.$white;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border-style: none;
+  //margin-top: 1em;
+  &:hover {
+    background-color: abstracts.$primary-color-active;
+  }
+  &:active {
+    background-color: abstracts.$black;
+  }
+}
+
+.tagsPage {
+  position: relative;
+  padding: 0 1em;
+  padding-top: 5em;
+  height: 100vh;
+  background: rgb(244, 244, 244);
+  background: linear-gradient(
+    118deg,
+    rgba(244, 244, 244, 1) 0%,
+    rgba(237, 254, 255, 1) 100%
+  );
+}
+
+.chosenTags {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  z-index: 0;
+  overflow: scroll;
+}
+/*
+.ais-SearchBox-input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}*/
+
+.ais-SearchBox-reset {
+  display: none;
+}
+
+.bottomButton {
+  bottom: 5em;
+}

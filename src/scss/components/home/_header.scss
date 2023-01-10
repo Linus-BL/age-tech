@@ -4,9 +4,9 @@
 .headerSection {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   align-items: center;
   justify-content: center;
-  height: 200px;
   background-color: abstracts.$secondary-color;
+  padding: 1em 0.5em 1em 0.5em;
 }

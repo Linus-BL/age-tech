@@ -10,6 +10,7 @@ import TagSection from '../atomics/TagsSection';
 import AllCategories from './AllCategories';
 import { getAllAds } from '../../api/AdsApi';
 import { getAllTags } from '../../api/TagsApi';
+import { getUserData } from '../../api/userApi';
 import { getAdById } from '../../api/AdsApi';
 import SwitchButton from '../atomics/switchButton';
 
@@ -20,50 +21,72 @@ export default function Home() {
   const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
-    try{
+    try {
       getAllAds()
-      .then((ads)=>{
-        setAds(ads)
-      })
-      .catch((error)=>{
-        console.log("Error", error)
-      })
-  
+        .then((ads) => {
+          setAds(ads);
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+
       getAllTags()
-        .then((tags)=>{
-          setTags(tags)
+        .then((tags) => {
+          setTags(tags);
         })
-        .catch((error)=>{
+        .catch((error) => {
           console.log(error);
-        })
-        
-        setLoading(false)
-    }catch(e){
+        });
+
+      setLoading(false);
+    } catch (e) {
       console.log(e);
     }
-  }, [])
-  
+  }, []);
+
+  useEffect(() => {
+    try {
+      getAllAds()
+        .then((ads) => {
+          setAds(ads);
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+
+      getAllTags()
+        .then((tags) => {
+          setTags(tags);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   const switchData = {
-    buttonOne: "Erbjudna",
-    buttonTwo: "Efterfrågade",
-    buttonOneNavigation: "/home",
-    buttonTwoNavigation: "/home",
-    activeButton: "buttonOne",
-  }
-  
+    buttonOne: 'Erbjudna',
+    buttonTwo: 'Efterfrågade',
+    buttonOneNavigation: '/home',
+    buttonTwoNavigation: '/home',
+    activeButton: 'buttonOne',
+  };
+
   return (
     <div className="homePage">
       <Header></Header>
-      <SwitchButton data={switchData}/>
-      {!loading && 
+      <SwitchButton data={switchData} />
+      {!loading && (
         <div className="mainContent">
           <TagSection sectionTitle="Kolla in dessa" tags={tags}></TagSection>
           <AllCategories ads={ads} categories={tags}></AllCategories>
         </div>
-      }
-
+      )}
     </div>
   );
 }

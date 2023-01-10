@@ -1,10 +1,20 @@
 import React from 'react';
-
-const Chip = ({ onClickFunction, tagName }) => {
+import { Link } from 'react-router-dom';
+const Chip = ({ tagName, primary = true, mini = false }) => {
+  if (mini) {
+    return (
+      <div className="chip mini">
+        <p>{tagName}</p>
+      </div>
+    );
+  }
   return (
-    <div className="chip" onClick={onClickFunction}>
+    <Link
+      className={primary ? 'chip' : 'chip secondary'}
+      to={`/allAds/${tagName}`}
+    >
       <p>{tagName}</p>
-    </div>
+    </Link>
   );
 };
 

@@ -8,14 +8,13 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
 
-  useEffect(()=>{
-    try{
-       getUserData();
-    } catch(error){
-      console.log(error)
+  useEffect(() => {
+    try {
+      getUserData();
+    } catch (error) {
+      console.log(error);
     }
-    
-  },[])
+  }, []);
 
   async function handleLogout(e) {
     e.preventDefault();
