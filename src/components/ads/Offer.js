@@ -11,7 +11,7 @@ export default function Offer() {
 
   const [titel, setTitel] = useState('');
   const [description, setDescription] = useState('');
-  const [tags, setTags] = useState('');
+  const [tags, setTags] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const [place, setPlace] = useState('');
   const [compensation, setCompensation] = useState('');
@@ -37,7 +37,7 @@ export default function Offer() {
 
     setTitel('');
     setDescription('');
-    setTags('');
+    setTags([]);
     setPlace('');
     setCompensation('');
     setTime('');

@@ -50,6 +50,7 @@ export async function getAllAds() {
     return ads; 
 }
 
+
 export async function getAdById(id){
     const col1 = "adOffer";
     const col2 = "adRequest";

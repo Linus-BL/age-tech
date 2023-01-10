@@ -28,6 +28,7 @@ import Request from './components/ads/Request';
 import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
 import Navbar from './components/nav/Navbar'
+import SelectTags from './components/login/SelectTags';
 
 const ad = {
   id: 1,
@@ -56,7 +57,7 @@ function App() {
               <Route path="" element={<UpdateProfile />} />
             </Route>
             <Route path="/profile" element={<PrivateRoute />}>
-              <Route path="" element={<Profile />} />
+              <Route path="" element={<Profile/>} />
             </Route>
             <Route path="/home" element={<PrivateRoute />}>
               <Route path="" element={<Home />} />
@@ -75,6 +76,9 @@ function App() {
               <Route path="" element={<Offer />} />
             </Route>
             <Route path="/createRequest" element={<PrivateRoute />}>
+              <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/selectTags" element={<SelectTags />}>
               <Route path="" element={<Request />} />
             </Route>
 
