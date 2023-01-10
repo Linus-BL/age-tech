@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './css/main.css';
 import Signup from './components/login/Signup';
 import Dashboard from './components/profile/Dashboard';
@@ -29,6 +29,9 @@ import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
 import AllAdsByCategory from './components/home/AdsByCategory';
 import Navbar from './components/nav/Navbar';
+import CreateAd from './components/ads/CreateAd';
+import { useAuth } from './context/AuthContext';
+import { getUserData } from './api/userApi';
 
 const ad = {
   id: 1,
@@ -42,6 +45,7 @@ const ad = {
 const user = {
   points: 245,
 };
+
 function App() {
   return (
     <>
@@ -79,6 +83,9 @@ function App() {
             </Route>
             <Route path="/createRequest" element={<PrivateRoute />}>
               <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/createAd" element={<PrivateRoute />}>
+              <Route path="" element={<CreateAd />} />
             </Route>
 
             <Route path="/signup" element={<Signup />} />
