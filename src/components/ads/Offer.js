@@ -17,6 +17,7 @@ export default function Offer() {
   const [place, setPlace] = useState('');
   const [compensation, setCompensation] = useState('');
   const [time, setTime] = useState('');
+  const [date, setDate] = useState('');
 
   const uid = currentUser.uid;
 
@@ -34,6 +35,7 @@ export default function Offer() {
       compensation: compensation,
       time: time,
       creator: uid,
+      date: date,
     });
 
     setTitel('');
@@ -42,14 +44,15 @@ export default function Offer() {
     setPlace('');
     setCompensation('');
     setTime('');
+    setDate('');
 
-    navigate('/dashboard');
+    navigate('/home');
   };
 
   return (
     <>
       <div className="loginPage">
-        <Heading1>Create Offer</Heading1>
+        <Heading1>Skapa erbjudande</Heading1>
         <form onSubmit={handleSubmit}>
           <div className="formGroup">
             <input
@@ -69,7 +72,7 @@ export default function Offer() {
               id="description"
               name="description"
               value={description}
-              placeholder="Tell us about your offer"
+              placeholder="Beskrivning"
               onChange={(event) => setDescription(event.target.value)}
             />
           </div>
@@ -80,7 +83,7 @@ export default function Offer() {
               id="tags"
               name="tags"
               value={tags}
-              placeholder="Tags"
+              placeholder="Taggar"
               onChange={(event) => setTags(event.target.value)}
             />
           </div>
@@ -91,7 +94,7 @@ export default function Offer() {
               id="imageUrl"
               name="imageUrl"
               value={imageUrl}
-              placeholder="Image Url"
+              placeholder="Bild Url"
               onChange={(event) => setImageUrl(event.target.value)}
             />
           </div>
@@ -102,7 +105,7 @@ export default function Offer() {
               id="place"
               name="place"
               value={place}
-              placeholder="Place"
+              placeholder="Plats"
               onChange={(event) => setPlace(event.target.value)}
             />
           </div>
@@ -113,7 +116,18 @@ export default function Offer() {
               id="time"
               name="time"
               value={time}
-              placeholder="Time"
+              placeholder="Tid"
+              onChange={(event) => setTime(event.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <input
+              className="inputField"
+              type="text"
+              id="date"
+              name="date"
+              value={date}
+              placeholder="Datum"
               onChange={(event) => setTime(event.target.value)}
             />
           </div>
@@ -124,7 +138,7 @@ export default function Offer() {
               id="compensation"
               name="compensation"
               value={compensation}
-              placeholder="Compensation"
+              placeholder="Kompensation"
               onChange={(event) => setCompensation(event.target.value)}
             />
           </div>
@@ -133,7 +147,7 @@ export default function Offer() {
             //disabled={loading}
             className="button"
             type="submit"
-            value="Submit"
+            value="Skapa annons"
           />
         </form>
       </div>

@@ -94,6 +94,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #121212;
 }
 
 ::-webkit-scrollbar {
@@ -103,6 +104,7 @@ select {
 .showMore {
   display: flex;
   align-items: center;
+  color: #121212;
 }
 
 .tags {
@@ -206,19 +208,18 @@ select {
   gap: 10px;
 }
 
-.buttonSticky {
-  position: -webkit-sticky;
-  position: sticky;
-  position: fixed;
-  padding-bottom: 1em;
-  z-index: 1000;
-}
-
 .bodyText {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #121212;
+}
+
+.bodyTextLight {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #f4f4f4;
 }
 
 .heading1 {
@@ -288,6 +289,7 @@ select {
   align-self: start;
   gap: 1em;
   margin: 0 0.5em;
+  padding-bottom: 6em;
 }
 
 .nameAndPicture {
@@ -307,6 +309,17 @@ select {
 .profileShortInfo {
   display: flex;
   justify-content: space-evenly;
+}
+
+.settingsLinks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  text-decoration: "none";
+  padding-bottom: 0.5em;
+  border-bottom: solid;
+  border-color: #121212;
 }
 
 .buttonSticky {
@@ -335,7 +348,7 @@ select {
 
 .headerAllAds {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
   background-color: #8ab0d2;
 }
@@ -744,6 +757,29 @@ select {
 
 .bottomButton {
   bottom: 5em;
+}
+
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 4em;
+  z-index: 1000;
+  width: stretch;
+}
+
+.createAdContainer {
+  background-color: #8ab0d2;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  gap: 2em;
+}
+.createAdContainer h1 {
+  margin-top: -4em;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -12,14 +12,7 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
-import CoopImage from './coop.png';
-import LinkButton from './components/atomics/LinkButton';
-import Button from './components/atomics/Button';
-import Deal from './components/shop/Deal';
-import Heading5 from './components/textComponents/Heading5';
-
-import Adcard from './components/atomics/AdCard';
-import testImage from './ad_test.jpg';
+import OwnProfile from './components/profile/OwnProfile';
 import Profile from './components/profile/Profile';
 import Home from './components/home/Home';
 import SignupDetails from './components/login/SignupDetails';
@@ -30,19 +23,9 @@ import AdOpened from './components/atomics/AdOpened';
 import Navbar from './components/nav/Navbar';
 import SelectTags from './components/login/SelectTags';
 import AllAdsByCategory from './components/home/AdsByCategory';
+import AllAdsUser from './components/profile/AllAdsUser';
+import CreateAd from './components/ads/CreateAd';
 
-const ad = {
-  id: 1,
-  title: 'Baka hos mig',
-  description: 'Kom och baka',
-  image: testImage,
-  location: 'Skultunaparken',
-  date: '20 november',
-  points: 23,
-};
-const user = {
-  points: 245,
-};
 function App() {
   return (
     <>
@@ -58,6 +41,9 @@ function App() {
               <Route path="" element={<UpdateProfile />} />
             </Route>
             <Route path="/profile" element={<PrivateRoute />}>
+              <Route path="" element={<OwnProfile />} />
+            </Route>
+            <Route path="/profile/:userId" element={<PrivateRoute />}>
               <Route path="" element={<Profile />} />
             </Route>
             <Route path="/home" element={<PrivateRoute />}>
@@ -68,6 +54,9 @@ function App() {
             </Route>
             <Route path="/allAds" element={<PrivateRoute />}>
               <Route path="/allAds/:tagName" element={<AllAdsByCategory />} />
+            </Route>
+            <Route path="/allAdsUser" element={<PrivateRoute />}>
+              <Route path="/allAdsUser/:userId" element={<AllAdsUser />} />
             </Route>
             <Route path="/ad" element={<PrivateRoute />}>
               <Route path="/ad/:id" element={<AdOpened />} />
@@ -83,6 +72,9 @@ function App() {
             </Route>
             <Route path="/selectTags" element={<SelectTags />}>
               <Route path="" element={<Request />} />
+            </Route>
+            <Route path="/createAd" element={<PrivateRoute />}>
+              <Route path="" element={<CreateAd />} />
             </Route>
 
             <Route path="/signup" element={<Signup />} />
