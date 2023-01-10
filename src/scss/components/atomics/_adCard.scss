@@ -4,9 +4,11 @@
 .adCard {
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
   border-radius: 5px;
-  height: 400px;
+  height: 300px;
   width: 180px;
   flex-shrink: 0;
+  background-color: #ffffff;
+  margin-left: 0.5em;
 }
 .adCardImgContainer {
   border-radius: 5px;
@@ -15,7 +17,7 @@
 .adCardImage {
   border-radius: 5px 5px 0px 0px;
   object-fit: cover;
-  height: 200px;
+  height: 150px;
   width: stretch;
 }
 .textContentAd {

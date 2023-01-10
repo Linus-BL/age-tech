@@ -81,9 +81,17 @@ select {
 .scrollableSection {
   display: flex;
   align-items: stretch;
-  gap: 1em;
+  gap: 0.5em;
   overflow-x: scroll;
   padding-bottom: 1em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+}
+.scrollableSection .adCard:last-child {
+  margin-right: 1em;
+}
+.scrollableSection .adCard:first-child {
+  padding-left: 0.5em;
 }
 
 ::-webkit-scrollbar {
@@ -143,15 +151,19 @@ select {
   display: flex;
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
   border-radius: 5px;
-  height: 200px;
+  height: stretch;
   width: stretch;
   flex-shrink: 0;
+  background-color: #ffffff;
 }
 
 .dealCardImgContainer {
-  object-fit: contain;
-  height: stretch;
-  width: 400px;
+  width: 250px;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1em;
 }
 
 .dealCardImage {
@@ -159,9 +171,10 @@ select {
 }
 
 .textContentDeal {
-  padding: 0.6em 8px 0.6em 1.2em;
-  background-color: #f4f4f4;
+  padding: 0.8em 8px 1em 1.2em;
+  background-color: #ffffff;
   width: stretch;
+  border-radius: 5px;
 }
 .textContentDeal .title {
   margin-block-start: 0em;
@@ -187,7 +200,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 0.5em;
+  padding: 1em 0.5em;
 }
 
 .points {
@@ -205,7 +218,8 @@ select {
   display: flex;
   flex-direction: column;
   padding: 8px 10px;
-  gap: 10px;
+  gap: 1em;
+  background-color: #f4f4f4;
 }
 
 .bodyText {
@@ -233,13 +247,13 @@ select {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.5em;
+  color: #121212;
 }
 
 .heading4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.125em;
-  color: #121212;
   margin: 0.4em 0em;
 }
 
@@ -247,8 +261,8 @@ select {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
-  color: #121212;
   margin: 0.4em 0em;
+  color: #121212;
 }
 
 .loginPage {
@@ -288,12 +302,12 @@ select {
   justify-content: start;
   align-self: start;
   gap: 1em;
-  margin: 0 0.5em;
+  padding: 0 0.5em;
   padding-bottom: 6em;
+  background-color: #f4f4f4;
 }
 
 .nameAndPicture {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -337,11 +351,20 @@ select {
   flex-direction: column;
   gap: 1em;
   align-items: center;
-  justify-content: center;
-  background-color: #8ab0d2;
-  padding: 1em 0.5em 1em 0.5em;
+  justify-content: end;
+  background: #8ab0d2;
+  background: url(https://blog.tubikstudio.com/wp-content/uploads/2021/10/retired-architect.jpg) no-repeat top right/cover;
+  height: 150px;
+  padding: 2em 0.5em 1em 0.5em;
 }
 
+.heading {
+  color: #ffffff !important;
+}
+
+.homePage {
+  background-color: #f4f4f4;
+}
 .homePage .mainContent {
   padding: 1em 0.5em;
 }
@@ -468,9 +491,11 @@ select {
 .adCard {
   box-shadow: 0.4em 0.6em 0.7em rgba(19, 40, 50, 0.2);
   border-radius: 5px;
-  height: 400px;
+  height: 300px;
   width: 180px;
   flex-shrink: 0;
+  background-color: #ffffff;
+  margin-left: 0.5em;
 }
 
 .adCardImgContainer {
@@ -480,7 +505,7 @@ select {
 .adCardImage {
   border-radius: 5px 5px 0px 0px;
   object-fit: cover;
-  height: 200px;
+  height: 150px;
   width: stretch;
 }
 
@@ -533,7 +558,6 @@ select {
   z-index: 1000;
   width: 32px;
   height: 32px;
-  border: 1px green solid;
 }
 
 .titleAndPoints {
@@ -550,11 +574,15 @@ select {
   gap: 10px;
 }
 
+.creator {
+  color: #000000;
+  text-decoration: none;
+}
+
 .profilePicture {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: #ff0000;
 }
 
 .shortInfoSection {
@@ -570,8 +598,13 @@ select {
 .iconText {
   display: flex;
   align-items: center;
+  justify-content: start;
   gap: 0.6em;
   padding-bottom: 0.3em;
+}
+
+.iconOpenedAd {
+  width: 20px;
 }
 
 /*
@@ -586,23 +619,24 @@ select {
   }
 }
 */
+.searchField {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 0.5em;
+  width: stretch;
+}
+
 .inputField {
   background-color: #f4f4f4;
   width: stretch;
   border-radius: 5px;
-  border: solid 1px #ff0000;
+  border: solid 0.5px #132a36;
   padding: 1em;
-  border-color: #132a36;
+  background-color: #ffffff;
 }
 .inputField:focus {
   outline: none;
   background-color: #d9d9d9;
-}
-
-.searchField {
-  display: flex;
-  gap: 0.5em;
-  width: stretch;
 }
 
 .switchContainer {

@@ -1,6 +1,9 @@
+@use '../../abstracts';
+
 .dealsSection {
   display: flex;
   flex-direction: column;
   padding: 8px 10px;
-  gap: 10px;
+  gap: 1em;
+  background-color: abstracts.$white;
 }

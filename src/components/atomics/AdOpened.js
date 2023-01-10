@@ -68,8 +68,9 @@ const adOpen = () => {
         <BodyText>{ad.description}</BodyText>
         {/* get profile and use data from there */}
         <div className="creatorSection">
-          <div className="profilePicture"></div>
-          <Link to={`/profile/${ad.creator}`}>
+          <img className="profilePicture" src={creator.profilePicture}></img>
+
+          <Link className="creator" to={`/profile/${ad.creator}`}>
             <Heading4>
               {creator.name} {creator.surname}
             </Heading4>
@@ -91,7 +92,7 @@ const adOpen = () => {
           </div>
           <BodyText>{ad.date}</BodyText>
           <div className="iconText">
-            <MdAccessTime />
+            <MdAccessTime className="icon" />
             <Heading5>Tid</Heading5>
           </div>
           <BodyText>{ad.time}</BodyText>
