@@ -13,40 +13,33 @@ import Button from '../atomics/Button';
 import { getUserAds } from '../../api/AdsApi';
 import { getUserTags } from '../../api/TagsApi';
 import { getUserData } from '../../api/userApi';
-import OwnProfile from './OwnProfile';
-import OtherProfile from './OtherProfile';
 
-export default function Profile() {
-  const [ads, setAds] = useState([]);
-  const { logout, userData } = useAuth();
-  const navigate = useNavigate();
-  const { currentUser } = useAuth();
+export default function OtherProfile(userId) {
   const [loadAds, setLoadAds] = useState(true);
   const [tags, setTags] = useState([]);
-  const params = useParams();
-  const { userId } = params;
-  const [ownProfile, setOwnProfile] = useState();
+  const [userInfo, setUserInfo] = useState([]);
+  const [ads, setAds] = useState([]);
 
-  // kod som kollar om man själv är current User
-  //hämta egna ads
   useEffect(() => {
     console.log('UserID', userId);
     try {
-      if (userId == currentUser.uid) {
-        console.log(' UserId ', userId);
-        console.log(' currentUser ', currentUser.uid);
-        setOwnProfile(true);
-      }
-      getUserAds(currentUser.uid)
+      getUserData(userId.userId)
+        .then((userData) => {
+          console.log('user Data ', userData);
+          setUserInfo(userData);
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+      getUserAds(userId.userId)
         .then((ads) => {
           setAds(ads);
           setLoadAds(false);
-          console.log('currentUser', currentUser.uid);
-          console.log('visit profile');
+          console.log('ads', ads);
         })
         .catch((error) => console.log(error));
 
-      getUserTags(currentUser.uid)
+      getUserTags(userId)
         .then((tags) => {
           setTags(tags);
         })
@@ -56,24 +49,30 @@ export default function Profile() {
     }
   }, []);
 
-  async function handleLogout(e) {
-    e.preventDefault();
-
-    try {
-      await logout();
-      navigate('/login');
-    } catch (error) {
-      console.log(error.code + error.message);
-    }
-  }
-
   return (
-    <>
-      {ownProfile ? (
-        <OwnProfile></OwnProfile>
-      ) : (
-        <OtherProfile userId={userId}></OtherProfile>
+    <div className="profilePage">
+      <div className="nameAndPicture">
+        <img className="profilePicture" src={testImage}></img>
+        <Heading1>
+          {userInfo.name} {userInfo.surname}{' '}
+        </Heading1>
+      </div>
+      <div className="profileShortInfo">
+        <Heading5>{userInfo.age} år </Heading5>
+        <Heading5>
+          <MdOutlineLocationOn /> {userInfo.city}
+        </Heading5>
+      </div>
+      {tags && <TagsSection tags={tags}></TagsSection>}
+      <BodyText>{userInfo.bio}</BodyText>
+      {!loadAds && (
+        <CategorySection ads={ads} userId={userId.userId}></CategorySection>
       )}
-    </>
+
+      <div className="buttonSticky">
+        {' '}
+        <Button className="buttonSticky">Kontakta annonsör</Button>
+      </div>
+    </div>
   );
 }

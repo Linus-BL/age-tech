@@ -23,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -94,6 +94,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #121212;
 }
 
 ::-webkit-scrollbar {
@@ -103,6 +104,7 @@ select {
 .showMore {
   display: flex;
   align-items: center;
+  color: #121212;
 }
 
 .tags {
@@ -215,27 +217,27 @@ select {
 }
 
 .bodyText {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #121212;
 }
 
 .heading1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1.5em;
   color: #121212;
 }
 
 .heading3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.5em;
 }
 
 .heading4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.125em;
   color: #121212;
@@ -243,7 +245,7 @@ select {
 }
 
 .heading5 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #121212;
@@ -288,6 +290,7 @@ select {
   align-self: start;
   gap: 1em;
   margin: 0 0.5em;
+  padding-bottom: 6em;
 }
 
 .nameAndPicture {
@@ -307,6 +310,17 @@ select {
 .profileShortInfo {
   display: flex;
   justify-content: space-evenly;
+}
+
+.settingsLinks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  text-decoration: 'none';
+  padding-bottom: 0.5em;
+  border-bottom: solid;
+  border-color: #121212;
 }
 
 .buttonSticky {
@@ -335,7 +349,7 @@ select {
 
 .headerAllAds {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
   background-color: #8ab0d2;
 }
@@ -357,7 +371,7 @@ select {
 
 .button {
   background-color: #132a36;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;
@@ -378,7 +392,7 @@ select {
 
 .buttonDisabled {
   background-color: #d9d9d9;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #b3b3b3;
@@ -428,7 +442,7 @@ select {
 
 .chip {
   background-color: #8ab0d2;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #132a36;
@@ -585,7 +599,7 @@ select {
   margin: 1rem;
   border-radius: 50px;
   display: flex;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;
