@@ -12,9 +12,12 @@ import {
   MdAddCircle,
 } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
+import BodyTextLight from '../textComponents/BodyTextLight';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Navbar() {
   const [active, setActive] = useState('anonser');
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     if (active) {
@@ -29,7 +32,7 @@ export default function Navbar() {
       setActive(item);
     }
   };
-  return (
+  return currentUser ? (
     <div className="navContainer">
       <Link
         to="/home"
@@ -37,7 +40,7 @@ export default function Navbar() {
         className="iconTextContainer"
       >
         {active === 'anonser' ? <MdHome /> : <MdOutlineHome />}
-        <p>Anonser</p>
+        <BodyTextLight>Annonser</BodyTextLight>
       </Link>
       <Link
         to="/chat"
@@ -45,7 +48,7 @@ export default function Navbar() {
         className="iconTextContainer"
       >
         {active === 'chat' ? <MdChatBubble /> : <MdOutlineChatBubbleOutline />}
-        <p>Chat</p>
+        <BodyTextLight>Chat</BodyTextLight>
       </Link>
       <Link
         to="/createAd"
@@ -53,7 +56,7 @@ export default function Navbar() {
         className="iconTextContainer"
       >
         {active === 'skapaAnons' ? <MdAddCircle /> : <MdAddCircleOutline />}
-        <p>Skapa anons</p>
+        <BodyTextLight>Skapa annons</BodyTextLight>
       </Link>
       <Link
         to="/shop"
@@ -61,7 +64,7 @@ export default function Navbar() {
         className="iconTextContainer"
       >
         {active === 'shop' ? <MdShoppingCart /> : <MdOutlineShoppingCart />}
-        <p>Shop</p>
+        <BodyTextLight>Shop</BodyTextLight>
       </Link>
       <Link
         to="/profile"
@@ -69,8 +72,10 @@ export default function Navbar() {
         className="iconTextContainer"
       >
         {active === 'profil' ? <MdPerson /> : <MdPersonOutline />}
-        <p>Profil</p>
+        <BodyTextLight>Profil</BodyTextLight>
       </Link>
     </div>
+  ) : (
+    ''
   );
 }
