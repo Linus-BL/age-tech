@@ -33,7 +33,6 @@ export default function Home() {
       getAllTags()
         .then((tags) => {
           setTags(tags);
-          console.log('TAGS ', tags);
         })
         .catch((error) => {
           console.log(error);

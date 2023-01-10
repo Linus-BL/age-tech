@@ -23,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -207,27 +207,27 @@ select {
 }
 
 .bodyText {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1em;
   color: #121212;
 }
 
 .heading1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.5em;
   color: #121212;
 }
 
 .heading3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.5em;
 }
 
 .heading4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.125em;
   color: #121212;
@@ -235,7 +235,7 @@ select {
 }
 
 .heading5 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #121212;
@@ -258,12 +258,7 @@ select {
 }
 
 .formGroup {
-  padding: 1em 0em;
-}
-
-.inputField {
-  padding: 1em;
-  width: stretch;
+  padding: 0.5em 0em;
 }
 
 .signUp {
@@ -309,11 +304,11 @@ select {
 .headerSection {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   align-items: center;
   justify-content: center;
-  height: 200px;
   background-color: #8ab0d2;
+  padding: 1em 0.5em 1em 0.5em;
 }
 
 .homePage .mainContent {
@@ -344,11 +339,12 @@ select {
 
 .button {
   background-color: #132a36;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;
   padding: 1em;
+  width: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -364,7 +360,7 @@ select {
 
 .buttonDisabled {
   background-color: #d9d9d9;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #b3b3b3;
@@ -414,7 +410,7 @@ select {
 
 .chip {
   background-color: #8ab0d2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1em;
   color: #132a36;
@@ -534,22 +530,24 @@ select {
   padding-bottom: 0.3em;
 }
 
+/*
 .inputField {
-  background-color: #f4f4f4;
+  background-color: abstracts.$white;
   width: stretch;
   border-radius: 5px;
   border: none;
+  &:focus {
+    outline: none;
+    background-color: abstracts.$light-gray;
+  }
 }
-.inputField:focus {
-  outline: none;
-  background-color: #d9d9d9;
-}
-
+*/
 .inputField {
   background-color: #f4f4f4;
   width: stretch;
   border-radius: 5px;
   border: solid 1px #ff0000;
+  padding: 1em;
   border-color: #132a36;
 }
 .inputField:focus {
@@ -569,7 +567,7 @@ select {
   margin: 1rem;
   border-radius: 50px;
   display: flex;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1em;
   color: #f4f4f4;

@@ -6,12 +6,14 @@
   width: stretch;
   border-radius: 5px;
   border: solid 1px #ff0000;
+  padding: 1em;
   border-color: abstracts.$primary-color;
   &:focus {
     outline: none;
     background-color: abstracts.$light-gray;
   }
 }
+
 .searchField {
   display: flex;
   gap: 0.5em;
