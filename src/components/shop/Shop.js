@@ -53,7 +53,7 @@ const Shop = () => {
         <DealCard deal={deal3}></DealCard>
         <div className="buttonSticky">
           {' '}
-          <Button>Kontakta annonsör</Button>
+          <Button>Köp fler poäng</Button>
         </div>
       </div>
     </div>
