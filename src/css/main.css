@@ -206,14 +206,6 @@ select {
   gap: 10px;
 }
 
-.buttonSticky {
-  position: -webkit-sticky;
-  position: sticky;
-  position: fixed;
-  padding-bottom: 1em;
-  z-index: 1000;
-}
-
 .bodyText {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -307,16 +299,6 @@ select {
 .profileShortInfo {
   display: flex;
   justify-content: space-evenly;
-}
-
-.buttonSticky {
-  position: -webkit-sticky;
-  position: sticky;
-  position: fixed;
-  bottom: 1em;
-  z-index: 1000;
-  padding: 1em;
-  width: 100vw;
 }
 
 .headerSection {
@@ -601,6 +583,14 @@ select {
 .switchContainer .active {
   background-color: #132a36;
   color: #f4f4f4;
+}
+
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 4em;
+  z-index: 1000;
+  width: stretch;
 }
 
 /*# sourceMappingURL=main.css.map */
