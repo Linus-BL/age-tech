@@ -54,7 +54,6 @@ export async function getAllAds() {
   querySnapshot2.forEach((doc) => {
     ads.push({ id: doc.id, ad: doc.data() });
   });
-  console.log('ALl adds ', ads);
   return ads;
 }
 

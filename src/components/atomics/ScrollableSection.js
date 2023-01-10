@@ -16,11 +16,9 @@ const ScrollableSection = ({ tag, userId }) => {
           console.log(e);
         });
     } else if (userId != null) {
-      console.log('UserID!= null', userId);
       getUserAds(userId)
         .then((ads) => {
           setAds(ads);
-          console.log('ads', ads);
         })
         .catch((error) => console.log(error));
     }

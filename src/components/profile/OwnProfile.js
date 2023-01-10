@@ -30,11 +30,9 @@ export default function OwnProfile() {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
-    console.log('currentUsr', currentUser);
     try {
       getUserData(currentUser.uid)
         .then((userInfo) => {
-          console.log('user Data ', userInfo);
           setUserInfo(userInfo);
         })
         .catch((error) => {
@@ -44,8 +42,6 @@ export default function OwnProfile() {
         .then((ads) => {
           setAds(ads);
           setLoadAds(false);
-          console.log('currentUser', currentUser.uid);
-          console.log('visit profile');
         })
         .catch((error) => console.log(error));
       getUserTags(currentUser.uid)

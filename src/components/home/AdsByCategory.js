@@ -14,11 +14,9 @@ const AllAdsByCategory = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     try {
-      console.log('tagName', tagName);
       get5AdsByTag(tagName)
         .then((ads) => {
           setAds(ads);
-          console.log(ads);
         })
         .catch((error) => {
           console.log('Error', error);

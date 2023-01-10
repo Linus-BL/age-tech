@@ -28,9 +28,10 @@ const Shop = () => {
         <DealCard deal={deal}></DealCard>
         <DealCard deal={deal}></DealCard>
         <DealCard deal={deal}></DealCard>
-      </div>
-      <div className="buttonSticky">
-        <Button>Skaffa fler poäng</Button>
+        <div className="buttonSticky">
+          {' '}
+          <Button>Kontakta annonsör</Button>
+        </div>
       </div>
     </div>
   );

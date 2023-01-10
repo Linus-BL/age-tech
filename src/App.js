@@ -12,12 +12,6 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './components/nav/PrivateRoute';
 import UpdateProfile from './components/profile/UpdateProfile';
-import CoopImage from './coop.png';
-import LinkButton from './components/atomics/LinkButton';
-import Button from './components/atomics/Button';
-import Deal from './components/shop/Deal';
-import Heading5 from './components/textComponents/Heading5';
-
 import Adcard from './components/atomics/AdCard';
 import testImage from './ad_test.jpg';
 import OwnProfile from './components/profile/OwnProfile';

@@ -6,15 +6,11 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 
 const CategorySection = ({ category, userId }) => {
-  console.log('category', category);
-  console.log('userID', userId);
-
   const [profilePage, setProfilePage] = useState(false);
 
   useEffect(() => {
     if (userId != null) {
       setProfilePage(true);
-      console.log('profilePage', profilePage);
     }
   });
 

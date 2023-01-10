@@ -11,10 +11,8 @@ import Button from './Button';
 import Heading5 from '../textComponents/Heading5';
 import Heading4 from '../textComponents/Heading4';
 import { getAdById } from '../../api/AdsApi';
-import TagSection from '../atomics/TagsSection';
 import BackButton from '../atomics/BackButton';
 import { getUserData } from '../../api/userApi';
-import { useAuth } from '../../context/AuthContext';
 
 const adOpen = () => {
   //takes in one ad object though props
