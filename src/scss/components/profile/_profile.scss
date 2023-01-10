@@ -8,6 +8,7 @@
   align-self: start;
   gap: 1em;
   margin: 0 0.5em;
+  padding-bottom: 6em;
 }
 .nameAndPicture {
   width: 100vw;
@@ -27,4 +28,25 @@
 .profileShortInfo {
   display: flex;
   justify-content: space-evenly;
+}
+
+.settingsLinks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  text-decoration: 'none';
+  padding-bottom: 0.5em;
+  border-bottom: solid;
+  border-color: abstracts.$black;
+}
+
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  position: fixed;
+  bottom: 1em;
+  z-index: 1000;
+  padding: 1em;
+  width: 100vw;
 }

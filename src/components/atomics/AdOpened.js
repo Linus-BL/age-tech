@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import BodyText from '../textComponents/BodyText';
 import Heading1 from '../textComponents/Heading1';
 import { MdCalendarToday } from 'react-icons/md';
@@ -10,13 +11,14 @@ import Button from './Button';
 import Heading5 from '../textComponents/Heading5';
 import Heading4 from '../textComponents/Heading4';
 import { getAdById } from '../../api/AdsApi';
-import TagSection from '../atomics/TagsSection';
 import BackButton from '../atomics/BackButton';
+import { getUserData } from '../../api/userApi';
 
 const adOpen = () => {
   //takes in one ad object though props
   const [ad, setAd] = useState([]);
   const [loading, setLoading] = useState();
+  const [creator, setCreator] = useState([]);
   const params = useParams();
   const { id } = params;
 
@@ -29,6 +31,15 @@ const adOpen = () => {
         .then((ad) => {
           setAd(ad);
           console.log('AD', ad);
+          getUserData(ad.creator)
+            .then((creator) => {
+              setCreator(creator);
+              console.log('creator', creator);
+              console.log('creator', ad.creator);
+            })
+            .catch((error) => {
+              console.log('Error', error);
+            });
         })
         .catch((error) => {
           console.log('Error', error);
@@ -58,9 +69,15 @@ const adOpen = () => {
         {/* get profile and use data from there */}
         <div className="creatorSection">
           <div className="profilePicture"></div>
-          <Heading4>{ad.creator}</Heading4>
+          <Link to={`/profile/${ad.creator}`}>
+            <Heading4>
+              {creator.name} {creator.surname}
+            </Heading4>
+          </Link>
         </div>
-        <Button>Kontakta annonsör</Button>
+        <Link to={`/ad/${id}`}>
+          <Button>Kontakta annonsör</Button>
+        </Link>
         <div className="shortInfoSection">
           <div className="iconText">
             {' '}

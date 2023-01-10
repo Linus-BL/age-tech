@@ -94,6 +94,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #121212;
 }
 
 ::-webkit-scrollbar {
@@ -103,6 +104,7 @@ select {
 .showMore {
   display: flex;
   align-items: center;
+  color: #121212;
 }
 
 .tags {
@@ -287,6 +289,7 @@ select {
   align-self: start;
   gap: 1em;
   margin: 0 0.5em;
+  padding-bottom: 6em;
 }
 
 .nameAndPicture {
@@ -308,6 +311,27 @@ select {
   justify-content: space-evenly;
 }
 
+.settingsLinks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  text-decoration: 'none';
+  padding-bottom: 0.5em;
+  border-bottom: solid;
+  border-color: #121212;
+}
+
+.buttonSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  position: fixed;
+  bottom: 1em;
+  z-index: 1000;
+  padding: 1em;
+  width: 100vw;
+}
+
 .headerSection {
   display: flex;
   flex-direction: column;
@@ -324,7 +348,7 @@ select {
 
 .headerAllAds {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
   background-color: #8ab0d2;
 }
