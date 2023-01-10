@@ -5,9 +5,9 @@
   background-color: abstracts.$white;
   width: stretch;
   border-radius: 5px;
-  border: solid 1px #ff0000;
-  padding: 1em;
-  border-color: abstracts.$primary-color;
+  border: solid 0.5px abstracts.$primary-color;
+  padding: 0.7em;
+  
   &:focus {
     outline: none;
     background-color: abstracts.$light-gray;

@@ -590,9 +590,8 @@ select {
   background-color: #f4f4f4;
   width: stretch;
   border-radius: 5px;
-  border: solid 1px #ff0000;
-  padding: 1em;
-  border-color: #132a36;
+  border: solid 0.5px #132a36;
+  padding: 0.7em;
 }
 .inputField:focus {
   outline: none;

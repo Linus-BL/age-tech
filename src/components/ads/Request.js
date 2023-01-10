@@ -1,23 +1,26 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import { collection, addDoc } from 'firebase/firestore';
 import Heading1 from '../textComponents/Heading1';
-
+import TagSearch from '../atomics/TagSearch';
+import { searchableTags } from '../../api/SearchAPI';
+import TagSection from '../atomics/TagsSection';
 export default function Request() {
   const { currentUser } = useAuth();
-
   const [titel, setTitel] = useState('');
   const [description, setDescription] = useState('');
-  const [tags, setTags] = useState('');
+  const [tags, setTags] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const [place, setPlace] = useState('');
   const [compensation, setCompensation] = useState('');
   const [time, setTime] = useState('');
   const [date, setDate] = useState('');
+  const [displayTags, setDisplayTags] = useState([]);
+  const [userTags, setUserTags] = useState([]);
 
   const uid = currentUser.uid;
 
@@ -25,7 +28,9 @@ export default function Request() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    console.log(String(date))
+    console.log(userTags)
+    
     addDoc(collection(db, 'adRequest'), {
       titel: titel,
       description: description,
@@ -40,14 +45,24 @@ export default function Request() {
 
     setTitel('');
     setDescription('');
-    setTags('');
+    setTags([]);
     setPlace('');
     setCompensation('');
     setTime('');
     setDate('');
-
     navigate('/home');
   };
+
+  useEffect(() => {
+    searchableTags();
+  }, []);
+
+  const handleUserTags = (childData) =>{
+    setUserTags([...userTags, childData])
+}
+const handleDisplayTags = (childData) =>{
+  setDisplayTags([...displayTags, childData]);
+}
 
   return (
     <>
@@ -80,17 +95,6 @@ export default function Request() {
             <input
               className="inputField"
               type="text"
-              id="tags"
-              name="tags"
-              value={tags}
-              placeholder="Taggar"
-              onChange={(event) => setTags(event.target.value)}
-            />
-          </div>
-          <div className="formGroup">
-            <input
-              className="inputField"
-              type="text"
               id="imageUrl"
               name="imageUrl"
               value={imageUrl}
@@ -112,7 +116,7 @@ export default function Request() {
           <div className="formGroup">
             <input
               className="inputField"
-              type="text"
+              type="time"
               id="time"
               name="time"
               value={time}
@@ -122,13 +126,13 @@ export default function Request() {
           </div>
           <div className="formGroup">
             <input
-              className="inputField"
-              type="text"
+            className="inputField"
+              type="date"
               id="date"
               name="date"
               value={date}
               placeholder="Datum"
-              onChange={(event) => setTime(event.target.value)}
+              onChange={(event) => setDate(event.target.value)}
             />
           </div>
           <div className="formGroup">
@@ -142,7 +146,22 @@ export default function Request() {
               onChange={(event) => setCompensation(event.target.value)}
             />
           </div>
+          <div className="formGroup">
+              <TagSearch 
+              passUserTags={handleUserTags}
+              passDisplayTags={handleDisplayTags}
+              userTags={userTags}/>
+              
+              <TagSection
+                  mini={true}
+                  primary={false}
+                  sectionTitle={'Valda taggar'}
+                  tags={displayTags}
+                ></TagSection>
+          </div>
 
+
+    
           <input
             //disabled={loading}
             className="button"
