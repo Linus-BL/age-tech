@@ -28,7 +28,7 @@ import CreateAd from './components/ads/CreateAd';
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Router>
         <AuthProvider>
           <Switch>
@@ -84,7 +84,7 @@ function App() {
           <Navbar />
         </AuthProvider>
       </Router>
-    </>
+    </div>
   );
 }
 

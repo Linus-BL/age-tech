@@ -98,15 +98,17 @@ export async function getAdById(id) {
   const col1 = 'adOffer';
   const col2 = 'adRequest';
   const docRef1 = doc(db, col1, id);
-  const docSnap1 = await getDoc(docRef1);
+  const docRef2 = doc(db, col2, id);
 
-  if (!docSnap1) {
-    const docRef2 = doc(db, col2, id);
-    const docSnap2 = await getDoc(docRef2);
+  const docSnap1 = await getDoc(docRef1);
+  const docSnap2 = await getDoc(docRef2);
+
+  // if docSnap1 empty (offers) -> get from docsnap 2 (requests)
+  if (!docSnap1.data()) {
     console.log(docSnap2.data());
     return docSnap2.data();
   } else {
-    console.log(docSnap1.data());
+    console.log(docSnap1);
     return docSnap1.data();
   }
 }

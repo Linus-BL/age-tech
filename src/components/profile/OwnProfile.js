@@ -106,10 +106,6 @@ export default function OwnProfile() {
       <div className="settingsLinks" onClick={handleLogout}>
         <BodyText>Logga ut </BodyText> <MdKeyboardArrowRight />
       </div>
-      <div className="buttonSticky">
-        {' '}
-        <Button className="buttonSticky">Kontakta annonsör</Button>
-      </div>
     </div>
   );
 }
