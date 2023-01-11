@@ -4,7 +4,9 @@
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
-  background-color: abstracts.$secondary-color;
+  background-color: abstracts.$white;
+  justify-content: center;
+  align-items: center;
 }
 .heading {
   display: flex;
@@ -16,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
-  padding: 10px 10px 10px 10px;
-  gap: 10px 10px;
-  justify-content: space-between;
+  gap: 0.8em 0.8em;
+  justify-content: center;
+  height: calc(100vh - 3.5em);
 }

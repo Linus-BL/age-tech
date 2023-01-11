@@ -13,11 +13,13 @@ import Heading4 from '../textComponents/Heading4';
 import { getAdById } from '../../api/AdsApi';
 import BackButton from '../atomics/BackButton';
 import { getUserData } from '../../api/userApi';
-
+import TagSection from './TagsSection';
+import { getSpecificTag } from '../../api/TagsApi';
 const adOpen = () => {
   //takes in one ad object though props
   const [ad, setAd] = useState([]);
-  const [loading, setLoading] = useState();
+  const [tags, setTags] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [creator, setCreator] = useState([]);
   const params = useParams();
   const { id } = params;
@@ -45,6 +47,19 @@ const adOpen = () => {
     }
   }, []);
 
+  useEffect(() => {
+    console.log('andra userEFfektiv körs');
+
+    if (!loading) {
+      console.log('ad', ad);
+      ad.tags.forEach((tag) => {
+        getSpecificTag(tag).then((tagObj) => {
+          setTags((tags) => [...tags, tagObj]);
+        });
+      });
+    }
+  }, [ad]);
+
   return (
     <div className="adOpen">
       <div className="openedAdImgContainer">
@@ -63,7 +78,11 @@ const adOpen = () => {
         <BodyText>{ad.description}</BodyText>
         {/* get profile and use data from there */}
         <div className="creatorSection">
-          <img className="profilePicture" src={creator.profilePicture}></img>
+          <img
+            className="profilePicture"
+            src={creator.profilePicture}
+            alt="profile picture"
+          ></img>
 
           <Link className="creator" to={`/profile/${ad.creator}`}>
             <Heading4>
@@ -92,7 +111,7 @@ const adOpen = () => {
           </div>
           <BodyText>{ad.time}</BodyText>
         </div>
-        {/* <TagSection tags={ad.tags}></TagSection> */}
+        <TagSection tags={tags} sectionTitle=""></TagSection>
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import ScrollableSection from './ScrollableSection';
 import Heading3 from '../textComponents/Heading3';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import { MdArrowForwardIos } from 'react-icons/md';
 
 const CategorySection = ({ active, category, userId }) => {
   const [profilePage, setProfilePage] = useState(false);

@@ -10,19 +10,17 @@ import { db } from '../firebase';
 
 export async function getSpecificTag(tagType) {
   // creates reference to the collection which to query
-  const col = 'tags';
+  const col = 'tag';
   const ref = collection(db, col);
-  let tags = [];
+  let tag;
 
   // create query against collection
   const q = query(ref, where('name', '==', tagType));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, '=>', doc.data());
-    tags.push({ id: doc.id, ad: doc.data() });
+    tag = { id: doc.id, name: doc.data().name };
   });
-  console.log(tags);
-  return tags;
+  return tag;
 }
 
 export async function getAllTags() {
@@ -43,10 +41,10 @@ export async function getUserTags(userId) {
   const docRef = doc(db, col, userId);
   getDoc(docRef)
     .then((doc) => {
-      console.log(doc.data());
-      return doc.data().tags;
+      console.log('tags i tasAPi', doc.data().tags);
+      return doc.data();
     })
     .catch((error) => {
-      console.log(error);
+      console.log(error.data);
     });
 }
