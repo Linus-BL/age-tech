@@ -90,7 +90,7 @@ const adOpen = () => {
             </Heading4>
           </Link>
         </div>
-        <Link to={`/ad/${id}`}>
+        <Link to={`/privateChat`}>
           <Button>Kontakta annonsör</Button>
         </Link>
         <div className="shortInfoSection">
