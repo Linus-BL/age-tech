@@ -14,26 +14,25 @@ export default function Home() {
   const [active, setActive] = useState('adOffer');
   const [checkoutTags, setCheckoutTags] = useState([]);
 
-  // function to get random tags. Recursive to repeat randomization in case tag alreade has been randomized. 
-  function getRandomTags(i, randomTags){
-    randomTags=[];
+  // function to get random tags. Recursive to repeat randomization in case tag alreade has been randomized.
+  function getRandomTags(i, randomTags) {
+    randomTags = [];
     let n = tags.length;
-    while(i > 0){
-      let random = Math.floor(Math.random()*n)
+    while (i > 0) {
+      let random = Math.floor(Math.random() * n);
       let tag = tags[random];
-      if(randomTags.some(t => t.id == tag.id)){
+      if (randomTags.some((t) => t.id == tag.id)) {
         getRandomTags(i, randomTags);
-      }else{
+      } else {
         i--;
         randomTags.push(tag);
       }
     }
-   return randomTags;
+    return randomTags;
   }
 
   useEffect(() => {
     try {
-
       getAllTags()
         .then((tags) => {
           setTags(tags);
@@ -41,24 +40,21 @@ export default function Home() {
         .catch((error) => {
           console.log(error);
         });
-        //getRandomTags();
-        
-        setLoading(false);
-        
+      //getRandomTags();
+
+      setLoading(false);
     } catch (e) {
       console.log(e);
     }
   }, []);
 
-
-// set random tags
-useEffect(()=>{
-  if(!loading){
-    let tags = []
-    setCheckoutTags(getRandomTags(5,tags))
-  }
-},[tags])
-
+  // set random tags
+  useEffect(() => {
+    if (!loading) {
+      let tags = [];
+      setCheckoutTags(getRandomTags(5, tags));
+    }
+  }, [tags]);
 
   const switchData = {
     buttonOne: 'Erbjudna',
@@ -68,8 +64,7 @@ useEffect(()=>{
     activeButton: 'buttonOne',
   };
 
- 
-  function updateActive(data){
+  function updateActive(data) {
     setActive(data);
   }
 
@@ -79,7 +74,10 @@ useEffect(()=>{
       <SwitchButton updateActive={updateActive} data={switchData} />
       {!loading && (
         <div className="mainContent">
-          <TagSection sectionTitle="Kolla in dessa" tags={checkoutTags}></TagSection>
+          <TagSection
+            sectionTitle="Kolla in dessa"
+            tags={checkoutTags}
+          ></TagSection>
           <AllCategories active={active} categories={tags}></AllCategories>
         </div>
       )}

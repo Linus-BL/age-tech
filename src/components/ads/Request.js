@@ -28,9 +28,9 @@ export default function Request() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(String(date))
-    console.log(userTags)
-    
+    console.log(String(date));
+    console.log(userTags);
+
     addDoc(collection(db, 'adRequest'), {
       titel: titel,
       description: description,
@@ -57,12 +57,12 @@ export default function Request() {
     searchableTags();
   }, []);
 
-  const handleUserTags = (childData) =>{
-    setUserTags([...userTags, childData])
-}
-const handleDisplayTags = (childData) =>{
-  setDisplayTags([...displayTags, childData]);
-}
+  const handleUserTags = (childData) => {
+    setUserTags([...userTags, childData]);
+  };
+  const handleDisplayTags = (childData) => {
+    setDisplayTags([...displayTags, childData]);
+  };
 
   return (
     <>
@@ -126,7 +126,7 @@ const handleDisplayTags = (childData) =>{
           </div>
           <div className="formGroup">
             <input
-            className="inputField"
+              className="inputField"
               type="date"
               id="date"
               name="date"
@@ -147,21 +147,20 @@ const handleDisplayTags = (childData) =>{
             />
           </div>
           <div className="formGroup">
-              <TagSearch 
+            <TagSearch
               passUserTags={handleUserTags}
               passDisplayTags={handleDisplayTags}
-              userTags={userTags}/>
-              
-              <TagSection
-                  mini={true}
-                  primary={false}
-                  sectionTitle={'Valda taggar'}
-                  tags={displayTags}
-                ></TagSection>
+              userTags={userTags}
+            />
+
+            <TagSection
+              mini={true}
+              primary={false}
+              sectionTitle={'Valda taggar'}
+              tags={displayTags}
+            ></TagSection>
           </div>
 
-
-    
           <input
             //disabled={loading}
             className="button"

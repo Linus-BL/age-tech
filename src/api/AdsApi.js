@@ -69,9 +69,9 @@ export async function getAllAdsByTag(tag) {
   adsRef = collection(db, col2);
   const q2 = query(adsRef, where('tags', 'array-contains-any', [tag]));
   const querySnapshot2 = await getDocs(q2);
-  
+
   querySnapshot2.forEach((doc) => {
-    if(!ads.some(ad => ad.id === doc.id)){
+    if (!ads.some((ad) => ad.id === doc.id)) {
       ads.push({ id: doc.id, ad: doc.data() });
     }
   });
@@ -111,18 +111,18 @@ export async function getAdById(id) {
   }
 }
 
-export async function getAdOffers(){
+export async function getAdOffers() {
   const col = 'adOffer';
   let ads = [];
   const querySnapshot = await getDocs(collection(db, col));
   querySnapshot.forEach((doc) => {
     ads.push({ id: doc.id, ad: doc.data() });
   });
-  
+
   return ads;
 }
 
-export async function getAdRequests(){
+export async function getAdRequests() {
   const col = 'adRequest';
   let ads = [];
 

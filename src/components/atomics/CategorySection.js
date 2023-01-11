@@ -12,7 +12,7 @@ const CategorySection = ({ active, category, userId }) => {
     if (userId != null) {
       setProfilePage(true);
     }
-  },[active]);
+  }, [active]);
 
   return (
     <div>
@@ -37,7 +37,11 @@ const CategorySection = ({ active, category, userId }) => {
       )}
 
       <div className="scrollableSection">
-        <ScrollableSection active={active} tag={category} userId={userId}></ScrollableSection>
+        <ScrollableSection
+          active={active}
+          tag={category}
+          userId={userId}
+        ></ScrollableSection>
       </div>
     </div>
   );

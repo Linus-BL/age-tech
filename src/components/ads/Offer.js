@@ -28,7 +28,7 @@ export default function Offer() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     addDoc(collection(db, 'adOffer'), {
       titel: titel,
       description: description,
@@ -55,12 +55,12 @@ export default function Offer() {
     searchableTags();
   }, []);
 
-  const handleUserTags = (childData) =>{
-    setUserTags([...userTags, childData])
-}
-const handleDisplayTags = (childData) =>{
-  setDisplayTags([...displayTags, childData]);
-}
+  const handleUserTags = (childData) => {
+    setUserTags([...userTags, childData]);
+  };
+  const handleDisplayTags = (childData) => {
+    setDisplayTags([...displayTags, childData]);
+  };
   return (
     <>
       <div className="loginPage">
@@ -144,17 +144,18 @@ const handleDisplayTags = (childData) =>{
             />
           </div>
           <div className="formGroup">
-              <TagSearch 
+            <TagSearch
               passUserTags={handleUserTags}
               passDisplayTags={handleDisplayTags}
-              userTags={userTags}/>
-              
-              <TagSection
-                  mini={true}
-                  primary={false}
-                  sectionTitle={'Valda taggar'}
-                  tags={displayTags}
-                ></TagSection>
+              userTags={userTags}
+            />
+
+            <TagSection
+              mini={true}
+              primary={false}
+              sectionTitle={'Valda taggar'}
+              tags={displayTags}
+            ></TagSection>
           </div>
           <input
             //disabled={loading}

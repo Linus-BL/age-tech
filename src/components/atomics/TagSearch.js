@@ -9,32 +9,28 @@ import {
 } from 'react-instantsearch-hooks-web';
 import { client } from '../../algolia';
 
+function TagSearch({ passUserTags, passDisplayTags, displayTags, userTags }) {
+  useEffect(() => {
+    searchableTags();
+  }, []);
 
-function TagSearch({passUserTags, passDisplayTags, displayTags, userTags}) {
-
-    useEffect(() => {
-      searchableTags();
-    }, []);
-  
-    /**
+  /**
        Component that displays search hits
        */
-    function Hit({ hit }) {
-      function handleClick() {
-        
-        let tag = { name: hit.name, id: hit.objectID };
-        passUserTags(tag.name);
-        passDisplayTags(tag)
-
-      }
-  
-      return (
-        <div onClick={handleClick}>
-          <p>{hit.name}</p>
-        </div>
-      );
+  function Hit({ hit }) {
+    function handleClick() {
+      let tag = { name: hit.name, id: hit.objectID };
+      passUserTags(tag.name);
+      passDisplayTags(tag);
     }
-      /* Function to not show tags when search field is empty */
+
+    return (
+      <div onClick={handleClick}>
+        <p>{hit.name}</p>
+      </div>
+    );
+  }
+  /* Function to not show tags when search field is empty */
   function EmptyQueryBoundary({ children, fallback }) {
     const { indexUiState } = useInstantSearch();
 
@@ -75,25 +71,25 @@ function TagSearch({passUserTags, passDisplayTags, displayTags, userTags}) {
   }
   return (
     <div className="search">
-        <InstantSearch
-          searchClient={client}
-          indexName={'Tags'}
-          className="formGroup"
-        >
-          <SearchBox
-            translations={{
-              placeholder: 'Ex: Skidåkning..',
-            }}
-          />{' '}
-          {/*Sök button fix*/}
-          <EmptyQueryBoundary fallback={null}>
-            <NoResultsBoundary fallback={<NoResults />}>
-              <Hits hitComponent={Hit}></Hits>
-            </NoResultsBoundary>
-          </EmptyQueryBoundary>
-        </InstantSearch>
-      </div>
-  )
+      <InstantSearch
+        searchClient={client}
+        indexName={'Tags'}
+        className="formGroup"
+      >
+        <SearchBox
+          translations={{
+            placeholder: 'Ex: Skidåkning..',
+          }}
+        />{' '}
+        {/*Sök button fix*/}
+        <EmptyQueryBoundary fallback={null}>
+          <NoResultsBoundary fallback={<NoResults />}>
+            <Hits hitComponent={Hit}></Hits>
+          </NoResultsBoundary>
+        </EmptyQueryBoundary>
+      </InstantSearch>
+    </div>
+  );
 }
 
-export default TagSearch
+export default TagSearch;

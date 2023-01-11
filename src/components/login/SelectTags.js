@@ -28,14 +28,14 @@ function SelectTags() {
     searchableTags();
   }, []);
 
-  const handleUserTags = (childData) =>{
-    setUserTags([...userTags, childData])
-    console.log(childData)
-    console.log(userTags)
-}
-const handleDisplayTags = (childData) =>{
-  setDisplayTags([...displayTags, childData]);
-}
+  const handleUserTags = (childData) => {
+    setUserTags([...userTags, childData]);
+    console.log(childData);
+    console.log(userTags);
+  };
+  const handleDisplayTags = (childData) => {
+    setDisplayTags([...displayTags, childData]);
+  };
 
   /**
    * Handles submission
@@ -55,10 +55,11 @@ const handleDisplayTags = (childData) =>{
         </p>
       </div>
       <div className="search">
-        <TagSearch 
+        <TagSearch
           passUserTags={handleUserTags}
           passDisplayTags={handleDisplayTags}
-          userTags={userTags}/>
+          userTags={userTags}
+        />
       </div>
 
       <div className="chosenTags">

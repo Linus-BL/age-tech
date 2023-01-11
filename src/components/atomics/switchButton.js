@@ -17,7 +17,7 @@ const switchData = {
 
 const switchButton = (props) => {
   const [active, setActive] = useState(props.data.activeButton);
-  const adOffer  = 'adOffer';
+  const adOffer = 'adOffer';
   const adRequest = 'adRequest';
 
   useEffect(() => {
@@ -31,9 +31,9 @@ const switchButton = (props) => {
   const onSetActiveMenuItem = (item) => {
     if (item !== active) {
       setActive(item);
-      if(item == 'buttonOne'){
-        props.updateActive(adOffer)
-      }else{
+      if (item == 'buttonOne') {
+        props.updateActive(adOffer);
+      } else {
         props.updateActive(adRequest);
       }
     }
