@@ -84,6 +84,7 @@ select {
   gap: 0.5em;
   overflow-x: scroll;
   padding-bottom: 1em;
+  padding-right: 0.5em;
   margin-left: -0.5em;
   margin-right: -0.5em;
 }
@@ -92,6 +93,7 @@ select {
 }
 .scrollableSection .adCard:first-child {
   padding-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 ::-webkit-scrollbar {
@@ -373,7 +375,9 @@ select {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
-  background-color: #8ab0d2;
+  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
@@ -386,9 +390,9 @@ select {
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
-  padding: 10px 10px 10px 10px;
-  gap: 10px 10px;
-  justify-content: space-between;
+  gap: 0.8em 0.8em;
+  justify-content: center;
+  height: calc(100vh - 3.5em);
 }
 
 .button {
@@ -429,6 +433,7 @@ select {
   width: 32px;
   height: 32px;
   z-index: 1000;
+  display: flex;
 }
 
 .backButtonOnImage {
@@ -443,6 +448,8 @@ select {
 .arrowBlack {
   width: stretch;
   height: stretch;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrowWhite {
@@ -495,7 +502,6 @@ select {
   width: 180px;
   flex-shrink: 0;
   background-color: #ffffff;
-  margin-left: 0.5em;
 }
 
 .adCardImgContainer {
@@ -532,6 +538,8 @@ select {
 
 .informationContentAd {
   padding: 10px;
+  padding-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .openedAdImgContainer {

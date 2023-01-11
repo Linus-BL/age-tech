@@ -45,30 +45,6 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    try {
-      getAllAds()
-        .then((ads) => {
-          setAds(ads);
-        })
-        .catch((error) => {
-          console.log('Error', error);
-        });
-
-      getAllTags()
-        .then((tags) => {
-          setTags(tags);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
-
   const switchData = {
     buttonOne: 'Erbjudna',
     buttonTwo: 'Efterfrågade',
