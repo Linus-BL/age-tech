@@ -639,7 +639,7 @@ select {
   width: stretch;
   border-radius: 5px;
   border: solid 0.5px #132a36;
-  padding: 1em;
+  padding: 0.7em;
   background-color: #ffffff;
 }
 .inputField:focus {

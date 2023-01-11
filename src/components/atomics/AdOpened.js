@@ -24,22 +24,15 @@ const adOpen = () => {
   const params = useParams();
   const { id } = params;
 
-  console.log('id from params ', id);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     try {
       getAdById(id)
         .then((ad) => {
           setAd(ad);
-          console.log('AD', ad);
-          console.log('ad.tag', ad.tags);
-
           getUserData(ad.creator)
             .then((creator) => {
               setCreator(creator);
-              console.log('creator', creator);
-              console.log('creator', ad.creator);
             })
             .catch((error) => {
               console.log('Error', error);
