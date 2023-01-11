@@ -24,6 +24,8 @@ import AllAdsByCategory from './components/home/AdsByCategory';
 import Navbar from './components/nav/Navbar';
 import AllAdsUser from './components/profile/AllAdsUser';
 import CreateAd from './components/ads/CreateAd';
+import Chat from './components/chat/Chat';
+import PrivateChat from './components/chat/PrivateChat';
 
 function App() {
   return (
@@ -72,7 +74,12 @@ function App() {
             <Route path="/createAd" element={<PrivateRoute />}>
               <Route path="" element={<CreateAd />} />
             </Route>
-
+            <Route path="/chat" element={<PrivateRoute />}>
+              <Route path="" element={<Chat />} />
+            </Route>
+            <Route path="/privateChat" element={<PrivateRoute />}>
+              <Route path="" element={<PrivateChat />} />
+            </Route>
             <Route path="/signup" element={<Signup />} />
             <Route exact path="/" element={<Login />} />
             <Route path="/forgotPassword" element={<ForgotPassword />} />
