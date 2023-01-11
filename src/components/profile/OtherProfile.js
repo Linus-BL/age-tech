@@ -9,6 +9,7 @@ import Button from '../atomics/Button';
 import { getUserAds } from '../../api/AdsApi';
 import { getSpecificTag } from '../../api/TagsApi';
 import { getUserData } from '../../api/userApi';
+import { useNavigate } from 'react-router-dom';
 
 export default function OtherProfile(userId) {
   const [loadAds, setLoadAds] = useState(true);
@@ -16,6 +17,7 @@ export default function OtherProfile(userId) {
   const [tags, setTags] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [ads, setAds] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -51,6 +53,12 @@ export default function OtherProfile(userId) {
     }
   }, [userInfo]);
 
+  function handleOnClick() {
+    console.log("hej")
+    navigate('/privateChat');
+
+  }
+
   return (
     <div className="profilePage">
       <div className="nameAndPicture">
@@ -71,9 +79,9 @@ export default function OtherProfile(userId) {
         <CategorySection ads={ads} userId={userId.userId}></CategorySection>
       )}
 
-      <div className="buttonSticky">
+      <div className="buttonSticky" onClick={handleOnClick}>
         {' '}
-        <Button className="buttonSticky">Kontakta annonsör</Button>
+        <Button className="buttonSticky" >Kontakta annonsör</Button>
       </div>
     </div>
   );
