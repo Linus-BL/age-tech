@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-const CategorySection = ({ category, userId }) => {
+const CategorySection = ({ active, category, userId }) => {
   const [profilePage, setProfilePage] = useState(false);
 
   useEffect(() => {
     if (userId != null) {
       setProfilePage(true);
     }
-  });
+  }, [active]);
 
   return (
     <div>
@@ -37,7 +37,11 @@ const CategorySection = ({ category, userId }) => {
       )}
 
       <div className="scrollableSection">
-        <ScrollableSection tag={category} userId={userId}></ScrollableSection>
+        <ScrollableSection
+          active={active}
+          tag={category}
+          userId={userId}
+        ></ScrollableSection>
       </div>
     </div>
   );

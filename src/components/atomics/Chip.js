@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Chip = ({ tagName, primary = true, mini = false }) => {
   if (mini) {
     return (
-      <div className="chip mini">
+      <div className={primary ? 'chip mini' : 'chip secondary mini'}>
         <p>{tagName}</p>
       </div>
     );

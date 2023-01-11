@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AdCard from '../atomics/AdCard';
 import Heading1 from '../textComponents/Heading1';
 import { useParams } from 'react-router-dom';
-import { get5AdsByTag } from '../../api/AdsApi';
+import { getAllAdsByTag } from '../../api/AdsApi';
 import BackButton from '../atomics/BackButton';
 
 const AllAdsByCategory = () => {
@@ -14,7 +14,7 @@ const AllAdsByCategory = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     try {
-      get5AdsByTag(tagName)
+      getAllAdsByTag(tagName)
         .then((ads) => {
           setAds(ads);
         })
