@@ -9,7 +9,6 @@ import Heading5 from '../textComponents/Heading5';
 import TagsSection from '../atomics/TagsSection';
 import BodyText from '../textComponents/BodyText';
 import CategorySection from '../atomics/CategorySection';
-import Button from '../atomics/Button';
 
 import { MdOutlineLocationOn } from 'react-icons/md';
 import { MdKeyboardArrowRight } from 'react-icons/md';

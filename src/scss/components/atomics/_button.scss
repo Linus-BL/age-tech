@@ -21,6 +21,7 @@
   &:active {
     background-color: abstracts.$black;
   }
+
 }
 .buttonDisabled {
   background-color: abstracts.$light-gray;
@@ -33,4 +34,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+}
+
+.secondaryBtn{
+  background-color: abstracts.$white !important;
+  border: 2px solid abstracts.$primary-color;
+  color: abstracts.$primary-color;
 }

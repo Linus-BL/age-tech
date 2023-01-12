@@ -25,6 +25,7 @@ import SelectTags from './components/login/SelectTags';
 import AllAdsByCategory from './components/home/AdsByCategory';
 import AllAdsUser from './components/profile/AllAdsUser';
 import CreateAd from './components/ads/CreateAd';
+import Transaction from './components/atomics/Transaction';
 
 function App() {
   return (
@@ -74,6 +75,9 @@ function App() {
               <Route path="" element={<Request />} />
             </Route>
             <Route path="/createAd" element={<PrivateRoute />}>
+              <Route path="" element={<CreateAd />} />
+            </Route>
+            <Route path="/transaction/:id" element={<Transaction />}>
               <Route path="" element={<CreateAd />} />
             </Route>
 
