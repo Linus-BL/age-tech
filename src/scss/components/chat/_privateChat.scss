@@ -1,0 +1,98 @@
+@use '../../abstracts';
+@use '../../base';
+
+.privateChatHeader {
+  height: 4.125em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  .backButton {
+    margin-left: 0.5em;
+  }
+
+  img {
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+  }
+  h5,
+  h6,
+  p {
+    margin: 0.2em 0;
+  }
+}
+
+.privateChatContainer {
+  background-color: abstracts.$white;
+  padding: 0 0.5em;
+  height: calc(100vh - 4.125em - 3.5em);
+
+  .chatArea {
+    height: calc(100vh - 4.125em - 3.5em - 3.75em);
+
+    .chatMsg {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto 1rem;
+      width: fit-content;
+      max-width: 70%;
+      padding: 0.5rem 1rem;
+    }
+    .sent {
+      background-color: abstracts.$white;
+      border: 2px solid abstracts.$primary-color;
+      border-radius: 1em 1em 0 1em;
+      align-self: flex-start;
+      margin-right: 0;
+    }
+    .received {
+      background-color: abstracts.$secondary-color;
+      border-radius: 1em 1em 1em 0;
+      margin-left: 1.5em;
+
+      img {
+        height: 1em;
+        width: 1em;
+        border-radius: 50%;
+        position: absolute;
+        left: 0.5em;
+        margin-top: 1em;
+      }
+    }
+    .timeSent {
+      position: absolute;
+      bottom: 36.5em;
+      right: 1.5em;
+      width: fit-content;
+      font-size: 10px;
+    }
+  }
+  .keyboardContainer {
+    position: absolute;
+    height: 3.75em;
+    bottom: 3.75em;
+    left: 0;
+    width: stretch;
+    padding: 0.5em;
+    //border-top: 1px solid abstracts.$primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Input {
+      border: 1px solid abstracts.$primary-color;
+      border-radius: 0.3125em;
+      padding: 0.5em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      svg {
+        height: 2em;
+        width: 2em;
+      }
+    }
+  }
+}
