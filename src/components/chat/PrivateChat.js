@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BodyText from '../textComponents/BodyText';
 import Heading6 from '../textComponents/Heading6';
 import BackButton from '../atomics/BackButton';
@@ -6,13 +6,32 @@ import Button from '../atomics/Button';
 import TextInput from '../atomics/TextInput';
 import { MdSend } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import CryptoJS from 'crypto-js';
 
 export default function PrivateChat() {
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
+  const JaneDoe = 'vRa8Dcy4uYd3tS8WMPY1vylEyjB3';
+  const adId = 'LCFPetVhYQMV9ta5AupL';
+  const myID = currentUser.uid;
+  const creator = JaneDoe;
+  const users = {
+    creator: creator,
+    user: myID,
+  };
+  const userString = JSON.stringify(users);
+  const salt = 'kiyK7CH3udgJ';
 
   const navigateTransaction = () => {
-    navigate('/transaction');
+    // encrypt userdata from params
+    var cipher = CryptoJS.AES.encrypt(userString, salt).toString();
+    //replace special characters (they can messup the url routing)
+    cipher = encodeURIComponent(cipher.toString('base64'));
+    console.log(cipher);
+    navigate(`/transaction/${adId}/${cipher}`);
   };
+
   return (
     <>
       <div className="privateChatHeader">

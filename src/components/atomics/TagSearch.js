@@ -60,7 +60,7 @@ function TagSearch({ passUserTags, passDisplayTags, displayTags, userTags }) {
 
   function NoResults() {
     const { indexUiState } = useInstantSearch();
-    console.log("no results")
+    console.log('no results');
 
     return (
       <div className="noSearchResults">

@@ -25,6 +25,7 @@ import SelectTags from './components/login/SelectTags';
 import AllAdsByCategory from './components/home/AdsByCategory';
 import AllAdsUser from './components/profile/AllAdsUser';
 import CreateAd from './components/ads/CreateAd';
+import Transaction from './components/atomics/Transaction';
 import Chat from './components/chat/Chat';
 import PrivateChat from './components/chat/PrivateChat';
 
@@ -77,6 +78,9 @@ function App() {
             </Route>
             <Route path="/createAd" element={<PrivateRoute />}>
               <Route path="" element={<CreateAd />} />
+            </Route>
+            <Route path="/transaction" element={<PrivateRoute />}>
+              <Route path="/transaction/:adId/:u" element={<Transaction />} />
             </Route>
             <Route path="/chat" element={<PrivateRoute />}>
               <Route path="" element={<Chat />} />

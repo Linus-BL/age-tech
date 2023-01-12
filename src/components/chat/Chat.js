@@ -13,7 +13,7 @@ export default function Chat() {
       <div className="messageContainer">
         <Link to="/privateChat">
           <div className="chatCard">
-            <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"></img>
+            <img src="https://images.unsplash.com/photo-1608198093039-81259e1b10e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80"></img>
             <div className="chatCardText">
               <Heading5>Baka bröd med mig</Heading5>
               <Heading6>Jane Doe</Heading6>

@@ -54,9 +54,8 @@ export default function OtherProfile(userId) {
   }, [userInfo]);
 
   function handleOnClick() {
-    console.log("hej")
+    console.log('hej');
     navigate('/privateChat');
-
   }
 
   return (
@@ -81,7 +80,7 @@ export default function OtherProfile(userId) {
 
       <div className="buttonSticky" onClick={handleOnClick}>
         {' '}
-        <Button className="buttonSticky" >Kontakta annonsör</Button>
+        <Button className="buttonSticky">Kontakta annonsör</Button>
       </div>
     </div>
   );
