@@ -14,7 +14,7 @@ import { MdOutlineLocationOn } from 'react-icons/md';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import { getUserAds } from '../../api/AdsApi';
-import { getUserTags } from '../../api/TagsApi';
+import { getSpecificTag } from '../../api/TagsApi';
 import { getUserData } from '../../api/userApi';
 
 export default function OwnProfile() {
@@ -23,7 +23,6 @@ export default function OwnProfile() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [loadAds, setLoadAds] = useState(true);
-  const params = useParams();
   const [userInfo, setUserInfo] = useState([]);
   const [ads, setAds] = useState([]);
   const [tags, setTags] = useState([]);
@@ -43,15 +42,24 @@ export default function OwnProfile() {
           setLoadAds(false);
         })
         .catch((error) => console.log(error));
-      getUserTags(currentUser.uid)
-        .then((tags) => {
-          setTags(tags);
-        })
-        .catch((error) => [console.log(error)]);
     } catch (e) {
       console.log(e);
     }
   }, []);
+
+  useEffect(() => {
+    if (!loadAds && userInfo.tags) {
+      userInfo.tags.forEach((tag) => {
+        getSpecificTag(tag)
+          .then((tagObj) => {
+            if (!tags.some((tags) => tags.id == tagObj.id)) {
+              setTags((tags) => [...tags, tagObj]);
+            }
+          })
+          .catch((error) => [console.log(error)]);
+      });
+    }
+  }, [userInfo, loadAds]);
 
   async function handleLogout(e) {
     e.preventDefault();

@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
 import Heading1 from '../textComponents/Heading1';
 import Heading5 from '../textComponents/Heading5';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import TagsSection from '../atomics/TagsSection';
 import BodyText from '../textComponents/BodyText';
 import CategorySection from '../atomics/CategorySection';
-import testImage from '../../ad_test.jpg';
 import Button from '../atomics/Button';
 import { getUserAds } from '../../api/AdsApi';
-import { getUserTags } from '../../api/TagsApi';
+import { getSpecificTag } from '../../api/TagsApi';
 import { getUserData } from '../../api/userApi';
+import { useNavigate } from 'react-router-dom';
 
 export default function OtherProfile(userId) {
   const [loadAds, setLoadAds] = useState(true);
+  const [userID, setUserID] = useState(userId);
   const [tags, setTags] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [ads, setAds] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('UserID', userId);
     try {
       getUserData(userId.userId)
         .then((userData) => {
-          console.log('user Data ', userData);
           setUserInfo(userData);
         })
         .catch((error) => {
@@ -35,24 +32,36 @@ export default function OtherProfile(userId) {
         .then((ads) => {
           setAds(ads);
           setLoadAds(false);
-          console.log('ads', ads);
         })
         .catch((error) => console.log(error));
-
-      getUserTags(userId)
-        .then((tags) => {
-          setTags(tags);
-        })
-        .catch((error) => [console.log(error)]);
     } catch (e) {
       console.log(e);
     }
   }, []);
 
+  useEffect(() => {
+    if (!loadAds && userInfo.tags) {
+      userInfo.tags.forEach((tag) => {
+        getSpecificTag(tag)
+          .then((tagObj) => {
+            if (!tags.some((tags) => tags.id == tagObj.id)) {
+              setTags((tags) => [...tags, tagObj]);
+            }
+          })
+          .catch((error) => [console.log(error)]);
+      });
+    }
+  }, [userInfo]);
+
+  function handleOnClick() {
+    console.log('hej');
+    navigate('/privateChat');
+  }
+
   return (
     <div className="profilePage">
       <div className="nameAndPicture">
-        <img className="profilePicture" src={testImage}></img>
+        <img className="profilePicture" src={userInfo.profilePicture}></img>
         <Heading1>
           {userInfo.name} {userInfo.surname}{' '}
         </Heading1>
@@ -69,7 +78,7 @@ export default function OtherProfile(userId) {
         <CategorySection ads={ads} userId={userId.userId}></CategorySection>
       )}
 
-      <div className="buttonSticky">
+      <div className="buttonSticky" onClick={handleOnClick}>
         {' '}
         <Button className="buttonSticky">Kontakta annonsör</Button>
       </div>

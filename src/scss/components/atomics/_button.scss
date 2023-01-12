@@ -21,7 +21,6 @@
   &:active {
     background-color: abstracts.$black;
   }
-
 }
 .buttonDisabled {
   background-color: abstracts.$light-gray;
@@ -36,7 +35,7 @@
   border-radius: 5px;
 }
 
-.secondaryBtn{
+.secondaryBtn {
   background-color: abstracts.$white !important;
   border: 2px solid abstracts.$primary-color;
   color: abstracts.$primary-color;
