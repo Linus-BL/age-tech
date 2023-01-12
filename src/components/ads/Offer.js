@@ -14,7 +14,6 @@ export default function Offer() {
   const { currentUser } = useAuth();
   const [titel, setTitel] = useState('');
   const [description, setDescription] = useState('');
-  const [tags, setTags] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const [place, setPlace] = useState('');
   const [compensation, setCompensation] = useState('');
@@ -28,8 +27,8 @@ export default function Offer() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    addDoc(collection(db, 'adOffer'), {
+      console.log(userTags)
+      addDoc(collection(db, 'adOffer'), {
       titel: titel,
       description: description,
       tags: userTags,
@@ -41,21 +40,25 @@ export default function Offer() {
       date: date,
     });
 
+   
     setTitel('');
     setDescription('');
-    setTags([]);
+    setUserTags([]);
     setPlace('');
     setCompensation('');
     setTime('');
     setDate('');
 
+    
     navigate('/home');
   };
+
   useEffect(() => {
     searchableTags();
   }, []);
 
   const handleUserTags = (childData) => {
+    console.log(childData)
     setUserTags([...userTags, childData]);
   };
   const handleDisplayTags = (childData) => {

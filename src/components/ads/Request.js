@@ -13,7 +13,6 @@ export default function Request() {
   const { currentUser } = useAuth();
   const [titel, setTitel] = useState('');
   const [description, setDescription] = useState('');
-  const [tags, setTags] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const [place, setPlace] = useState('');
   const [compensation, setCompensation] = useState('');
@@ -34,7 +33,7 @@ export default function Request() {
     addDoc(collection(db, 'adRequest'), {
       titel: titel,
       description: description,
-      tags: tags,
+      tags: userTags,
       imageUrl: imageUrl,
       place: place,
       compensation: compensation,
@@ -45,7 +44,7 @@ export default function Request() {
 
     setTitel('');
     setDescription('');
-    setTags([]);
+    setUserTags([]);
     setPlace('');
     setCompensation('');
     setTime('');
