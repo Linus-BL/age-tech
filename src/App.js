@@ -20,8 +20,9 @@ import Offer from './components/ads/Offer';
 import Request from './components/ads/Request';
 import Shop from './components/shop/Shop';
 import AdOpened from './components/atomics/AdOpened';
-import AllAdsByCategory from './components/home/AdsByCategory';
 import Navbar from './components/nav/Navbar';
+import SelectTags from './components/login/SelectTags';
+import AllAdsByCategory from './components/home/AdsByCategory';
 import AllAdsUser from './components/profile/AllAdsUser';
 import CreateAd from './components/ads/CreateAd';
 import Chat from './components/chat/Chat';
@@ -29,7 +30,7 @@ import PrivateChat from './components/chat/PrivateChat';
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Router>
         <AuthProvider>
           <Switch>
@@ -71,6 +72,9 @@ function App() {
             <Route path="/createRequest" element={<PrivateRoute />}>
               <Route path="" element={<Request />} />
             </Route>
+            <Route path="/selectTags" element={<SelectTags />}>
+              <Route path="" element={<Request />} />
+            </Route>
             <Route path="/createAd" element={<PrivateRoute />}>
               <Route path="" element={<CreateAd />} />
             </Route>
@@ -87,7 +91,7 @@ function App() {
           <Navbar />
         </AuthProvider>
       </Router>
-    </>
+    </div>
   );
 }
 

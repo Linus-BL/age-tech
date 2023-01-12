@@ -2,6 +2,8 @@
 @use '../../base';
 
 .homePage {
+  background-color: abstracts.$white;
+
   .mainContent {
     padding: 1em 0.5em;
   }

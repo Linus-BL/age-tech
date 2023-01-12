@@ -5,7 +5,6 @@ import SearchField from '../atomics/SearchField';
 const Header = ({ children, onClickFunction, active = true }) => {
   return (
     <div className="headerSection">
-      <Heading1>Boomer Biz</Heading1>
       <SearchField></SearchField>
     </div>
   );

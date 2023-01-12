@@ -7,7 +7,6 @@ const DealCard = (props) => {
   return (
     <div className="dealCard" onClick={props.onClickFunction}>
       <div className="dealCardImgContainer">
-        {' '}
         <img src={props.deal.image} alt="deal" className="dealCardImage"></img>
       </div>
       <div className="textContentDeal">

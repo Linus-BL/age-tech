@@ -13,16 +13,16 @@ import Heading4 from '../textComponents/Heading4';
 import { getAdById } from '../../api/AdsApi';
 import BackButton from '../atomics/BackButton';
 import { getUserData } from '../../api/userApi';
-
+import TagSection from './TagsSection';
+import { getSpecificTag } from '../../api/TagsApi';
 const adOpen = () => {
   //takes in one ad object though props
   const [ad, setAd] = useState([]);
-  const [loading, setLoading] = useState();
+  const [tags, setTags] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [creator, setCreator] = useState([]);
   const params = useParams();
   const { id } = params;
-
-  console.log('id from params ', id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,12 +30,9 @@ const adOpen = () => {
       getAdById(id)
         .then((ad) => {
           setAd(ad);
-          console.log('AD', ad);
           getUserData(ad.creator)
             .then((creator) => {
               setCreator(creator);
-              console.log('creator', creator);
-              console.log('creator', ad.creator);
             })
             .catch((error) => {
               console.log('Error', error);
@@ -49,6 +46,19 @@ const adOpen = () => {
       console.log(e);
     }
   }, []);
+
+  useEffect(() => {
+    console.log('andra userEFfektiv körs');
+
+    if (!loading) {
+      console.log('ad', ad);
+      ad.tags.forEach((tag) => {
+        getSpecificTag(tag).then((tagObj) => {
+          setTags((tags) => [...tags, tagObj]);
+        });
+      });
+    }
+  }, [ad]);
 
   return (
     <div className="adOpen">
@@ -68,14 +78,19 @@ const adOpen = () => {
         <BodyText>{ad.description}</BodyText>
         {/* get profile and use data from there */}
         <div className="creatorSection">
-          <div className="profilePicture"></div>
-          <Link to={`/profile/${ad.creator}`}>
+          <img
+            className="profilePicture"
+            src={creator.profilePicture}
+            alt="profile picture"
+          ></img>
+
+          <Link className="creator" to={`/profile/${ad.creator}`}>
             <Heading4>
               {creator.name} {creator.surname}
             </Heading4>
           </Link>
         </div>
-        <Link to={`/ad/${id}`}>
+        <Link to={`/privateChat`}>
           <Button>Kontakta annonsör</Button>
         </Link>
         <div className="shortInfoSection">
@@ -91,12 +106,12 @@ const adOpen = () => {
           </div>
           <BodyText>{ad.date}</BodyText>
           <div className="iconText">
-            <MdAccessTime />
+            <MdAccessTime className="icon" />
             <Heading5>Tid</Heading5>
           </div>
           <BodyText>{ad.time}</BodyText>
         </div>
-        {/* <TagSection tags={ad.tags}></TagSection> */}
+        <TagSection tags={tags} sectionTitle=""></TagSection>
       </div>
     </div>
   );

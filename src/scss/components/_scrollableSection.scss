@@ -4,9 +4,19 @@
 .scrollableSection {
   display: flex;
   align-items: stretch;
-  gap: 1em;
+  gap: 0.5em;
   overflow-x: scroll;
   padding-bottom: 1em;
+  padding-right: 0.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  .adCard:last-child {
+    margin-right: 1em;
+  }
+  .adCard:first-child {
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+  }
 }
 
 ::-webkit-scrollbar {

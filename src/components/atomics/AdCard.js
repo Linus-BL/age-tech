@@ -26,7 +26,7 @@ const adCard = (props) => {
           <div className="iconText">
             {' '}
             <MdCalendarToday className="icon" />{' '}
-            <BodyText>{props.ad.time}</BodyText>
+            <BodyText>{props.ad.date}</BodyText>
           </div>
           <div className="iconText">
             {' '}
