@@ -51,7 +51,7 @@ export default function SignupDetails() {
   return (
     <>
       <div className="loginPage">
-        <Heading1>Profile details</Heading1>
+        <Heading1>Berätta mer om dig</Heading1>
         <form onSubmit={handleSubmit}>
           <div className="formGroup">
             <input
@@ -60,7 +60,7 @@ export default function SignupDetails() {
               id="firstName"
               name="firstName"
               value={firstName}
-              placeholder="First Name"
+              placeholder="Förnamn"
               onChange={(event) => setFirstName(event.target.value)}
             />
           </div>
@@ -71,7 +71,7 @@ export default function SignupDetails() {
               id="lastName"
               name="lastName"
               value={lastName}
-              placeholder="Last Name"
+              placeholder="Efternamn"
               onChange={(event) => setLastName(event.target.value)}
             />
           </div>
@@ -93,7 +93,7 @@ export default function SignupDetails() {
               id="city"
               name="city"
               value={city}
-              placeholder="City"
+              placeholder="Stad"
               onChange={(event) => setCity(event.target.value)}
             />
           </div>
@@ -104,7 +104,7 @@ export default function SignupDetails() {
               id="age"
               name="age"
               value={age}
-              placeholder="Age"
+              placeholder="Ålder"
               onChange={(event) => setAge(event.target.value)}
             />
           </div>
@@ -115,7 +115,7 @@ export default function SignupDetails() {
               id="gender"
               name="gender"
               value={gender}
-              placeholder="Gender"
+              placeholder="Kön"
               onChange={(event) => setGender(event.target.value)}
             />
           </div>
@@ -126,7 +126,7 @@ export default function SignupDetails() {
               id="profilePicture"
               name="profilePicture"
               value={profilePicture}
-              placeholder="Profile picture url"
+              placeholder="Url till profilbild"
               onChange={(event) => setProfilePicture(event.target.value)}
             />
           </div>
@@ -135,7 +135,7 @@ export default function SignupDetails() {
             //disabled={loading}
             className="button"
             type="submit"
-            value="Submit"
+            value="Spara"
           />
         </form>
       </div>

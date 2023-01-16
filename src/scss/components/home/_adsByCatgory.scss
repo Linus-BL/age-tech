@@ -2,11 +2,12 @@
 
 .headerAllAds {
   display: grid;
+  flex-wrap: wrap;
   grid-template-columns: 1fr 5fr 1fr;
   padding: 24px 16px;
   background-color: abstracts.$white;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 .heading {
   display: flex;
@@ -14,11 +15,18 @@
 }
 
 .AdsByCategory {
-  background-color: abstracts.$white;
   display: flex;
   flex-wrap: wrap;
+  align-items: end;
   padding-top: 10px;
-  gap: 0.8em 0.8em;
-  justify-content: center;
-  height: calc(100vh - 3.5em);
+  padding-left: 0.6em;
+  gap: 0.8em 0.6em;
+  justify-content: start;
+  align-items: start;
+  //
+  padding-bottom: 4.5em;
+}
+.background{
+  background-color: abstracts.$white;
+  height: 100%
 }

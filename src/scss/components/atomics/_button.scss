@@ -7,6 +7,8 @@
   font-weight: base.$h4-font-weight;
   font-size: base.$h5-font-size;
   color: abstracts.$white;
+  box-sizing: border-box;
+
   padding: 1em;
   width: stretch;
   display: flex;
@@ -39,4 +41,6 @@
   background-color: abstracts.$white !important;
   border: 2px solid abstracts.$primary-color;
   color: abstracts.$primary-color;
+  box-sizing: border-box;
+  height: 56px;
 }

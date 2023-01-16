@@ -32,7 +32,7 @@ export default function ForgotPassword() {
   return (
     <>
       <div className="loginPage">
-        <Heading1>Password Reset</Heading1>
+        <Heading1>Återställ lösenord</Heading1>
         {error && <p>{error}</p>}
         {message && <p>{message}</p>}
         <form className="loginForm" onSubmit={handleSubmit}>
@@ -41,7 +41,7 @@ export default function ForgotPassword() {
               className="inputField"
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Mail"
               ref={emailRef}
             />
           </div>
@@ -54,10 +54,10 @@ export default function ForgotPassword() {
         </form>
         <div>
           <div className="links">
-            Need an account? <Link to="/signup">Sign up</Link>{' '}
+            Behöver du ett konto? <Link to="/signup">Skapa konto</Link>{' '}
           </div>
           <div className="links">
-            Have an account? <Link to="/login">Log ín</Link>{' '}
+            Har du redan ett konto? <Link to="/login">Logga in</Link>{' '}
           </div>
         </div>
       </div>
