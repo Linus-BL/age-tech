@@ -60,6 +60,44 @@ const adOpen = () => {
     }
   }, [ad]);
 
+  // function to get date in "Måndag 12 Januari" format
+  function getDate(date) {
+    let d = new Date(date);
+    let day = d.getDay();
+    let year = d.getFullYear();
+    let adDate = d.getDate();
+    let month = d.getMonth();
+    const days = [
+      'Söndag',
+      'Måndag',
+      'Tisdag',
+      'Onsdag',
+      'Torsdag',
+      'Fredag',
+      'Lördag',
+
+    ];
+    const months = [
+      'Januari',
+      'Februari',
+      'Mars',
+      'April',
+      'Maj',
+      'Juni',
+      'Juli',
+      'Augusti',
+      'September',
+      'Oktober',
+      'November',
+      'December',
+
+    ];
+    console.log("day", day)
+    let s = days[day] + ' ' + adDate + ' ' + months[month];
+    return s;
+  }
+
+
   return (
     <div className="adOpen">
       <div className="openedAdImgContainer">
@@ -104,7 +142,7 @@ const adOpen = () => {
             {' '}
             <MdCalendarToday className="icon" /> <Heading5>Datum</Heading5>
           </div>
-          <BodyText>{ad.date}</BodyText>
+          <BodyText>{getDate(ad.date)}</BodyText>
           <div className="iconText">
             <MdAccessTime className="icon" />
             <Heading5>Tid</Heading5>

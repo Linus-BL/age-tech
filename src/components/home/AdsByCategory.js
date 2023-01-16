@@ -32,7 +32,7 @@ const AllAdsByCategory = () => {
   ));
 
   return (
-    <div>
+    <div className="background">
       <div className="headerAllAds">
         <BackButton black={true}></BackButton>
         <div className="heading">

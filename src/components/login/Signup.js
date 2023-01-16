@@ -36,7 +36,7 @@ export default function Signup() {
   return (
     <>
       <div className="loginPage">
-        <Heading1>Sign Up</Heading1>
+        <Heading1>Skapa konto</Heading1>
         {error && <p>{error}</p>}
         <form className="loginForm" onSubmit={handleSubmit}>
           <div className="formGroup">
@@ -44,7 +44,7 @@ export default function Signup() {
               className="inputField"
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Mail"
               ref={emailRef}
             />
           </div>
@@ -53,7 +53,7 @@ export default function Signup() {
               className="inputField"
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="Lösenord"
               ref={passwordRef}
               required
             />
@@ -63,7 +63,7 @@ export default function Signup() {
               className="inputField"
               type="password"
               name="password-confirm"
-              placeholder="Confirm passoword"
+              placeholder="Bekräfta lösenord"
               ref={passwordConfirmRef}
               required
             />
@@ -72,11 +72,11 @@ export default function Signup() {
             className="button"
             disabled={loading}
             type="submit"
-            value="Submit"
+            value="Skapa konto"
           />
         </form>
         <div className="links">
-          Need an account? <Link to="/">Log ín</Link>{' '}
+          Har du redan ett konto? <Link to="/">Logga in</Link>{' '}
         </div>
       </div>
     </>

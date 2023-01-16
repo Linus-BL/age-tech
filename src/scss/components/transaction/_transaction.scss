@@ -21,6 +21,7 @@
 
 .transaction-description {
   min-height: 10vh;
+  padding-top: 0.8em;
 }
 
 .transactionMembers {
@@ -45,15 +46,13 @@
 .buttonSection {
   position: absolute;
   bottom: 2em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 84%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  gap: 1em;
 }
 
 .small {
-  width: fit-content;
+  background-color: #00ff00;
   .button {
     padding: 1em 2.5em;
   }

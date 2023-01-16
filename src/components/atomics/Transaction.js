@@ -32,7 +32,7 @@ function Transaction(props) {
   const [userAccepted, setUserAccepted] = useState(false);
   const [creatorAccepted, setCreatorAccepted] = useState(true);
   const [transactionDesc, setTransactionDesc] = useState(
-    'John köper med sig ingredienser. Vi ses hemma hos John.',
+    'Jane köper med sig ingredienser. Vi ses hemma hos Jane.',
   );
   const salt = 'kiyK7CH3udgJ';
   const navigate = useNavigate();
@@ -74,13 +74,14 @@ function Transaction(props) {
     let adDate = d.getDate();
     let month = d.getMonth();
     const days = [
+      'Söndag',
       'Måndag',
       'Tisdag',
       'Onsdag',
       'Torsdag',
       'Fredag',
       'Lördag',
-      'Söndag',
+
     ];
     const months = [
       'Januari',
@@ -96,6 +97,7 @@ function Transaction(props) {
       'November',
       'December',
     ];
+
     let s = days[day - 1] + ' ' + adDate + ' ' + months[month];
     return s;
   }
@@ -168,8 +170,8 @@ function Transaction(props) {
               {userAccepted ? (
                 <MdCheckCircle size="24" color="#3F9367" />
               ) : (
-                <MdCheckCircleOutline size="24" />
-              )}
+                  <MdCheckCircleOutline size="24" />
+                )}
             </div>
             {otherUser && (
               <div className="transactionUserAccepted">
@@ -186,8 +188,8 @@ function Transaction(props) {
                 {creatorAccepted ? (
                   <MdCheckCircle size="24" color="#3F9367" />
                 ) : (
-                  <MdCheckCircleOutline size="24" />
-                )}
+                    <MdCheckCircleOutline size="24" />
+                  )}
               </div>
             )}
           </div>

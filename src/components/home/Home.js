@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import TagSection from '../atomics/TagsSection';
 import AllCategories from './AllCategories';
@@ -57,8 +55,8 @@ export default function Home() {
   }, [tags]);
 
   const switchData = {
-    buttonOne: 'Erbjudna',
-    buttonTwo: 'Efterfrågade',
+    buttonOne: 'Erbjudanden',
+    buttonTwo: 'Förfrågnigar',
     buttonOneNavigation: '/home',
     buttonTwoNavigation: '/home',
     activeButton: 'buttonOne',

@@ -41,7 +41,7 @@ export default function Login() {
 
   return (
     <div className="loginPage">
-      <Heading1>Log In</Heading1>
+      <Heading1>Logga in</Heading1>
       {error && <p>{error}</p>}
       <form className="loginForm" onSubmit={handleSubmit}>
         <div className="formGroup">
@@ -49,7 +49,7 @@ export default function Login() {
             className="inputField"
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Mail"
             ref={emailRef}
           />
         </div>
@@ -58,7 +58,7 @@ export default function Login() {
             className="inputField"
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Lösenord"
             ref={passwordRef}
             required
           />
@@ -67,20 +67,20 @@ export default function Login() {
           disabled={loading}
           className="button"
           type="submit"
-          value="Submit"
+          value="Logga in"
         />
       </form>
 
       <div className="signUp">
         <BodyText>
           {' '}
-          Need an account? <Link to="/signup">Sign up</Link>
+          Behöver du ett konto? <Link to="/signup">Skapa konto</Link>
         </BodyText>
       </div>
       <div className="forgotPassword">
         <BodyText>
           {' '}
-          <Link to="/forgotPassword">Forgot password</Link>
+          <Link to="/forgotPassword">Glömt lösenord</Link>
         </BodyText>
       </div>
     </div>
